@@ -9,374 +9,83 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg: #0a0a0f;
-    --bg2: #111118;
-    --bg3: #18181f;
-    --border: rgba(255,255,255,0.07);
-    --border2: rgba(255,255,255,0.12);
-    --accent: #00e5ff;
-    --accent2: #ff3d6e;
-    --text: #f0f0f8;
-    --muted: #7a7a8e;
-    --card-hover: #1c1c26;
-  }
-
+  :root { --bg: #0a0a0f; --bg2: #111118; --bg3: #18181f; --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12); --accent: #00e5ff; --accent2: #ff3d6e; --text: #f0f0f8; --muted: #7a7a8e; --card-hover: #1c1c26; }
   html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(10,10,15,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 60px;
-  }
-
-  .logo {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.5rem; font-weight: 800; letter-spacing: 0.02em;
-    text-decoration: none;
-    display: flex; align-items: center; gap: 6px;
-  }
-
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,15,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: 0.02em; text-decoration: none; display: flex; align-items: center; gap: 6px; }
   .logo span:first-child { color: var(--text); }
-  .logo .hq {
-    background: var(--accent);
-    color: #0a0a0f;
-    padding: 1px 7px;
-    border-radius: 3px;
-    font-size: 1.1rem;
-  }
-
+  .logo .hq { background: var(--accent); color: #0a0a0f; padding: 1px 7px; border-radius: 3px; font-size: 1.1rem; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    color: var(--muted); text-decoration: none; font-size: 0.9rem;
-    font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase;
-    transition: color 0.2s;
-  }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--accent); }
-
-  .nav-cta {
-    background: transparent; border: 1px solid var(--accent);
-    color: var(--accent); padding: 7px 18px; border-radius: 4px;
-    font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em;
-    text-transform: uppercase; cursor: pointer; transition: all 0.2s;
-    font-family: 'DM Sans', sans-serif; text-decoration: none;
-  }
+  .nav-cta { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 7px 18px; border-radius: 4px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif; text-decoration: none; }
   .nav-cta:hover { background: var(--accent); color: #0a0a0f; }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center;
-    padding: 80px 2rem 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-    width: 800px; height: 500px;
-    background: radial-gradient(ellipse at center, rgba(0,229,255,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-tag {
-    display: inline-flex; align-items: center; gap: 8px;
-    border: 1px solid var(--border2);
-    background: var(--bg3);
-    padding: 6px 16px; border-radius: 100px;
-    font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 2rem;
-    animation: fadeUp 0.6s ease both;
-  }
-
-  .hero-tag::before {
-    content: ''; width: 6px; height: 6px; border-radius: 50%;
-    background: var(--accent); display: block;
-    box-shadow: 0 0 8px var(--accent);
-    animation: pulse 2s ease infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  h1 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(3.5rem, 10vw, 7rem);
-    font-weight: 800;
-    line-height: 0.95;
-    letter-spacing: -0.01em;
-    margin-bottom: 1.5rem;
-    animation: fadeUp 0.6s 0.1s ease both;
-  }
-
-  h1 .line2 {
-    display: block;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .hero-sub {
-    font-size: 1.1rem; color: var(--muted); max-width: 540px;
-    line-height: 1.7; margin-bottom: 2.5rem;
-    animation: fadeUp 0.6s 0.2s ease both;
-  }
-
-  .hero-buttons {
-    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
-    animation: fadeUp 0.6s 0.3s ease both;
-  }
-
-  .btn-primary {
-    background: var(--accent); color: #0a0a0f;
-    padding: 12px 28px; border-radius: 4px; text-decoration: none;
-    font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;
-    text-transform: uppercase; transition: all 0.2s;
-    border: none; cursor: pointer;
-  }
+  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 2rem 4rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 800px; height: 500px; background: radial-gradient(ellipse at center, rgba(0,229,255,0.08) 0%, transparent 70%); pointer-events: none; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border2); background: var(--bg3); padding: 6px 16px; border-radius: 100px; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2rem; animation: fadeUp 0.6s ease both; }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: block; box-shadow: 0 0 8px var(--accent); animation: pulse 2s ease infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(3.5rem, 10vw, 7rem); font-weight: 800; line-height: 0.95; letter-spacing: -0.01em; margin-bottom: 1.5rem; animation: fadeUp 0.6s 0.1s ease both; }
+  h1 .line2 { display: block; background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 540px; line-height: 1.7; margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.6s 0.3s ease both; }
+  .btn-primary { background: var(--accent); color: #0a0a0f; padding: 12px 28px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; transition: all 0.2s; border: none; cursor: pointer; }
   .btn-primary:hover { background: #33eaff; transform: translateY(-1px); }
-
-  .btn-ghost {
-    background: transparent; color: var(--text);
-    padding: 12px 28px; border-radius: 4px; text-decoration: none;
-    font-weight: 500; font-size: 0.9rem; letter-spacing: 0.03em;
-    text-transform: uppercase; transition: all 0.2s;
-    border: 1px solid var(--border2);
-  }
+  .btn-ghost { background: transparent; color: var(--text); padding: 12px 28px; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.03em; text-transform: uppercase; transition: all 0.2s; border: 1px solid var(--border2); }
   .btn-ghost:hover { border-color: var(--muted); }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* CATEGORIES */
-  .categories {
-    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-    padding: 3rem 2rem;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    background: var(--bg2);
-  }
-
-  .cat-pill {
-    display: flex; align-items: center; gap: 8px;
-    padding: 8px 20px; border-radius: 100px;
-    border: 1px solid var(--border2);
-    background: var(--bg3);
-    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em;
-    text-decoration: none; color: var(--text); transition: all 0.2s;
-    text-transform: uppercase;
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .categories { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; padding: 3rem 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg2); }
+  .cat-pill { display: flex; align-items: center; gap: 8px; padding: 8px 20px; border-radius: 100px; border: 1px solid var(--border2); background: var(--bg3); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em; text-decoration: none; color: var(--text); transition: all 0.2s; text-transform: uppercase; }
   .cat-pill:hover { border-color: var(--accent); color: var(--accent); }
   .cat-pill .dot { width: 7px; height: 7px; border-radius: 50%; }
-
-  /* FEATURED */
   .section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
-
-  .section-header {
-    display: flex; align-items: baseline; justify-content: space-between;
-    margin-bottom: 2.5rem;
-  }
-
-  .section-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 2rem; font-weight: 700; letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-
+  .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; }
+  .section-title { font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
   .section-title span { color: var(--accent); }
-
-  .see-all {
-    font-size: 0.85rem; color: var(--muted); text-decoration: none;
-    letter-spacing: 0.05em; text-transform: uppercase;
-    transition: color 0.2s;
-  }
+  .see-all { font-size: 0.85rem; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
   .see-all:hover { color: var(--accent); }
-
-  /* FEATURED GRID */
-  .featured-grid {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 1.5px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  .card {
-    background: var(--bg2);
-    padding: 2rem;
-    transition: background 0.2s;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
+  .featured-grid { display: grid; grid-template-columns: 1.6fr 1fr; grid-template-rows: auto auto; gap: 1.5px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .card { background: var(--bg2); padding: 2rem; transition: background 0.2s; cursor: pointer; text-decoration: none; color: inherit; display: block; }
   .card:hover { background: var(--card-hover); }
-
   .card.big { grid-row: span 2; padding: 2.5rem; }
-
-  .card-tag {
-    display: inline-block;
-    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
-    text-transform: uppercase; padding: 3px 10px; border-radius: 3px;
-    margin-bottom: 1rem;
-  }
+  .card-tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 3px; margin-bottom: 1rem; }
   .tag-tech { background: rgba(0,229,255,0.12); color: var(--accent); }
   .tag-games { background: rgba(255,61,110,0.12); color: var(--accent2); }
   .tag-guide { background: rgba(120,200,120,0.12); color: #7cc47c; }
   .tag-review { background: rgba(255,180,60,0.12); color: #ffb43c; }
-
-  .card-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; letter-spacing: 0.01em; line-height: 1.1;
-    margin-bottom: 0.75rem;
-  }
+  .card-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.01em; line-height: 1.1; margin-bottom: 0.75rem; }
   .card.big .card-title { font-size: 2.2rem; }
   .card:not(.big) .card-title { font-size: 1.3rem; }
-
-  .card-excerpt {
-    font-size: 0.92rem; color: var(--muted); line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
+  .card-excerpt { font-size: 0.92rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem; }
   .card:not(.big) .card-excerpt { display: none; }
-
-  .card-meta {
-    display: flex; align-items: center; gap: 1rem;
-    font-size: 0.8rem; color: var(--muted);
-  }
+  .card-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.8rem; color: var(--muted); }
   .card-meta .read-time::before { content: '⏱ '; }
-
-  /* LATEST POSTS */
-  .posts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  .post-card {
-    background: var(--bg2);
-    padding: 1.75rem;
-    transition: background 0.2s;
-    cursor: pointer;
-    display: block;
-    text-decoration: none;
-    color: inherit;
-  }
+  .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .post-card { background: var(--bg2); padding: 1.75rem; transition: background 0.2s; cursor: pointer; display: block; text-decoration: none; color: inherit; }
   .post-card:hover { background: var(--card-hover); }
-
   .post-card .card-title { font-size: 1.1rem; margin-bottom: 0.5rem; }
   .post-card .card-excerpt { display: block; font-size: 0.87rem; margin-bottom: 1rem; }
-
-  /* NEWSLETTER */
-  .newsletter {
-    background: var(--bg2);
-    border: 1px solid var(--border2);
-    border-radius: 8px;
-    padding: 4rem 3rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    margin: 0 2rem;
-  }
-
-  .newsletter::before {
-    content: '';
-    position: absolute; bottom: -100px; right: -100px;
-    width: 400px; height: 400px;
-    background: radial-gradient(ellipse, rgba(255,61,110,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .newsletter h2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 2.8rem; font-weight: 800;
-    text-transform: uppercase; letter-spacing: 0.02em;
-    margin-bottom: 0.75rem;
-  }
-
+  .newsletter { background: var(--bg2); border: 1px solid var(--border2); border-radius: 8px; padding: 4rem 3rem; text-align: center; position: relative; overflow: hidden; margin: 0 2rem; }
+  .newsletter h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 2.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.75rem; }
   .newsletter p { color: var(--muted); margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
-
-  .newsletter-form {
-    display: flex; gap: 0.75rem; max-width: 460px;
-    margin: 0 auto; flex-wrap: wrap; justify-content: center;
-  }
-
-  .newsletter-form input {
-    flex: 1; min-width: 200px;
-    background: var(--bg3); border: 1px solid var(--border2);
-    color: var(--text); padding: 12px 18px; border-radius: 4px;
-    font-size: 0.95rem; font-family: 'DM Sans', sans-serif;
-    outline: none; transition: border-color 0.2s;
-  }
+  .newsletter-form { display: flex; gap: 0.75rem; max-width: 460px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+  .newsletter-form input { flex: 1; min-width: 200px; background: var(--bg3); border: 1px solid var(--border2); color: var(--text); padding: 12px 18px; border-radius: 4px; font-size: 0.95rem; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.2s; }
   .newsletter-form input:focus { border-color: var(--accent); }
   .newsletter-form input::placeholder { color: var(--muted); }
-
-  /* FOOTER */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 3rem 2rem;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 1.5rem;
-    max-width: 1200px; margin: 4rem auto 0;
-  }
-
-  .footer-logo {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.3rem; font-weight: 800;
-    text-decoration: none; color: var(--text);
-  }
-
+  footer { border-top: 1px solid var(--border); padding: 3rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; max-width: 1200px; margin: 4rem auto 0; }
+  .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 800; text-decoration: none; color: var(--text); }
   .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
   .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
   .footer-links a:hover { color: var(--text); }
-
   .footer-copy { color: var(--muted); font-size: 0.82rem; }
-
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .featured-grid { grid-template-columns: 1fr; }
-    .card.big { grid-row: span 1; }
-    nav .nav-links { display: none; }
-    .newsletter { padding: 3rem 1.5rem; margin: 0 1rem; }
-    footer { flex-direction: column; text-align: center; }
-  }
+  @media (max-width: 768px) { .featured-grid { grid-template-columns: 1fr; } .card.big { grid-row: span 1; } nav .nav-links { display: none; } .newsletter { padding: 3rem 1.5rem; margin: 0 1rem; } footer { flex-direction: column; text-align: center; } }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="/" class="logo">
-    <span>TechGame</span><span class="hq">HQ</span>
-  </a>
+  <a href="/" class="logo"><span>TechGame</span><span class="hq">HQ</span></a>
   <ul class="nav-links">
     <li><a href="#tech">Tech</a></li>
     <li><a href="#games">Games</a></li>
@@ -386,24 +95,16 @@
   <a href="#newsletter" class="nav-cta">Subscribe</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-tag">Tech &amp; Gaming Intelligence</div>
-  <h1>
-    Your HQ for<br>
-    <span class="line2">Tech &amp; Games</span>
-  </h1>
-  <p class="hero-sub">
-    Guides, reviews, and tips for gamers and tech enthusiasts.
-    Level up your setup, your skills, and your knowledge.
-  </p>
+  <h1>Your HQ for<br><span class="line2">Tech &amp; Games</span></h1>
+  <p class="hero-sub">Guides, reviews, and tips for gamers and tech enthusiasts. Level up your setup, your skills, and your knowledge.</p>
   <div class="hero-buttons">
     <a href="#featured" class="btn-primary">Read Latest</a>
     <a href="#newsletter" class="btn-ghost">Get Weekly Digest</a>
   </div>
 </section>
 
-<!-- CATEGORIES -->
 <div class="categories">
   <a href="#tech" class="cat-pill"><span class="dot" style="background:#00e5ff"></span>Tech News</a>
   <a href="#games" class="cat-pill"><span class="dot" style="background:#ff3d6e"></span>Gaming</a>
@@ -413,110 +114,100 @@
   <a href="#deals" class="cat-pill"><span class="dot" style="background:#ff9a3c"></span>Deals</a>
 </div>
 
-<!-- FEATURED -->
 <div class="section" id="featured">
   <div class="section-header">
     <h2 class="section-title">Featured <span>Posts</span></h2>
     <a href="#" class="see-all">See all →</a>
   </div>
-
   <div class="featured-grid">
     <a href="articles/best-free-games-for-low-end-pcs.html" class="card big">
       <span class="card-tag tag-guide">Guide</span>
       <h3 class="card-title">Best Free Games for Low-End PCs in 2025: Full Tier List</h3>
-      <p class="card-excerpt">
-        You don't need a $1,500 rig to have fun. We tested 40+ free-to-play games on a budget laptop and ranked them by performance, fun factor, and how well they run on integrated graphics.
-      </p>
-      <div class="card-meta">
-        <span>May 2025</span>
-        <span class="read-time">7 min read</span>
-      </div>
+      <p class="card-excerpt">You don't need a $1,500 rig to have fun. We tested 40+ free-to-play games on a budget laptop and ranked them by performance, fun factor, and how well they run on integrated graphics.</p>
+      <div class="card-meta"><span>May 2025</span><span class="read-time">7 min read</span></div>
     </a>
     <a href="articles/how-to-speed-up-your-pc-for-gaming.html" class="card">
       <span class="card-tag tag-tech">Tech</span>
       <h3 class="card-title">How to Speed Up Your PC for Gaming Without Spending a Dime</h3>
-      <div class="card-meta">
-        <span>May 2025</span>
-        <span class="read-time">8 min read</span>
-      </div>
+      <div class="card-meta"><span>May 2025</span><span class="read-time">8 min read</span></div>
     </a>
     <a href="articles/best-gaming-mice-under-30.html" class="card">
       <span class="card-tag tag-review">Review</span>
       <h3 class="card-title">Top 5 Gaming Mice Under $30 That Actually Perform</h3>
-      <div class="card-meta">
-        <span>Apr 2025</span>
-        <span class="read-time">6 min read</span>
-      </div>
+      <div class="card-meta"><span>Apr 2025</span><span class="read-time">6 min read</span></div>
     </a>
   </div>
 </div>
 
-<!-- LATEST POSTS -->
 <div class="section" id="latest">
   <div class="section-header">
     <h2 class="section-title">Latest <span>Articles</span></h2>
     <a href="#" class="see-all">See all →</a>
   </div>
-
   <div class="posts-grid">
     <a href="articles/best-free-games-for-low-end-pcs.html" class="post-card">
       <span class="card-tag tag-games">Gaming</span>
       <h3 class="card-title">Best Free Games for Low-End PCs in 2025</h3>
       <p class="card-excerpt">Our picks for the best free games that run on almost any PC or laptop.</p>
-      <div class="card-meta">
-        <span>May 2025</span>
-        <span class="read-time">7 min read</span>
-      </div>
+      <div class="card-meta"><span>May 2025</span><span class="read-time">7 min read</span></div>
     </a>
     <a href="articles/ssd-vs-hdd-for-gaming.html" class="post-card">
       <span class="card-tag tag-tech">Tech</span>
       <h3 class="card-title">SSD vs HDD for Gaming: Does It Actually Matter?</h3>
       <p class="card-excerpt">We ran real load-time benchmarks across 10 popular games. The results might surprise you.</p>
-      <div class="card-meta">
-        <span>Apr 2025</span>
-        <span class="read-time">6 min read</span>
-      </div>
+      <div class="card-meta"><span>Apr 2025</span><span class="read-time">6 min read</span></div>
     </a>
     <a href="articles/how-to-speed-up-your-pc-for-gaming.html" class="post-card">
       <span class="card-tag tag-guide">Guide</span>
       <h3 class="card-title">How to Speed Up Your PC for Gaming (Free Methods)</h3>
       <p class="card-excerpt">Boost FPS and reduce lag without spending a single dollar. Works on any PC.</p>
-      <div class="card-meta">
-        
-        <span>May 2025</span>
-        <span class="read-time">8 min read</span>
-      </div>
+      <div class="card-meta"><span>May 2025</span><span class="read-time">8 min read</span></div>
     </a>
     <a href="articles/best-gaming-mice-under-30.html" class="post-card">
       <span class="card-tag tag-review">Review</span>
       <h3 class="card-title">Best Gaming Mice Under $30 in 2025</h3>
       <p class="card-excerpt">Budget mice that actually perform — tested and ranked for all grip styles.</p>
-      <div class="card-meta">
-        <span>Apr 2025</span>
-        <span class="read-time">6 min read</span>
-      </div>
+      <div class="card-meta"><span>Apr 2025</span><span class="read-time">6 min read</span></div>
     </a>
     <a href="articles/best-free-tools-for-gamers.html" class="post-card">
       <span class="card-tag tag-tech">Tech</span>
       <h3 class="card-title">Best Free Tools Every Gamer Should Install in 2025</h3>
       <p class="card-excerpt">From MSI Afterburner to OBS — the free software that actually makes a difference.</p>
-      <div class="card-meta">
-        <span>Mar 2025</span>
-        <span class="read-time">5 min read</span>
-      </div>
+      <div class="card-meta"><span>Mar 2025</span><span class="read-time">5 min read</span></div>
     </a>
-    <a href="#" class="post-card">
+    <a href="articles/top-10-indie-games-worth-your-time.html" class="post-card">
       <span class="card-tag tag-games">Gaming</span>
       <h3 class="card-title">Top 10 Indie Games Worth Your Time in 2025</h3>
       <p class="card-excerpt">Hidden gems that flew under the radar but deserve way more attention.</p>
-      <div class="card-meta">
-        <span>Coming soon</span>
-      </div>
+      <div class="card-meta"><span>May 2025</span><span class="read-time">7 min read</span></div>
+    </a>
+    <a href="articles/how-to-monitor-pc-temperature-while-gaming.html" class="post-card">
+      <span class="card-tag tag-tech">Tech</span>
+      <h3 class="card-title">How to Monitor Your PC Temperature While Gaming</h3>
+      <p class="card-excerpt">High temps are silently killing your FPS. Here's how to check and fix it for free.</p>
+      <div class="card-meta"><span>May 2025</span><span class="read-time">6 min read</span></div>
+    </a>
+    <a href="articles/how-to-reduce-input-lag-on-any-monitor.html" class="post-card">
+      <span class="card-tag tag-tech">Tech</span>
+      <h3 class="card-title">How to Reduce Input Lag on Any Monitor</h3>
+      <p class="card-excerpt">Simple free settings that make your games feel instantly more responsive.</p>
+      <div class="card-meta"><span>May 2025</span><span class="read-time">6 min read</span></div>
+    </a>
+    <a href="articles/best-gaming-headsets-under-50.html" class="post-card">
+      <span class="card-tag tag-review">Review</span>
+      <h3 class="card-title">Best Gaming Headsets Under $50 in 2025</h3>
+      <p class="card-excerpt">Budget headsets that actually deliver — tested for sound, mic, and comfort.</p>
+      <div class="card-meta"><span>May 2025</span><span class="read-time">6 min read</span></div>
+    </a>
+    <a href="articles/how-to-get-better-at-fps-games.html" class="post-card">
+      <span class="card-tag tag-games">Gaming</span>
+      <h3 class="card-title">How to Get Better at FPS Games</h3>
+      <p class="card-excerpt">Aim, game sense, and positioning tips used by high-ranked players.</p>
+      <div class="card-meta"><span>May 2025</span><span class="read-time">8 min read</span></div>
     </a>
   </div>
 </div>
 
-<!-- NEWSLETTER -->
 <section id="newsletter">
   <div class="newsletter">
     <h2>Stay in the <span style="color:var(--accent)">Loop</span></h2>
@@ -528,7 +219,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <a href="/" class="footer-logo">TechGame<span style="color:var(--accent)">HQ</span></a>
   <ul class="footer-links">
