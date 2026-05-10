@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — TechGameHQ</title>
+<meta name="description" content="About TechGameHQ — honest guides, real benchmarks, and budget-friendly picks for gamers and tech enthusiasts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --white: #ffffff; --off-white: #f7f6f3; --border: #e2e0da; --text: #1a1917; --muted: #6b6860; --accent: #2563eb; --accent-warm: #f97316; }
+  body { background: var(--white); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.75; }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 2px solid var(--text); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; text-decoration: none; color: var(--text); letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+  .back { color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .back:hover { color: var(--text); }
+
+  .hero { background: var(--text); color: var(--white); padding: 5rem 2rem; text-align: center; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin-bottom: 1rem; letter-spacing: -0.02em; }
+  .hero h1 span { color: var(--accent); font-style: italic; }
+  .hero p { font-size: 1.15rem; color: rgba(255,255,255,0.7); max-width: 540px; margin: 0 auto; font-weight: 300; }
+
+  .wrap { max-width: 740px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+
+  h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; margin: 2.5rem 0 1rem; letter-spacing: -0.01em; }
+  p { margin-bottom: 1.25rem; color: #3a3835; }
+
+  .values { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+  .value-card { border: 1px solid var(--border); border-top: 4px solid var(--accent); padding: 1.5rem; background: var(--off-white); }
+  .value-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .value-card p { font-size: 0.9rem; margin: 0; color: var(--muted); }
+
+  .topics { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0; }
+  .topic { background: var(--off-white); border: 1px solid var(--border); padding: 6px 16px; font-size: 0.85rem; font-weight: 600; color: var(--text); }
+
+  .cta-box { background: var(--text); color: var(--white); padding: 2.5rem; text-align: center; margin-top: 3rem; }
+  .cta-box h2 { color: var(--white); margin-top: 0; }
+  .cta-box p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .btn { display: inline-block; background: var(--accent); color: var(--white); padding: 12px 28px; text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; transition: all 0.2s; }
+  .btn:hover { background: var(--accent-warm); }
+
+  footer { background: var(--text); padding: 2rem; text-align: center; margin-top: 4rem; }
+  footer p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">TechGame<span>HQ</span></a>
+  <a href="index.html" class="back">← Back to Home</a>
+</nav>
+
+<div class="hero">
+  <h1>Your HQ for <span>Smarter</span> Gaming</h1>
+  <p>Honest guides, real benchmarks, and budget-friendly picks — because great gaming shouldn't cost a fortune.</p>
+</div>
+
+<div class="wrap">
+
+  <h2>What is TechGameHQ?</h2>
+  <p>TechGameHQ is a gaming and tech blog focused on helping everyday gamers get the most out of their setup without breaking the bank. We cover everything from free games that run on budget hardware, to honest reviews of affordable peripherals, to practical guides that actually work.</p>
+  <p>We believe you don't need a $3,000 PC to have a great gaming experience. With the right knowledge, a budget setup can perform surprisingly well — and that's exactly what we're here to prove.</p>
+
+  <h2>What We Cover</h2>
+  <div class="topics">
+    <span class="topic">PC Gaming</span>
+    <span class="topic">Budget Peripherals</span>
+    <span class="topic">Free Games</span>
+    <span class="topic">Tech Guides</span>
+    <span class="topic">PC Optimization</span>
+    <span class="topic">Hardware Reviews</span>
+    <span class="topic">Indie Games</span>
+    <span class="topic">FPS Tips</span>
+  </div>
+
+  <h2>Our Values</h2>
+  <div class="values">
+    <div class="value-card">
+      <h3>Honest</h3>
+      <p>We tell you the truth — even when a product isn't worth buying.</p>
+    </div>
+    <div class="value-card">
+      <h3>Practical</h3>
+      <p>Every guide is tested and actionable. No filler, no fluff.</p>
+    </div>
+    <div class="value-card">
+      <h3>Budget-Friendly</h3>
+      <p>We focus on value. Great gaming doesn't require a fortune.</p>
+    </div>
+    <div class="value-card">
+      <h3>Independent</h3>
+      <p>Our opinions are our own. We're not paid to recommend anything.</p>
+    </div>
+  </div>
+
+  <h2>Affiliate Disclosure</h2>
+  <p>TechGameHQ is a participant in the Amazon Services LLC Associates Program. Some links on this site are affiliate links, meaning we may earn a small commission if you purchase through them — at no extra cost to you. This helps us keep the site running and producing free content.</p>
+  <p>We only recommend products we genuinely believe are worth buying. Our editorial opinions are never influenced by affiliate relationships.</p>
+
+  <div class="cta-box">
+    <h2>Ready to Level Up?</h2>
+    <p>Browse our latest guides, reviews, and tips — all completely free.</p>
+    <a href="index.html" class="btn">Read Latest Articles</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 <a href="index.html">TechGameHQ</a> — Your Headquarters for Tech & Gaming</p>
+</footer>
+
+</body>
+</html>
