@@ -6,57 +6,72 @@
 <title>How to Monitor Your PC Temperature While Gaming — TechGameHQ</title>
 <meta name="description" content="Learn how to monitor your CPU and GPU temperatures while gaming. Find out what temps are safe and how to fix overheating for free.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --bg: #0a0a0f; --bg2: #111118; --bg3: #18181f; --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12); --accent: #00e5ff; --accent2: #ff3d6e; --text: #f0f0f8; --muted: #7a7a8e; }
-  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 17px; line-height: 1.75; }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,15,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 6px; }
-  .logo span { color: var(--text); }
-  .logo .hq { background: var(--accent); color: #0a0a0f; padding: 1px 7px; border-radius: 3px; }
-  .back { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
-  .back:hover { color: var(--accent); }
-  .article-wrap { max-width: 760px; margin: 0 auto; padding: 100px 2rem 5rem; }
-  .article-tag { display: inline-block; background: rgba(0,229,255,0.12); color: var(--accent); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 3px; margin-bottom: 1.25rem; }
-  h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.05; margin-bottom: 1.25rem; }
-  .article-meta { display: flex; gap: 1.5rem; color: var(--muted); font-size: 0.85rem; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-  .intro { font-size: 1.15rem; color: #c0c0d0; line-height: 1.8; margin-bottom: 2.5rem; }
-  h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.7rem; font-weight: 700; letter-spacing: 0.02em; margin: 2.5rem 0 1rem; }
-  h3 { font-size: 1.05rem; font-weight: 500; margin: 1.5rem 0 0.6rem; color: var(--accent); }
-  p { margin-bottom: 1.25rem; color: #d0d0e0; }
+  :root { --white: #ffffff; --off-white: #f7f6f3; --border: #e2e0da; --text: #1a1917; --muted: #6b6860; --accent: #2563eb; --accent-warm: #f97316; --accent-light: #eff6ff; --danger: #dc2626; --safe: #16a34a; --warn: #d97706; }
+  body { background: var(--white); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.75; }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 2px solid var(--text); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; text-decoration: none; color: var(--text); letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+  .back { color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .back:hover { color: var(--text); }
+  .article-wrap { max-width: 740px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+  .article-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; background: var(--accent-light); color: var(--accent); margin-bottom: 1.25rem; }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+  .article-meta { display: flex; gap: 1.5rem; color: var(--muted); font-size: 0.82rem; font-weight: 500; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+  .intro { font-size: 1.15rem; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+  h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; margin: 2.5rem 0 1rem; letter-spacing: -0.01em; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.6rem; color: var(--text); }
+  p { margin-bottom: 1.25rem; color: #3a3835; }
   ul, ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
-  li { margin-bottom: 0.6rem; color: #d0d0e0; }
+  li { margin-bottom: 0.6rem; color: #3a3835; }
+
+  /* TABLE */
   .temp-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.92rem; }
-  .temp-table th { background: var(--bg3); color: var(--accent); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 1rem; text-align: left; border-bottom: 1px solid var(--border2); }
-  .temp-table td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); color: #d0d0e0; }
+  .temp-table th { background: var(--text); color: var(--white); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 1rem; text-align: left; }
+  .temp-table td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); color: #3a3835; }
+  .temp-table tr:nth-child(even) td { background: var(--off-white); }
   .temp-table tr:last-child td { border-bottom: none; }
-  .safe { color: #7cc47c; font-weight: 500; }
-  .warn { color: #ffb43c; font-weight: 500; }
-  .danger { color: var(--accent2); font-weight: 500; }
-  .tip-box { background: var(--bg3); border-left: 3px solid var(--accent); padding: 1.25rem 1.5rem; border-radius: 0 6px 6px 0; margin: 2rem 0; font-size: 0.95rem; }
-  .tip-box strong { color: var(--accent); display: block; margin-bottom: 0.5rem; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
-  .warning-box { background: rgba(255,61,110,0.08); border-left: 3px solid var(--accent2); padding: 1.25rem 1.5rem; border-radius: 0 6px 6px 0; margin: 2rem 0; font-size: 0.95rem; }
-  .warning-box strong { color: var(--accent2); display: block; margin-bottom: 0.5rem; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
-  .step { background: var(--bg2); border: 1px solid var(--border2); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
-  .step-num { color: var(--accent); font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
-  .conclusion { background: var(--bg2); border-radius: 8px; padding: 2rem; margin-top: 3rem; border: 1px solid var(--border2); }
-  .conclusion h2 { margin-top: 0; }
-  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 4rem; }
+  .safe { color: var(--safe); font-weight: 600; }
+  .warn { color: var(--warn); font-weight: 600; }
+  .danger { color: var(--danger); font-weight: 600; }
+
+  /* STEP CARDS */
+  .step { border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.5rem; margin: 1.5rem 0; background: var(--off-white); }
+  .step-num { font-size: 0.72rem; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; font-family: 'Source Sans 3', sans-serif; }
+  .step h3 { color: var(--text); margin-top: 0; margin-bottom: 0.75rem; font-size: 1.05rem; }
+
+  /* TIP & WARNING BOXES */
+  .tip-box { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
+  .tip-box strong { color: var(--accent); display: block; margin-bottom: 0.5rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .warning-box { background: #fef2f2; border-left: 4px solid var(--danger); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
+  .warning-box strong { color: var(--danger); display: block; margin-bottom: 0.5rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .conclusion { background: var(--text); color: var(--white); padding: 2rem; margin-top: 3rem; }
+  .conclusion h2 { color: var(--white); margin-top: 0; font-size: 1.4rem; font-family: 'Playfair Display', serif; }
+  .conclusion p { color: rgba(255,255,255,0.8); margin-bottom: 1rem; }
+  .conclusion p:last-child { margin-bottom: 0; }
+
+  footer { background: var(--text); padding: 2rem; text-align: center; margin-top: 4rem; }
+  footer p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
   footer a { color: var(--accent); text-decoration: none; }
 </style>
 </head>
 <body>
+
 <nav>
-  <a href="../index.html" class="logo"><span>TechGame</span><span class="hq">HQ</span></a>
+  <a href="../index.html" class="logo">TechGame<span>HQ</span></a>
   <a href="../index.html" class="back">← Back to Home</a>
 </nav>
+
 <article class="article-wrap">
   <span class="article-tag">Tech Guide</span>
   <h1>How to Monitor Your PC Temperature While Gaming</h1>
   <div class="article-meta">
-    <span>May 2025</span>
-    <span>⏱ 6 min read</span>
+    <span>May 2026</span>
+    <span>6 min read</span>
     <span>Tech</span>
   </div>
   <p class="intro">High temperatures are the silent killer of gaming PCs. Your PC could be thermal throttling right now — cutting your FPS in half to protect itself — and you'd never know without monitoring. Here's how to check and fix it for free.</p>
@@ -127,8 +142,10 @@
     <p>Install MSI Afterburner, enable the in-game overlay, and play your most demanding game for 30 minutes. Check your peak temperatures. If you're under 85°C on CPU and GPU, you're fine. If you're hitting 90°C+, start with cleaning your PC — it's free and fixes most overheating issues instantly.</p>
   </div>
 </article>
+
 <footer>
-  <p>© 2025 <a href="../index.html">TechGameHQ</a> — Your Headquarters for Tech & Gaming</p>
+  <p>© 2026 <a href="../index.html">TechGameHQ</a> — Your Headquarters for Tech & Gaming</p>
 </footer>
+
 </body>
 </html>

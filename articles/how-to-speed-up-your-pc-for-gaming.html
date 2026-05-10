@@ -6,104 +6,69 @@
 <title>How to Speed Up Your PC for Gaming (Free Methods) — TechGameHQ</title>
 <meta name="description" content="Learn how to speed up your PC for gaming using free methods. Boost FPS, reduce lag, and improve performance without spending a dime.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #0a0a0f; --bg2: #111118; --bg3: #18181f;
-    --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-    --accent: #00e5ff; --accent2: #ff3d6e;
-    --text: #f0f0f8; --muted: #7a7a8e;
-  }
-  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 17px; line-height: 1.75; }
-
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(10,10,15,0.9); backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px;
-  }
-  .logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 6px; }
-  .logo span { color: var(--text); }
-  .logo .hq { background: var(--accent); color: #0a0a0f; padding: 1px 7px; border-radius: 3px; }
-  .back { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
-  .back:hover { color: var(--accent); }
-
-  .article-wrap { max-width: 760px; margin: 0 auto; padding: 100px 2rem 5rem; }
-
-  .article-tag { display: inline-block; background: rgba(0,229,255,0.12); color: var(--accent); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 3px; margin-bottom: 1.25rem; }
-
-  h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.05; letter-spacing: 0.01em; margin-bottom: 1.25rem; }
-
-  .article-meta { display: flex; gap: 1.5rem; color: var(--muted); font-size: 0.85rem; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-
-  .intro { font-size: 1.15rem; color: #c0c0d0; line-height: 1.8; margin-bottom: 2.5rem; }
-
-  h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.7rem; font-weight: 700; letter-spacing: 0.02em; margin: 2.5rem 0 1rem; color: var(--text); }
-  h3 { font-size: 1.1rem; font-weight: 500; margin: 1.75rem 0 0.75rem; color: var(--accent); }
-
-  p { margin-bottom: 1.25rem; color: #d0d0e0; }
-
-  .tip-box {
-    background: var(--bg3); border-left: 3px solid var(--accent);
-    padding: 1.25rem 1.5rem; border-radius: 0 6px 6px 0;
-    margin: 2rem 0; font-size: 0.95rem;
-  }
-  .tip-box strong { color: var(--accent); display: block; margin-bottom: 0.5rem; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
-
-  .warning-box {
-    background: rgba(255,61,110,0.08); border-left: 3px solid var(--accent2);
-    padding: 1.25rem 1.5rem; border-radius: 0 6px 6px 0;
-    margin: 2rem 0; font-size: 0.95rem;
-  }
-  .warning-box strong { color: var(--accent2); display: block; margin-bottom: 0.5rem; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
-
+  :root { --white: #ffffff; --off-white: #f7f6f3; --border: #e2e0da; --text: #1a1917; --muted: #6b6860; --accent: #2563eb; --accent-warm: #f97316; --accent-light: #eff6ff; --danger: #dc2626; }
+  body { background: var(--white); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.75; }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 2px solid var(--text); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; text-decoration: none; color: var(--text); letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+  .back { color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .back:hover { color: var(--text); }
+  .article-wrap { max-width: 740px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+  .article-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; background: var(--accent-light); color: var(--accent); margin-bottom: 1.25rem; }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+  .article-meta { display: flex; gap: 1.5rem; color: var(--muted); font-size: 0.82rem; font-weight: 500; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+  .intro { font-size: 1.15rem; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+  h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; margin: 2.5rem 0 1rem; letter-spacing: -0.01em; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.75rem; color: var(--text); }
+  p { margin-bottom: 1.25rem; color: #3a3835; }
   ol, ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
-  li { margin-bottom: 0.6rem; color: #d0d0e0; }
+  li { margin-bottom: 0.6rem; color: #3a3835; }
 
-  .step {
-    background: var(--bg2); border: 1px solid var(--border2);
-    border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;
-  }
-  .step-num { color: var(--accent); font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
-  .step h3 { color: var(--text); margin: 0 0 0.75rem; font-size: 1.05rem; }
+  .step { border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.5rem; margin: 1.5rem 0; background: var(--off-white); }
+  .step-num { font-size: 0.72rem; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; font-family: 'Source Sans 3', sans-serif; }
 
-  .affiliate-box {
-    background: var(--bg2); border: 1px solid rgba(0,229,255,0.2);
-    border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0;
-    display: flex; gap: 1rem; align-items: flex-start;
-  }
+  .tip-box { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
+  .tip-box strong { color: var(--accent); display: block; margin-bottom: 0.5rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .warning-box { background: #fef2f2; border-left: 4px solid var(--danger); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
+  .warning-box strong { color: var(--danger); display: block; margin-bottom: 0.5rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .affiliate-box { border: 1px solid var(--border); border-top: 4px solid var(--accent-warm); padding: 1.5rem; margin: 2.5rem 0; background: var(--off-white); display: flex; gap: 1rem; align-items: flex-start; }
   .affiliate-box .icon { font-size: 2rem; flex-shrink: 0; }
-  .affiliate-box h4 { color: var(--accent); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .affiliate-box h4 { color: var(--accent-warm); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; font-family: 'Source Sans 3', sans-serif; }
   .affiliate-box p { margin: 0 0 0.75rem; font-size: 0.9rem; }
-  .affiliate-box a { color: var(--accent); font-size: 0.85rem; font-weight: 500; }
+  .affiliate-box a { color: var(--accent); font-size: 0.88rem; font-weight: 600; text-decoration: none; display: block; margin-top: 0.4rem; }
+  .affiliate-box a:hover { text-decoration: underline; }
 
-  .conclusion { background: var(--bg2); border-radius: 8px; padding: 2rem; margin-top: 3rem; border: 1px solid var(--border2); }
-  .conclusion h2 { margin-top: 0; }
+  .conclusion { background: var(--text); color: var(--white); padding: 2rem; margin-top: 3rem; }
+  .conclusion h2 { color: var(--white); margin-top: 0; font-size: 1.4rem; font-family: 'Playfair Display', serif; }
+  .conclusion p { color: rgba(255,255,255,0.8); margin-bottom: 1rem; }
+  .conclusion p:last-child { margin-bottom: 0; }
 
-  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 4rem; }
+  footer { background: var(--text); padding: 2rem; text-align: center; margin-top: 4rem; }
+  footer p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
   footer a { color: var(--accent); text-decoration: none; }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="/index.html" class="logo"><span>TechGame</span><span class="hq">HQ</span></a>
-  <a href="/index.html" class="back">← Back to Home</a>
+  <a href="../index.html" class="logo">TechGame<span>HQ</span></a>
+  <a href="../index.html" class="back">← Back to Home</a>
 </nav>
 
 <article class="article-wrap">
   <span class="article-tag">Tech Guide</span>
   <h1>How to Speed Up Your PC for Gaming (Free Methods That Actually Work)</h1>
   <div class="article-meta">
-    <span>May 2025</span>
-    <span>⏱ 8 min read</span>
+    <span>May 2026</span>
+    <span>8 min read</span>
     <span>Tech</span>
   </div>
-
-  <p class="intro">
-    Your PC is stuttering, your FPS is dropping, and you're getting destroyed in-game because of lag. Before you spend money on new hardware, try these free optimizations first — most gamers see a noticeable improvement within 30 minutes.
-  </p>
+  <p class="intro">Your PC is stuttering, your FPS is dropping, and you're getting destroyed in-game because of lag. Before you spend money on new hardware, try these free optimizations first — most gamers see a noticeable improvement within 30 minutes.</p>
 
   <h2>1. Update Your GPU Drivers</h2>
   <p>Outdated GPU drivers are one of the most common causes of poor gaming performance. Both NVIDIA and AMD release driver updates regularly that include performance improvements for new games.</p>
@@ -127,19 +92,16 @@
 
   <h2>2. Disable Background Apps and Startup Programs</h2>
   <p>Every app running in the background is stealing RAM and CPU resources from your game. Here's how to stop them:</p>
-
   <ol>
     <li>Press <strong>Ctrl + Shift + Esc</strong> to open Task Manager</li>
     <li>Click the <strong>Startup</strong> tab</li>
     <li>Right-click any app you don't need at startup and select <strong>Disable</strong></li>
     <li>Common culprits: Discord, Spotify, OneDrive, Teams, Skype, Steam (if you launch it manually)</li>
   </ol>
-
   <p>You can also press <strong>Windows + R</strong>, type <strong>msconfig</strong>, and under the "Services" tab, check "Hide all Microsoft services" then disable anything you don't recognize.</p>
 
   <h2>3. Enable Game Mode in Windows</h2>
   <p>Windows 10 and 11 have a built-in Game Mode that prioritizes your game for CPU and GPU resources. It's free and takes 10 seconds to enable.</p>
-
   <ol>
     <li>Press <strong>Windows + I</strong> to open Settings</li>
     <li>Go to <strong>Gaming → Game Mode</strong></li>
@@ -153,13 +115,11 @@
 
   <h2>4. Adjust Your Power Plan</h2>
   <p>If your PC is set to "Balanced" or "Power Saver" mode, Windows is throttling your CPU to save electricity. Switch to High Performance:</p>
-
   <ol>
     <li>Press <strong>Windows + R</strong>, type <strong>powercfg.cpl</strong> and press Enter</li>
     <li>Select <strong>High Performance</strong> (click "Show additional plans" if you don't see it)</li>
     <li>Close the window</li>
   </ol>
-
   <p>On laptops, plug in your charger and set the battery mode to "Best Performance" in the taskbar battery icon.</p>
 
   <h2>5. Clear Your Temp Files and Disk Space</h2>
@@ -178,8 +138,7 @@
   </div>
 
   <h2>6. Lower In-Game Settings Strategically</h2>
-  <p>Not all graphics settings impact performance equally. Some cost you a lot of FPS for very little visual benefit. Here's what to lower first:</p>
-
+  <p>Not all graphics settings impact performance equally. Here's what to lower first:</p>
   <ul>
     <li><strong>Anti-Aliasing</strong> — huge performance cost, barely noticeable at 1080p. Set to OFF or FXAA only.</li>
     <li><strong>Shadows</strong> — set to Medium instead of Ultra. Huge FPS gain.</li>
@@ -195,7 +154,6 @@
 
   <h2>7. Install MSI Afterburner (Free)</h2>
   <p>MSI Afterburner is the best free tool for monitoring and boosting GPU performance. It works with all GPU brands, not just MSI.</p>
-
   <ul>
     <li>Download free at msi.com/Landing/afterburner</li>
     <li>Use it to monitor your GPU/CPU temps and FPS in-game</li>
@@ -209,21 +167,19 @@
 
   <h2>8. Check for Malware</h2>
   <p>Malware running in the background can silently destroy your PC performance. Run a free scan with Windows Defender:</p>
-
   <ol>
     <li>Press Windows + S and search for <strong>Windows Security</strong></li>
     <li>Click <strong>Virus & threat protection</strong></li>
     <li>Click <strong>Quick scan</strong></li>
   </ol>
-
   <p>For a deeper scan, use Malwarebytes Free — the free version is excellent for one-time scans.</p>
 
   <div class="affiliate-box">
     <div class="icon">🖱️</div>
     <div>
       <h4>Upgrade Recommendation</h4>
-      <p>If you've done all these optimizations and still struggling, your bottleneck might be RAM. 16GB DDR4 is the sweet spot for gaming in 2025 and prices have never been lower.</p>
-      <a href="https://amzn.to/3Rv0S2X">Corsair Vengeance 32GB DDR5 (Desktop) on Amazon →</a><br>
+      <p>If you've done all these optimizations and still struggling, your bottleneck might be RAM. Prices have dropped significantly and upgrading is one of the best value improvements you can make.</p>
+      <a href="https://amzn.to/3Rv0S2X">Corsair Vengeance 32GB DDR5 (Desktop) on Amazon →</a>
       <a href="https://amzn.to/4dj1pMN">Crucial 16GB DDR5 (Laptop) on Amazon →</a>
     </div>
   </div>
@@ -236,7 +192,7 @@
 </article>
 
 <footer>
-  <p>© 2025 <a href="/index.html">TechGameHQ</a> — Your Headquarters for Tech & Gaming</p>
+  <p>© 2026 <a href="../index.html">TechGameHQ</a> — Your Headquarters for Tech & Gaming</p>
 </footer>
 
 </body>

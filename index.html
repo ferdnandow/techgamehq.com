@@ -3,233 +3,624 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TechGameHQ — Your Headquarters for Tech & Gaming</title>
+<title>TechGameHQ — Tech & Gaming Guides, Reviews & Tips</title>
 <meta name="description" content="Guides, reviews, and tips for gamers and tech enthusiasts. Level up your setup and knowledge at TechGameHQ.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --bg: #0a0a0f; --bg2: #111118; --bg3: #18181f; --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12); --accent: #00e5ff; --accent2: #ff3d6e; --text: #f0f0f8; --muted: #7a7a8e; --card-hover: #1c1c26; }
+
+  :root {
+    --white: #ffffff;
+    --off-white: #f7f6f3;
+    --light: #efefec;
+    --border: #e2e0da;
+    --text: #1a1917;
+    --muted: #6b6860;
+    --accent: #2563eb;
+    --accent-warm: #f97316;
+    --accent-light: #eff6ff;
+  }
+
   html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,15,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: 0.02em; text-decoration: none; display: flex; align-items: center; gap: 6px; }
-  .logo span:first-child { color: var(--text); }
-  .logo .hq { background: var(--accent); color: #0a0a0f; padding: 1px 7px; border-radius: 3px; font-size: 1.1rem; }
+
+  body {
+    background: var(--white);
+    color: var(--text);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white);
+    border-bottom: 2px solid var(--text);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 900;
+    text-decoration: none; color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .logo span { color: var(--accent); }
+
   .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-cta { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 7px 18px; border-radius: 4px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif; text-decoration: none; }
-  .nav-cta:hover { background: var(--accent); color: #0a0a0f; }
-  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 2rem 4rem; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 800px; height: 500px; background: radial-gradient(ellipse at center, rgba(0,229,255,0.08) 0%, transparent 70%); pointer-events: none; }
-  .hero-tag { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border2); background: var(--bg3); padding: 6px 16px; border-radius: 100px; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2rem; animation: fadeUp 0.6s ease both; }
-  .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: block; box-shadow: 0 0 8px var(--accent); animation: pulse 2s ease infinite; }
-  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-  h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(3.5rem, 10vw, 7rem); font-weight: 800; line-height: 0.95; letter-spacing: -0.01em; margin-bottom: 1.5rem; animation: fadeUp 0.6s 0.1s ease both; }
-  h1 .line2 { display: block; background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 540px; line-height: 1.7; margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.2s ease both; }
-  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.6s 0.3s ease both; }
-  .btn-primary { background: var(--accent); color: #0a0a0f; padding: 12px 28px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; transition: all 0.2s; border: none; cursor: pointer; }
-  .btn-primary:hover { background: #33eaff; transform: translateY(-1px); }
-  .btn-ghost { background: transparent; color: var(--text); padding: 12px 28px; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.03em; text-transform: uppercase; transition: all 0.2s; border: 1px solid var(--border2); }
-  .btn-ghost:hover { border-color: var(--muted); }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  .categories { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; padding: 3rem 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg2); }
-  .cat-pill { display: flex; align-items: center; gap: 8px; padding: 8px 20px; border-radius: 100px; border: 1px solid var(--border2); background: var(--bg3); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em; text-decoration: none; color: var(--text); transition: all 0.2s; text-transform: uppercase; }
-  .cat-pill:hover { border-color: var(--accent); color: var(--accent); }
-  .cat-pill .dot { width: 7px; height: 7px; border-radius: 50%; }
-  .section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
-  .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; }
-  .section-title { font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
-  .section-title span { color: var(--accent); }
-  .see-all { font-size: 0.85rem; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
-  .see-all:hover { color: var(--accent); }
-  .featured-grid { display: grid; grid-template-columns: 1.6fr 1fr; grid-template-rows: auto auto; gap: 1.5px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-  .card { background: var(--bg2); padding: 2rem; transition: background 0.2s; cursor: pointer; text-decoration: none; color: inherit; display: block; }
-  .card:hover { background: var(--card-hover); }
-  .card.big { grid-row: span 2; padding: 2.5rem; }
-  .card-tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 3px; margin-bottom: 1rem; }
-  .tag-tech { background: rgba(0,229,255,0.12); color: var(--accent); }
-  .tag-games { background: rgba(255,61,110,0.12); color: var(--accent2); }
-  .tag-guide { background: rgba(120,200,120,0.12); color: #7cc47c; }
-  .tag-review { background: rgba(255,180,60,0.12); color: #ffb43c; }
-  .card-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.01em; line-height: 1.1; margin-bottom: 0.75rem; }
-  .card.big .card-title { font-size: 2.2rem; }
-  .card:not(.big) .card-title { font-size: 1.3rem; }
-  .card-excerpt { font-size: 0.92rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem; }
-  .card:not(.big) .card-excerpt { display: none; }
-  .card-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.8rem; color: var(--muted); }
-  .card-meta .read-time::before { content: '⏱ '; }
-  .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-  .post-card { background: var(--bg2); padding: 1.75rem; transition: background 0.2s; cursor: pointer; display: block; text-decoration: none; color: inherit; }
-  .post-card:hover { background: var(--card-hover); }
-  .post-card .card-title { font-size: 1.1rem; margin-bottom: 0.5rem; }
-  .post-card .card-excerpt { display: block; font-size: 0.87rem; margin-bottom: 1rem; }
-  .newsletter { background: var(--bg2); border: 1px solid var(--border2); border-radius: 8px; padding: 4rem 3rem; text-align: center; position: relative; overflow: hidden; margin: 0 2rem; }
-  .newsletter h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 2.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.75rem; }
-  .newsletter p { color: var(--muted); margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
-  .newsletter-form { display: flex; gap: 0.75rem; max-width: 460px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
-  .newsletter-form input { flex: 1; min-width: 200px; background: var(--bg3); border: 1px solid var(--border2); color: var(--text); padding: 12px 18px; border-radius: 4px; font-size: 0.95rem; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.2s; }
-  .newsletter-form input:focus { border-color: var(--accent); }
-  .newsletter-form input::placeholder { color: var(--muted); }
-  footer { border-top: 1px solid var(--border); padding: 3rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; max-width: 1200px; margin: 4rem auto 0; }
-  .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 800; text-decoration: none; color: var(--text); }
+  .nav-links a {
+    color: var(--muted); text-decoration: none; font-size: 0.85rem;
+    font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    background: var(--text); color: var(--white);
+    padding: 8px 20px; font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.2s;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  .nav-cta:hover { background: var(--accent); }
+
+  /* HERO */
+.hero {
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-gaming.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+  .hero-main {
+    padding: 4rem 3rem 4rem 2rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .hero-label {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white);
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 4px 10px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 900; line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem; color: var(--muted);
+    max-width: 480px; line-height: 1.7;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--accent); color: var(--white);
+    padding: 12px 28px; text-decoration: none;
+    font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em;
+    text-transform: uppercase; transition: all 0.2s;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  .btn-primary:hover { background: var(--text); }
+
+  .btn-ghost {
+    background: transparent; color: var(--text);
+    padding: 12px 28px; text-decoration: none;
+    font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em;
+    text-transform: uppercase; transition: all 0.2s;
+    border: 2px solid var(--text);
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  .btn-ghost:hover { background: var(--text); color: var(--white); }
+
+  .hero-sidebar { padding: 2rem; }
+
+  .sidebar-title {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--text);
+    margin-bottom: 1.25rem;
+  }
+
+  .sidebar-item {
+    display: block; text-decoration: none; color: var(--text);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+  .sidebar-item:hover { color: var(--accent); }
+  .sidebar-item:last-child { border-bottom: none; }
+
+  .sidebar-tag {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent-warm);
+    display: block; margin-bottom: 0.3rem;
+  }
+
+  .sidebar-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem; font-weight: 700; line-height: 1.3; word-break: normal;
+  }
+
+  /* CATEGORIES BAR */
+  .categories {
+    border-bottom: 1px solid var(--border);
+    background: var(--off-white);
+  }
+
+  .categories-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 0 2rem;
+    display: flex; gap: 0; overflow-x: auto;
+  }
+
+  .cat-link {
+    display: flex; align-items: center; gap: 6px;
+    padding: 1rem 1.5rem;
+    font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; text-decoration: none;
+    color: var(--muted); border-right: 1px solid var(--border);
+    white-space: nowrap; transition: all 0.2s;
+  }
+  .cat-link:first-child { border-left: 1px solid var(--border); }
+  .cat-link:hover { background: var(--white); color: var(--text); }
+  .cat-link.active { background: var(--text); color: var(--white); }
+
+  /* MAIN CONTENT */
+  .main-wrap {
+    max-width: 1200px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .content-area { border-right: 1px solid var(--border); }
+
+  /* FEATURED */
+  .section-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 2rem 2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text);
+    padding-left: 0.75rem;
+    border-left: 3px solid var(--accent);
+  }
+
+  .see-all {
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--accent);
+    text-decoration: none;
+  }
+  .see-all:hover { text-decoration: underline; }
+
+  /* ARTICLE CARDS */
+  .featured-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .featured-card-main {
+    padding: 2rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .featured-card-secondary { padding: 2rem; }
+
+  .article-tag {
+    display: inline-block;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 3px 8px;
+    margin-bottom: 0.75rem;
+  }
+
+  .tag-tech { background: var(--accent-light); color: var(--accent); }
+  .tag-games { background: #fff7ed; color: var(--accent-warm); }
+  .tag-guide { background: #f0fdf4; color: #16a34a; }
+  .tag-review { background: #fdf4ff; color: #9333ea; }
+
+  .article-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; line-height: 1.2;
+    text-decoration: none; color: var(--text);
+    display: block; transition: color 0.2s;
+    margin-bottom: 0.75rem;
+  }
+  .article-title:hover { color: var(--accent); }
+
+  .article-title.large { font-size: 1.6rem; }
+  .article-title.medium { font-size: 1.2rem; }
+  .article-title.small { font-size: 1rem; }
+
+  .article-excerpt {
+    font-size: 0.92rem; color: var(--muted);
+    line-height: 1.6; margin-bottom: 1rem;
+    font-weight: 300;
+  }
+
+  .article-meta {
+    font-size: 0.78rem; color: var(--muted);
+    display: flex; gap: 1rem; align-items: center;
+  }
+
+  .article-meta .dot::before { content: '·'; margin-right: 1rem; }
+
+  /* ARTICLE LIST */
+  .article-list-item {
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none; color: var(--text);
+    transition: background 0.2s;
+  }
+  .article-list-item:hover { background: var(--off-white); }
+
+  .article-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 900;
+    color: var(--border); line-height: 1;
+    flex-shrink: 0; width: 36px;
+  }
+
+  /* SIDEBAR */
+  .sidebar { padding: 2rem; }
+
+  .sidebar-section { margin-bottom: 2.5rem; }
+
+  .sidebar-section-title {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text);
+    padding-left: 0.75rem;
+    border-left: 3px solid var(--accent-warm);
+    margin-bottom: 1.25rem;
+  }
+
+  .sidebar-article {
+    display: block; text-decoration: none; color: var(--text);
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+  .sidebar-article:hover { color: var(--accent); }
+  .sidebar-article:last-child { border-bottom: none; }
+
+  .sidebar-article-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem; font-weight: 700; line-height: 1.3;
+    margin-bottom: 0.25rem;
+  }
+
+  .sidebar-article-meta {
+    font-size: 0.75rem; color: var(--muted);
+  }
+
+  /* NEWSLETTER */
+  .newsletter-box {
+    background: var(--text); color: var(--white);
+    padding: 1.75rem; margin-bottom: 2rem;
+  }
+
+  .newsletter-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .newsletter-box p {
+    font-size: 0.85rem; color: rgba(255,255,255,0.7);
+    margin-bottom: 1rem; font-weight: 300;
+  }
+
+  .newsletter-box input {
+    width: 100%; padding: 10px 14px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--white); font-size: 0.9rem;
+    font-family: 'Source Sans 3', sans-serif;
+    margin-bottom: 0.75rem; outline: none;
+  }
+  .newsletter-box input::placeholder { color: rgba(255,255,255,0.4); }
+  .newsletter-box input:focus { border-color: rgba(255,255,255,0.5); }
+
+  .newsletter-box button {
+    width: 100%; padding: 10px;
+    background: var(--accent); color: var(--white);
+    border: none; font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    cursor: pointer; font-family: 'Source Sans 3', sans-serif;
+    transition: background 0.2s;
+  }
+  .newsletter-box button:hover { background: var(--accent-warm); }
+
+  /* FOOTER */
+  footer {
+    background: var(--text); color: var(--white);
+    padding: 3rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.5rem;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 900;
+    color: var(--white); text-decoration: none;
+  }
+
+  .footer-logo span { color: var(--accent); }
+
   .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
-  .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--text); }
-  .footer-copy { color: var(--muted); font-size: 0.82rem; }
-  @media (max-width: 768px) { .featured-grid { grid-template-columns: 1fr; } .card.big { grid-row: span 1; } nav .nav-links { display: none; } .newsletter { padding: 3rem 1.5rem; margin: 0 1rem; } footer { flex-direction: column; text-align: center; } }
+  .footer-links a {
+    color: rgba(255,255,255,0.5); text-decoration: none;
+    font-size: 0.82rem; font-weight: 500;
+    letter-spacing: 0.04em; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--white); }
+
+  .footer-copy { color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-sidebar { display: none; }
+    .main-wrap { grid-template-columns: 1fr; }
+    .content-area { border-right: none; }
+    .featured-card { grid-template-columns: 1fr; }
+    .featured-card-main { border-right: none; }
+    nav .nav-links { display: none; }
+  }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a href="/" class="logo"><span>TechGame</span><span class="hq">HQ</span></a>
+  <a href="/" class="logo">TechGame<span>HQ</span></a>
   <ul class="nav-links">
     <li><a href="#tech">Tech</a></li>
     <li><a href="#games">Games</a></li>
     <li><a href="#guides">Guides</a></li>
     <li><a href="#reviews">Reviews</a></li>
   </ul>
-  <a href="#newsletter" class="nav-cta">Subscribe</a>
+  <a href="#newsletter" class="nav-cta">Newsletter</a>
 </nav>
 
-<section class="hero">
-  <div class="hero-tag">Tech &amp; Gaming Intelligence</div>
-  <h1>Your HQ for<br><span class="line2">Tech &amp; Games</span></h1>
-  <p class="hero-sub">Guides, reviews, and tips for gamers and tech enthusiasts. Level up your setup, your skills, and your knowledge.</p>
-  <div class="hero-buttons">
-    <a href="#featured" class="btn-primary">Read Latest</a>
-    <a href="#newsletter" class="btn-ghost">Get Weekly Digest</a>
-  </div>
-</section>
-
-<div class="categories">
-  <a href="#tech" class="cat-pill"><span class="dot" style="background:#00e5ff"></span>Tech News</a>
-  <a href="#games" class="cat-pill"><span class="dot" style="background:#ff3d6e"></span>Gaming</a>
-  <a href="#guides" class="cat-pill"><span class="dot" style="background:#7cc47c"></span>Guides</a>
-  <a href="#reviews" class="cat-pill"><span class="dot" style="background:#ffb43c"></span>Reviews</a>
-  <a href="#setup" class="cat-pill"><span class="dot" style="background:#c87cff"></span>PC Setup</a>
-  <a href="#deals" class="cat-pill"><span class="dot" style="background:#ff9a3c"></span>Deals</a>
-</div>
-
-<div class="section" id="featured">
-  <div class="section-header">
-    <h2 class="section-title">Featured <span>Posts</span></h2>
-    <a href="#" class="see-all">See all →</a>
-  </div>
-  <div class="featured-grid">
-    <a href="articles/best-free-games-for-low-end-pcs.html" class="card big">
-      <span class="card-tag tag-guide">Guide</span>
-      <h3 class="card-title">Best Free Games for Low-End PCs in 2025: Full Tier List</h3>
-      <p class="card-excerpt">You don't need a $1,500 rig to have fun. We tested 40+ free-to-play games on a budget laptop and ranked them by performance, fun factor, and how well they run on integrated graphics.</p>
-      <div class="card-meta"><span>May 2025</span><span class="read-time">7 min read</span></div>
-    </a>
-    <a href="articles/how-to-speed-up-your-pc-for-gaming.html" class="card">
-      <span class="card-tag tag-tech">Tech</span>
-      <h3 class="card-title">How to Speed Up Your PC for Gaming Without Spending a Dime</h3>
-      <div class="card-meta"><span>May 2025</span><span class="read-time">8 min read</span></div>
-    </a>
-    <a href="articles/best-gaming-mice-under-30.html" class="card">
-      <span class="card-tag tag-review">Review</span>
-      <h3 class="card-title">Top 5 Gaming Mice Under $30 That Actually Perform</h3>
-      <div class="card-meta"><span>Apr 2025</span><span class="read-time">6 min read</span></div>
-    </a>
-  </div>
-</div>
-
-<div class="section" id="latest">
-  <div class="section-header">
-    <h2 class="section-title">Latest <span>Articles</span></h2>
-    <a href="#" class="see-all">See all →</a>
-  </div>
-  <div class="posts-grid">
-    <a href="articles/best-free-games-for-low-end-pcs.html" class="post-card">
-      <span class="card-tag tag-games">Gaming</span>
-      <h3 class="card-title">Best Free Games for Low-End PCs in 2025</h3>
-      <p class="card-excerpt">Our picks for the best free games that run on almost any PC or laptop.</p>
-      <div class="card-meta"><span>May 2025</span><span class="read-time">7 min read</span></div>
-    </a>
-    <a href="articles/ssd-vs-hdd-for-gaming.html" class="post-card">
-      <span class="card-tag tag-tech">Tech</span>
-      <h3 class="card-title">SSD vs HDD for Gaming: Does It Actually Matter?</h3>
-      <p class="card-excerpt">We ran real load-time benchmarks across 10 popular games. The results might surprise you.</p>
-      <div class="card-meta"><span>Apr 2025</span><span class="read-time">6 min read</span></div>
-    </a>
-    <a href="articles/how-to-speed-up-your-pc-for-gaming.html" class="post-card">
-      <span class="card-tag tag-guide">Guide</span>
-      <h3 class="card-title">How to Speed Up Your PC for Gaming (Free Methods)</h3>
-      <p class="card-excerpt">Boost FPS and reduce lag without spending a single dollar. Works on any PC.</p>
-      <div class="card-meta"><span>May 2025</span><span class="read-time">8 min read</span></div>
-    </a>
-    <a href="articles/best-gaming-mice-under-30.html" class="post-card">
-      <span class="card-tag tag-review">Review</span>
-      <h3 class="card-title">Best Gaming Mice Under $30 in 2025</h3>
-      <p class="card-excerpt">Budget mice that actually perform — tested and ranked for all grip styles.</p>
-      <div class="card-meta"><span>Apr 2025</span><span class="read-time">6 min read</span></div>
-    </a>
-    <a href="articles/best-free-tools-for-gamers.html" class="post-card">
-      <span class="card-tag tag-tech">Tech</span>
-      <h3 class="card-title">Best Free Tools Every Gamer Should Install in 2025</h3>
-      <p class="card-excerpt">From MSI Afterburner to OBS — the free software that actually makes a difference.</p>
-      <div class="card-meta"><span>Mar 2025</span><span class="read-time">5 min read</span></div>
-    </a>
-    <a href="articles/top-10-indie-games-worth-your-time.html" class="post-card">
-      <span class="card-tag tag-games">Gaming</span>
-      <h3 class="card-title">Top 10 Indie Games Worth Your Time in 2025</h3>
-      <p class="card-excerpt">Hidden gems that flew under the radar but deserve way more attention.</p>
-      <div class="card-meta"><span>May 2025</span><span class="read-time">7 min read</span></div>
-    </a>
-    <a href="articles/how-to-monitor-pc-temperature-while-gaming.html" class="post-card">
-      <span class="card-tag tag-tech">Tech</span>
-      <h3 class="card-title">How to Monitor Your PC Temperature While Gaming</h3>
-      <p class="card-excerpt">High temps are silently killing your FPS. Here's how to check and fix it for free.</p>
-      <div class="card-meta"><span>May 2025</span><span class="read-time">6 min read</span></div>
-    </a>
-    <a href="articles/how-to-reduce-input-lag-on-any-monitor.html" class="post-card">
-      <span class="card-tag tag-tech">Tech</span>
-      <h3 class="card-title">How to Reduce Input Lag on Any Monitor</h3>
-      <p class="card-excerpt">Simple free settings that make your games feel instantly more responsive.</p>
-      <div class="card-meta"><span>May 2025</span><span class="read-time">6 min read</span></div>
-    </a>
-    <a href="articles/best-gaming-headsets-under-50.html" class="post-card">
-      <span class="card-tag tag-review">Review</span>
-      <h3 class="card-title">Best Gaming Headsets Under $50 in 2025</h3>
-      <p class="card-excerpt">Budget headsets that actually deliver — tested for sound, mic, and comfort.</p>
-      <div class="card-meta"><span>May 2025</span><span class="read-time">6 min read</span></div>
-    </a>
-    <a href="articles/how-to-get-better-at-fps-games.html" class="post-card">
-      <span class="card-tag tag-games">Gaming</span>
-      <h3 class="card-title">How to Get Better at FPS Games</h3>
-      <p class="card-excerpt">Aim, game sense, and positioning tips used by high-ranked players.</p>
-      <div class="card-meta"><span>May 2025</span><span class="read-time">8 min read</span></div>
-    </a>
-  </div>
-</div>
-
-<section id="newsletter">
-  <div class="newsletter">
-    <h2>Stay in the <span style="color:var(--accent)">Loop</span></h2>
-    <p>Weekly digest of the best tech deals, game releases, and guides. No spam, ever.</p>
-    <div class="newsletter-form">
-      <input type="email" placeholder="your@email.com">
-      <button class="btn-primary" type="submit">Subscribe</button>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-main">
+    <span class="hero-label">Welcome to TechGameHQ</span>
+    <h1>Your guide to <em>smarter</em> gaming & tech</h1>
+    <p class="hero-sub">Honest guides, real benchmarks, and budget-friendly picks for gamers and tech enthusiasts. No fluff, no filler.</p>
+    <div class="hero-buttons">
+      <a href="#latest" class="btn-primary">Read Latest</a>
+      <a href="#newsletter" class="btn-ghost">Get Newsletter</a>
     </div>
   </div>
-</section>
+  <div class="hero-sidebar">
+    <div class="sidebar-title">Trending Now</div>
+    <a href="articles/best-gaming-mice-under-30.html" class="sidebar-item">
+      <span class="sidebar-tag">Review</span>
+      <h4>Best Gaming Mice Under $30 in 2026</h4>
+    </a>
+    <a href="articles/ssd-vs-hdd-for-gaming.html" class="sidebar-item">
+      <span class="sidebar-tag">Tech</span>
+      <h4>SSD vs HDD: Does It Actually Matter?</h4>
+    </a>
+    <a href="articles/how-to-get-better-at-fps-games.html" class="sidebar-item">
+      <span class="sidebar-tag">Gaming</span>
+      <h4>How to Get Better at FPS Games</h4>
+    </a>
+    <a href="articles/top-10-indie-games-worth-your-time.html" class="sidebar-item">
+      <span class="sidebar-tag">Gaming</span>
+      <h4>Top 10 Indie Games Worth Your Time</h4>
+    </a>
+  </div>
+</div>
 
+<!-- CATEGORIES -->
+<div class="categories">
+  <div class="categories-inner">
+    <a href="#" class="cat-link active">All</a>
+    <a href="#" class="cat-link">Tech</a>
+    <a href="#" class="cat-link">Gaming</a>
+    <a href="#" class="cat-link">Guides</a>
+    <a href="#" class="cat-link">Reviews</a>
+    <a href="#" class="cat-link">PC Setup</a>
+    <a href="#" class="cat-link">Deals</a>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main-wrap" id="latest">
+
+  <!-- CONTENT -->
+  <div class="content-area">
+
+    <div class="section-header">
+      <span class="section-label">Featured Articles</span>
+      <a href="#" class="see-all">See all →</a>
+    </div>
+
+    <div class="featured-card">
+      <div class="featured-card-main">
+        <span class="article-tag tag-guide">Guide</span>
+        <a href="articles/best-free-games-for-low-end-pcs.html" class="article-title large">Best Free Games for Low-End PCs in 2026</a>
+        <p class="article-excerpt">You don't need a $1,500 rig to have fun. We tested 40+ free-to-play games on budget hardware and ranked them by performance and fun factor.</p>
+        <div class="article-meta">
+          <span>May 2026</span>
+          <span class="dot">7 min read</span>
+        </div>
+      </div>
+      <div class="featured-card-secondary">
+        <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);">
+          <span class="article-tag tag-tech">Tech</span>
+          <a href="articles/how-to-speed-up-your-pc-for-gaming.html" class="article-title medium">How to Speed Up Your PC for Gaming (Free Methods)</a>
+          <div class="article-meta" style="margin-top: 0.5rem;">
+            <span>May 2026</span><span class="dot">8 min read</span>
+          </div>
+        </div>
+        <div>
+          <span class="article-tag tag-review">Review</span>
+          <a href="articles/best-gaming-mice-under-30.html" class="article-title medium">Best Gaming Mice Under $30 That Actually Perform</a>
+          <div class="article-meta" style="margin-top: 0.5rem;">
+            <span>Apr 2026</span><span class="dot">6 min read</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top: 1rem;">
+      <span class="section-label">Latest Articles</span>
+    </div>
+
+    <a href="articles/ssd-vs-hdd-for-gaming.html" class="article-list-item">
+      <span class="article-num">01</span>
+      <div>
+        <span class="article-tag tag-tech">Tech</span>
+        <div class="article-title small" style="display:block; font-family:'Playfair Display',serif; font-weight:700; font-size:1.05rem; margin-bottom:0.35rem;">SSD vs HDD for Gaming: Does It Actually Matter?</div>
+        <div class="article-meta"><span>Apr 2026</span><span class="dot">6 min read</span></div>
+      </div>
+    </a>
+    <a href="articles/best-free-tools-for-gamers.html" class="article-list-item">
+      <span class="article-num">02</span>
+      <div>
+        <span class="article-tag tag-tech">Tech</span>
+        <div class="article-title small" style="display:block; font-family:'Playfair Display',serif; font-weight:700; font-size:1.05rem; margin-bottom:0.35rem;">Best Free Tools Every Gamer Should Install in 2026</div>
+        <div class="article-meta"><span>Mar 2026</span><span class="dot">5 min read</span></div>
+      </div>
+    </a>
+    <a href="articles/top-10-indie-games-worth-your-time.html" class="article-list-item">
+      <span class="article-num">03</span>
+      <div>
+        <span class="article-tag tag-games">Gaming</span>
+        <div class="article-title small" style="display:block; font-family:'Playfair Display',serif; font-weight:700; font-size:1.05rem; margin-bottom:0.35rem;">Top 10 Indie Games Worth Your Time in 2026</div>
+        <div class="article-meta"><span>May 2026</span><span class="dot">7 min read</span></div>
+      </div>
+    </a>
+    <a href="articles/how-to-monitor-pc-temperature-while-gaming.html" class="article-list-item">
+      <span class="article-num">04</span>
+      <div>
+        <span class="article-tag tag-tech">Tech</span>
+        <div class="article-title small" style="display:block; font-family:'Playfair Display',serif; font-weight:700; font-size:1.05rem; margin-bottom:0.35rem;">How to Monitor Your PC Temperature While Gaming</div>
+        <div class="article-meta"><span>May 2026</span><span class="dot">6 min read</span></div>
+      </div>
+    </a>
+    <a href="articles/how-to-reduce-input-lag-on-any-monitor.html" class="article-list-item">
+      <span class="article-num">05</span>
+      <div>
+        <span class="article-tag tag-tech">Tech</span>
+        <div class="article-title small" style="display:block; font-family:'Playfair Display',serif; font-weight:700; font-size:1.05rem; margin-bottom:0.35rem;">How to Reduce Input Lag on Any Monitor</div>
+        <div class="article-meta"><span>May 2026</span><span class="dot">6 min read</span></div>
+      </div>
+    </a>
+    <a href="articles/best-gaming-headsets-under-50.html" class="article-list-item">
+      <span class="article-num">06</span>
+      <div>
+        <span class="article-tag tag-review">Review</span>
+        <div class="article-title small" style="display:block; font-family:'Playfair Display',serif; font-weight:700; font-size:1.05rem; margin-bottom:0.35rem;">Best Gaming Headsets Under $50 in 2026</div>
+        <div class="article-meta"><span>May 2026</span><span class="dot">6 min read</span></div>
+      </div>
+    </a>
+    <a href="articles/how-to-get-better-at-fps-games.html" class="article-list-item">
+      <span class="article-num">07</span>
+      <div>
+        <span class="article-tag tag-games">Gaming</span>
+        <div class="article-title small" style="display:block; font-family:'Playfair Display',serif; font-weight:700; font-size:1.05rem; margin-bottom:0.35rem;">How to Get Better at FPS Games</div>
+        <div class="article-meta"><span>May 2026</span><span class="dot">8 min read</span></div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="newsletter-box" id="newsletter">
+      <h3>Stay in the loop</h3>
+      <p>Weekly digest of the best tech deals, game releases, and guides.</p>
+      <input type="email" placeholder="your@email.com">
+      <button>Subscribe Free</button>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Popular Reviews</div>
+      <a href="articles/best-gaming-mice-under-30.html" class="sidebar-article">
+        <div class="sidebar-article-title">Best Gaming Mice Under $30</div>
+        <div class="sidebar-article-meta">Review · 6 min read</div>
+      </a>
+      <a href="articles/best-gaming-headsets-under-50.html" class="sidebar-article">
+        <div class="sidebar-article-title">Best Gaming Headsets Under $50</div>
+        <div class="sidebar-article-meta">Review · 6 min read</div>
+      </a>
+      <a href="articles/ssd-vs-hdd-for-gaming.html" class="sidebar-article">
+        <div class="sidebar-article-title">SSD vs HDD for Gaming</div>
+        <div class="sidebar-article-meta">Tech · 6 min read</div>
+      </a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Quick Guides</div>
+      <a href="articles/how-to-speed-up-your-pc-for-gaming.html" class="sidebar-article">
+        <div class="sidebar-article-title">Speed Up Your PC for Gaming</div>
+        <div class="sidebar-article-meta">Guide · 8 min read</div>
+      </a>
+      <a href="articles/how-to-monitor-pc-temperature-while-gaming.html" class="sidebar-article">
+        <div class="sidebar-article-title">Monitor PC Temperature While Gaming</div>
+        <div class="sidebar-article-meta">Guide · 6 min read</div>
+      </a>
+      <a href="articles/how-to-get-better-at-fps-games.html" class="sidebar-article">
+        <div class="sidebar-article-title">Get Better at FPS Games</div>
+        <div class="sidebar-article-meta">Guide · 8 min read</div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <a href="/" class="footer-logo">TechGame<span style="color:var(--accent)">HQ</span></a>
-  <ul class="footer-links">
-    <li><a href="#">Tech</a></li>
-    <li><a href="#">Gaming</a></li>
-    <li><a href="#">Guides</a></li>
-    <li><a href="#">Reviews</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Privacy Policy</a></li>
-  </ul>
-  <span class="footer-copy">© 2025 TechGameHQ. All rights reserved.</span>
+  <div class="footer-inner">
+    <a href="/" class="footer-logo">TechGame<span>HQ</span></a>
+    <ul class="footer-links">
+      <li><a href="#">Tech</a></li>
+      <li><a href="#">Gaming</a></li>
+      <li><a href="#">Guides</a></li>
+      <li><a href="#">Reviews</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 TechGameHQ. All rights reserved.</span>
+  </div>
 </footer>
 
 </body>
