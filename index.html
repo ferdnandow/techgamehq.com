@@ -75,7 +75,7 @@
   grid-template-columns: 1fr 280px;
   max-width: 1200px;
   margin: 0 auto;
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-gaming.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/hero-gaming.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -125,15 +125,15 @@
   }
   .btn-primary:hover { background: var(--text); }
 
-  .btn-ghost {
-    background: transparent; color: var(--text);
-    padding: 12px 28px; text-decoration: none;
-    font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em;
-    text-transform: uppercase; transition: all 0.2s;
-    border: 2px solid var(--text);
-    font-family: 'Source Sans 3', sans-serif;
-  }
-  .btn-ghost:hover { background: var(--text); color: var(--white); }
+.btn-ghost {
+  background: transparent; color: #ffffff;
+  padding: 12px 28px; text-decoration: none;
+  font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em;
+  text-transform: uppercase; transition: all 0.2s;
+  border: 2px solid #ffffff;
+  font-family: 'Source Sans 3', sans-serif;
+}
+.btn-ghost:hover { background: #ffffff; color: var(--text); }
 
   .hero-sidebar { padding: 2rem; }
 
@@ -282,6 +282,13 @@
     transition: background 0.2s;
   }
   .article-list-item:hover { background: var(--off-white); }
+
+  .hero-main h1 { color: #ffffff; }
+  .hero-main .hero-sub { color: rgba(255,255,255,0.85); }
+  .hero-main .hero-tag { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); }
+  .hero-sidebar { background: rgba(0,0,0,0.4); }
+  .sidebar-title { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.3); }
+  .sidebar-item h4 { color: #ffffff; }
 
   .article-num {
     font-family: 'Playfair Display', serif;
