@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Monitor Your PC Temperature While Gaming — TechGameHQ</title>
-<meta name="description" content="Learn how to monitor your CPU and GPU temperatures while gaming. Find out what temps are safe and how to fix overheating for free.">
+<title>How to Get Better at FPS Games — TechGameHQ</title>
+<meta name="description" content="Practical tips to improve your aim, game sense, and rank in FPS games. Proven methods used by high-ranked players.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --white: #ffffff; --off-white: #f7f6f3; --border: #e2e0da; --text: #1a1917; --muted: #6b6860; --accent: #2563eb; --accent-warm: #f97316; --accent-light: #eff6ff; --danger: #dc2626; --safe: #16a34a; --warn: #d97706; }
+  :root { --white: #ffffff; --off-white: #f7f6f3; --border: #e2e0da; --text: #1a1917; --muted: #6b6860; --accent: #2563eb; --accent-warm: #f97316; --accent-light: #eff6ff; }
   body { background: var(--white); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.75; }
   nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 2px solid var(--text); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
   .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; text-decoration: none; color: var(--text); letter-spacing: -0.02em; }
@@ -17,7 +17,7 @@
   .back { color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
   .back:hover { color: var(--text); }
   .article-wrap { max-width: 740px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
-  .article-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; background: var(--accent-light); color: var(--accent); margin-bottom: 1.25rem; }
+  .article-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; background: #fff7ed; color: var(--accent-warm); margin-bottom: 1.25rem; }
   h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
   .article-meta { display: flex; gap: 1.5rem; color: var(--muted); font-size: 0.82rem; font-weight: 500; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
   .intro { font-size: 1.15rem; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
@@ -27,30 +27,17 @@
   ul, ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
   li { margin-bottom: 0.6rem; color: #3a3835; }
 
-  /* TABLE */
-  .temp-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.92rem; }
-  .temp-table th { background: var(--text); color: var(--white); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 1rem; text-align: left; }
-  .temp-table td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); color: #3a3835; }
-  .temp-table tr:nth-child(even) td { background: var(--off-white); }
-  .temp-table tr:last-child td { border-bottom: none; }
-  .safe { color: var(--safe); font-weight: 600; }
-  .warn { color: var(--warn); font-weight: 600; }
-  .danger { color: var(--danger); font-weight: 600; }
+  .tip-card { border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.5rem; margin: 1.5rem 0; background: var(--off-white); }
+  .tip-number { font-size: 0.72rem; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; font-family: 'Source Sans 3', sans-serif; }
+  .tip-card h3 { color: var(--text); margin-top: 0; font-size: 1.05rem; margin-bottom: 0.75rem; }
 
-  /* STEP CARDS */
-  .step { border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.5rem; margin: 1.5rem 0; background: var(--off-white); }
-  .step-num { font-size: 0.72rem; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; font-family: 'Source Sans 3', sans-serif; }
-  .step h3 { color: var(--text); margin-top: 0; margin-bottom: 0.75rem; font-size: 1.05rem; }
-
-  /* TIP & WARNING BOXES */
   .tip-box { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
   .tip-box strong { color: var(--accent); display: block; margin-bottom: 0.5rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
 
-  .warning-box { background: #fef2f2; border-left: 4px solid var(--danger); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
-  .warning-box strong { color: var(--danger); display: block; margin-bottom: 0.5rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
-
   .conclusion { background: var(--text); color: var(--white); padding: 2rem; margin-top: 3rem; }
   .conclusion h2 { color: var(--white); margin-top: 0; font-size: 1.4rem; font-family: 'Playfair Display', serif; }
+  .conclusion ol { padding-left: 1.5rem; }
+  .conclusion li { color: rgba(255,255,255,0.8); margin-bottom: 0.75rem; }
   .conclusion p { color: rgba(255,255,255,0.8); margin-bottom: 1rem; }
   .conclusion p:last-child { margin-bottom: 0; }
 
@@ -68,84 +55,100 @@
 
 <article class="article-wrap">
   <img src="/images/thumb-fps.jpg" style="width:100%;height:400px;object-fit:cover;object-position:center;aspect-ratio:1/1;aspect-ratio:1/1;aspect-ratio:1/1;margin-bottom:1rem;">
-  <span class="article-tag">Tech Guide</span>
-  <h1>How to Monitor Your PC Temperature While Gaming</h1>
+  <span class="article-tag">Gaming Guide</span>
+  <h1>How to Get Better at FPS Games</h1>
   <div class="article-meta">
     <span>May 2026</span>
-    <span>6 min read</span>
-    <span>Tech</span>
+    <span>8 min read</span>
+    <span>Gaming</span>
   </div>
-  <p class="intro">High temperatures are the silent killer of gaming PCs. Your PC could be thermal throttling right now — cutting your FPS in half to protect itself — and you'd never know without monitoring. Here's how to check and fix it for free.</p>
+  <p class="intro">Getting better at FPS games isn't just about aim. Game sense, positioning, and the right settings matter just as much. Here's a practical guide to climbing the ranks — no aim bot required.</p>
 
-  <h2>Why Temperature Monitoring Matters</h2>
-  <p>When your CPU or GPU gets too hot, they automatically reduce their performance to avoid damage. This is called thermal throttling. It causes stutters, FPS drops, and crashes — symptoms that look exactly like a hardware problem but are actually just a cooling issue you can fix for free.</p>
+  <h2>1. Fix Your Settings First</h2>
 
-  <h2>Safe Temperature Ranges</h2>
-  <table class="temp-table">
-    <thead>
-      <tr><th>Component</th><th>Idle</th><th>Gaming (Safe)</th><th>Too Hot</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>CPU (Intel)</td><td class="safe">30–45°C</td><td class="safe">65–80°C</td><td class="danger">95°C+</td></tr>
-      <tr><td>CPU (AMD Ryzen)</td><td class="safe">35–50°C</td><td class="safe">70–85°C</td><td class="danger">95°C+</td></tr>
-      <tr><td>GPU (any)</td><td class="safe">30–45°C</td><td class="safe">65–83°C</td><td class="danger">90°C+</td></tr>
-      <tr><td>SSD (NVMe)</td><td class="safe">30–40°C</td><td class="warn">50–60°C</td><td class="danger">70°C+</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Best Free Tools to Monitor Temperature</h2>
-
-  <div class="step">
-    <div class="step-num">Option 1 — Best for in-game overlay</div>
-    <h3>MSI Afterburner + RivaTuner</h3>
-    <p>Download MSI Afterburner (free) and enable the in-game overlay. You'll see CPU temp, GPU temp, FPS, and usage in the corner of your screen while playing — without alt-tabbing.</p>
-    <p>Setup: Open Afterburner → Settings → Monitoring → check the sensors you want → enable "Show in On-Screen Display".</p>
+  <div class="tip-card">
+    <div class="tip-number">Step 1</div>
+    <h3>Find Your Ideal Mouse Sensitivity</h3>
+    <p>High sensitivity lets you turn fast but kills precision. Low sensitivity gives accuracy but makes quick turns hard. Most pro players use lower sensitivity than you'd expect — typically 400-800 DPI with low in-game sensitivity.</p>
+    <p>Start with 800 DPI and an in-game sensitivity that lets you do a 180° turn with one full swipe of your mousepad. Practice with it for two weeks before changing anything.</p>
   </div>
 
-  <div class="step">
-    <div class="step-num">Option 2 — Most detailed</div>
-    <h3>HWiNFO64</h3>
-    <p>Shows every sensor on your PC in real time. More detailed than Afterburner. Run it in "Sensors only" mode for a clean dashboard of all temps, voltages, and fan speeds.</p>
+  <div class="tip-card">
+    <div class="tip-number">Step 2</div>
+    <h3>Turn Off Mouse Acceleration</h3>
+    <p>Mouse acceleration means your cursor moves faster the quicker you move the mouse. This makes your movements inconsistent and kills muscle memory. Turn it off in Windows: Settings → Bluetooth & devices → Mouse → Additional mouse settings → Pointer Options → uncheck "Enhance pointer precision".</p>
   </div>
 
-  <div class="step">
-    <div class="step-num">Option 3 — Simplest</div>
-    <h3>Core Temp (CPU only)</h3>
-    <p>Dead simple app that sits in your taskbar and shows CPU temperature per core. Perfect if you just want a quick temp check without setting up a full monitoring suite.</p>
+  <div class="tip-card">
+    <div class="tip-number">Step 3</div>
+    <h3>Maximize Your FPS and Refresh Rate</h3>
+    <p>Higher FPS = smoother game = easier to aim. Lower your graphics settings to maximize FPS. Make sure your monitor is running at its maximum refresh rate. Even going from 60Hz to 144Hz makes enemies significantly easier to track.</p>
+  </div>
+
+  <h2>2. Train Your Aim Deliberately</h2>
+
+  <div class="tip-card">
+    <div class="tip-number">Aim Training</div>
+    <h3>Use Aim Lab or KovaaK's (Both Free/Cheap)</h3>
+    <p>Aim trainers isolate specific skills and let you practice them efficiently. Spend 15-20 minutes in an aim trainer before your gaming session. Focus on:</p>
+    <ul>
+      <li><strong>Flicking</strong> — snapping your crosshair to targets quickly</li>
+      <li><strong>Tracking</strong> — following moving targets smoothly</li>
+      <li><strong>Micro-adjustments</strong> — small corrections on stationary targets</li>
+    </ul>
+    <p>Aim Lab is free on Steam. 20 minutes a day for 30 days will noticeably improve your aim.</p>
   </div>
 
   <div class="tip-box">
-    <strong>💡 Quick Check</strong>
-    Press Ctrl+Shift+Esc to open Task Manager, click "Performance" tab. You won't see temperatures here but you'll see CPU/GPU usage — if either is at 100% constantly, that's your bottleneck.
+    <strong>💡 Crosshair Placement</strong>
+    The single fastest way to improve your aim: always keep your crosshair at head height where enemies will appear. If your crosshair is at the right position before you see an enemy, you barely need to move your mouse to get a headshot. This is called crosshair placement and it's more important than raw aim speed.
   </div>
 
-  <h2>My Temps Are Too High — What Now?</h2>
+  <h2>3. Improve Your Game Sense</h2>
 
-  <h3>1. Clean Your PC (Free)</h3>
-  <p>Dust buildup is the #1 cause of overheating. Use compressed air to blow out dust from vents, fans, and heatsinks. Do this every 3-6 months. It can drop temps by 10-20°C.</p>
-
-  <h3>2. Improve Airflow (Free)</h3>
-  <p>Make sure your PC has clear intake and exhaust paths. Don't put it inside a closed cabinet. Ensure cables aren't blocking airflow inside the case.</p>
-
-  <h3>3. Repaste Your CPU (Cheap)</h3>
-  <p>Thermal paste between your CPU and cooler dries out over time. Replacing it costs about $5-10 and can drop CPU temps by 10-15°C on older systems.</p>
-
-  <h3>4. Undervolt Your GPU (Free)</h3>
-  <p>Using MSI Afterburner, you can reduce your GPU's voltage while keeping the same clock speed. This reduces heat and power consumption with no performance loss. Search "GPU undervolt [your GPU model]" on YouTube for a guide specific to your card.</p>
-
-  <div class="warning-box">
-    <strong>⚠️ When to Worry</strong>
-    If your CPU hits 100°C or your GPU hits 90°C+ consistently during gaming, stop playing and investigate immediately. Sustained extreme temps can permanently damage your hardware.
+  <div class="tip-card">
+    <div class="tip-number">Game Sense</div>
+    <h3>Learn to Use Sound</h3>
+    <p>In competitive FPS games, sound is information. Footsteps, reload sounds, and ability sounds tell you exactly where enemies are. Use headphones (even budget ones), turn up game audio, and actively listen. Many kills come from hearing enemies before seeing them.</p>
   </div>
+
+  <div class="tip-card">
+    <div class="tip-number">Game Sense</div>
+    <h3>Play the Minimap</h3>
+    <p>Check your minimap constantly. Know where your teammates are. Track where enemies have been spotted. Most players ignore the minimap entirely — reading it well puts you in the top 25% immediately.</p>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-number">Game Sense</div>
+    <h3>Watch Your Replays</h3>
+    <p>Every death is information. Watch your death replays and ask: where was the enemy? Why didn't I see them? Was I in a bad position? This is how you identify the specific mistakes you keep making and stop repeating them.</p>
+  </div>
+
+  <h2>4. Positioning and Habits</h2>
+
+  <h3>Don't Peek When You Can Hold</h3>
+  <p>Holding an angle gives you a massive advantage — you know where to aim and your opponent has to find you. Don't run into open areas when you can wait for enemies to come to you in a position you control.</p>
+
+  <h3>Stop Rushing</h3>
+  <p>Most lower-ranked players die from rushing into unfavorable situations. Slow down. Check corners. Move with your team. Patience wins more rounds than aggression at most skill levels.</p>
+
+  <h3>One Game at a Time</h3>
+  <p>Play one game, take a break. Tilting (playing angry after losses) is the fastest way to lose more games. If you lose two ranked games in a row, stop for the day. Come back fresh tomorrow.</p>
 
   <div class="conclusion">
-    <h2>Bottom Line</h2>
-    <p>Install MSI Afterburner, enable the in-game overlay, and play your most demanding game for 30 minutes. Check your peak temperatures. If you're under 85°C on CPU and GPU, you're fine. If you're hitting 90°C+, start with cleaning your PC — it's free and fixes most overheating issues instantly.</p>
+    <h2>The 30-Day Plan</h2>
+    <ol>
+      <li><strong>Week 1:</strong> Fix your settings, find your sensitivity, turn off mouse acceleration</li>
+      <li><strong>Week 2:</strong> Add 15 min of Aim Lab before each session, focus on crosshair placement</li>
+      <li><strong>Week 3:</strong> Watch one replay after every session, identify your most common mistake</li>
+      <li><strong>Week 4:</strong> Focus specifically on fixing that mistake in every game</li>
+    </ol>
+    <p>Follow this for 30 days and you will rank up. Improvement in FPS games is mostly about deliberate practice, not raw talent.</p>
   </div>
 </article>
 
 <footer>
-  <p>© 2026 <a href="../index.html">TechGameHQ</a> — Your Headquarters for Tech & Gaming<br><br><small style="color:rgba(255,255,255,0.4);font-size:0.75rem;">TechGameHQ is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</small></p>
+  <p>© 2026 <a href="../index.html">TechGameHQ</a> — Your Headquarters for Tech & Gaming</p>
 </footer>
 
 </body>
