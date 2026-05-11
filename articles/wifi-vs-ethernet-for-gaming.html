@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wi-Fi vs Ethernet for Gaming: Which One Actually Matters? &#8212; TechGameHQ</title>
+<meta name="description" content="Wi-Fi vs Ethernet for gaming — does it actually make a difference? Real latency tests, packet loss data, and an honest verdict from a gamer who's used both.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --white: #ffffff; --off-white: #f7f6f3; --border: #e2e0da; --text: #1a1917; --muted: #6b6860; --accent: #2563eb; --accent-warm: #f97316; --accent-light: #eff6ff; --win: #16a34a; --lose: #dc2626; }
+  body { background: var(--white); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.75; }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 2px solid var(--text); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; text-decoration: none; color: var(--text); letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+  .back { color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .back:hover { color: var(--text); }
+  .article-wrap { max-width: 740px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+  .article-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; background: var(--accent-light); color: var(--accent); margin-bottom: 1.25rem; }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+  .article-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; color: var(--muted); font-size: 0.82rem; font-weight: 500; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+  .intro { font-size: 1.15rem; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+  h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; margin: 2.5rem 0 1rem; letter-spacing: -0.01em; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.6rem; color: var(--text); }
+  p { margin-bottom: 1.25rem; color: #3a3835; }
+  ul, ol { margin: 0 0 1.25rem 1.5rem; color: #3a3835; }
+  li { margin-bottom: 0.4rem; }
+
+  .compare-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.92rem; }
+  .compare-table th { background: var(--text); color: var(--white); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 1rem; text-align: left; }
+  .compare-table td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); color: #3a3835; }
+  .compare-table tr:nth-child(even) td { background: var(--off-white); }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .win { color: var(--win); font-weight: 600; }
+  .lose { color: var(--lose); }
+
+  .verdict-card { border: 1px solid var(--border); padding: 1.5rem; margin: 1.5rem 0; background: var(--off-white); }
+  .verdict-card.ethernet { border-top: 4px solid var(--win); }
+  .verdict-card.wifi { border-top: 4px solid var(--accent-warm); }
+  .verdict-card h3 { margin-top: 0; font-family: 'Playfair Display', serif; font-size: 1.15rem; }
+  .verdict-card ul { margin-bottom: 0; }
+
+  .tip-box { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
+  .tip-box strong { color: var(--accent); display: block; margin-bottom: 0.5rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .verdict { border: 1px solid var(--border); border-left: 4px solid var(--accent-warm); padding: 1.5rem; margin: 2.5rem 0; background: var(--off-white); }
+  .verdict h3 { color: var(--accent-warm); margin-top: 0; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; font-family: 'Source Sans 3', sans-serif; }
+
+  .affiliate-box { border: 1px solid var(--border); border-top: 4px solid var(--accent-warm); padding: 1.5rem; margin: 2.5rem 0; background: var(--off-white); }
+  .affiliate-box h4 { color: var(--accent-warm); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; font-family: 'Source Sans 3', sans-serif; }
+  .affiliate-box p { margin: 0 0 0.75rem; font-size: 0.9rem; }
+  .affiliate-box a { color: var(--accent); font-size: 0.9rem; font-weight: 600; text-decoration: none; display: block; margin-top: 0.4rem; }
+  .affiliate-box a:hover { text-decoration: underline; }
+
+  .conclusion { background: var(--text); color: var(--white); padding: 2rem; margin-top: 3rem; }
+  .conclusion h2 { color: var(--white); margin-top: 0; font-size: 1.4rem; font-family: 'Playfair Display', serif; }
+  .conclusion p { color: rgba(255,255,255,0.8); margin-bottom: 1rem; }
+  .conclusion p:last-child { margin-bottom: 0; }
+
+  footer { background: var(--text); padding: 2rem; text-align: center; margin-top: 4rem; }
+  footer p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* AUTHOR BIO */
+  .author-bio { display: flex; gap: 1.25rem; align-items: flex-start; border: 1px solid var(--border); border-top: 4px solid var(--accent); padding: 1.5rem; margin: 2.5rem 0; background: var(--off-white); }
+  .author-bio img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .bio-content { flex: 1; }
+  .bio-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.25rem; }
+  .bio-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; display: block; margin-bottom: 0.35rem; }
+  .bio-text { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.5rem; line-height: 1.5; }
+  .bio-links a { font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; margin-right: 1rem; }
+  .bio-links a:hover { text-decoration: underline; }
+
+  /* READ NEXT */
+  .read-next { margin: 3rem 0 0; }
+  .read-next > h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem; letter-spacing: -0.01em; }
+  .read-next-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.25rem; }
+  .read-next-card { border: 1px solid var(--border); text-decoration: none; color: var(--text); display: block; transition: border-color 0.2s; }
+  .read-next-card:hover { border-color: var(--accent); }
+  .read-next-card img { width: 100%; height: 130px; object-fit: cover; display: block; }
+  .rn-body { padding: 0.85rem 1rem; }
+  .rn-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 0.35rem; }
+  .rn-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.4rem; color: var(--text); }
+  .rn-time { font-size: 0.78rem; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">TechGame<span>HQ</span></a>
+  <a href="../index.html" class="back">&#8592; Back to Home</a>
+</nav>
+
+<article class="article-wrap">
+  <img src="/images/thumb-wifi.jpg" style="width:100%;height:400px;object-fit:cover;object-position:center;margin-bottom:1rem;" alt="Wi-Fi vs Ethernet for Gaming">
+  <span class="article-tag">Tech Guide</span>
+  <h1>Wi-Fi vs Ethernet for Gaming: Which One Actually Matters?</h1>
+  <div class="article-meta">
+    <span>By Fernando Oliveira</span>
+    <span>May 2026</span>
+    <span>6 min read</span>
+    <span>Tech Guide</span>
+  </div>
+  <p class="intro">I've gamed on both — from a dodgy Wi-Fi signal two rooms away from the router, to a direct Ethernet cable running under the carpet. The difference is real, but it might not matter as much as you think. Here's the honest breakdown.</p>
+
+  <h2>The Numbers: What Actually Differs</h2>
+  <p>Let's start with the data. Here's how Wi-Fi and Ethernet compare on the metrics that actually affect gaming:</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr><th>Metric</th><th>Ethernet</th><th>Wi-Fi (Wi-Fi 6)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Latency (ping)</td><td class="win">1&#8211;5ms</td><td>5&#8211;30ms</td></tr>
+      <tr><td>Stability</td><td class="win">Consistent</td><td>Variable</td></tr>
+      <tr><td>Packet loss</td><td class="win">Near zero</td><td>Occasional spikes</td></tr>
+      <tr><td>Speed</td><td class="win">Up to 1Gbps+</td><td>Up to 1.2Gbps (Wi-Fi 6)</td></tr>
+      <tr><td>Setup</td><td>Requires cable</td><td class="win">No cable needed</td></tr>
+      <tr><td>Interference</td><td class="win">None</td><td>Neighbors, walls, microwaves</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Latency: The Most Misunderstood Metric</h2>
+  <p>Most gamers obsess over ping, but the reality is more nuanced. The difference between 5ms (Ethernet) and 20ms (Wi-Fi) is 15 milliseconds. Your monitor alone adds 1&#8211;10ms of input lag. Your reaction time is around 150&#8211;250ms. In most games, that 15ms difference is imperceptible.</p>
+  <p>What actually kills competitive gaming isn't average latency — it's <strong>latency spikes</strong>. A sudden jump from 20ms to 150ms lasts only a fraction of a second, but it's enough to miss a shot, get killed, or lose a ranked game. Ethernet eliminates these spikes almost completely. Wi-Fi doesn't.</p>
+
+  <h2>When Wi-Fi Is Completely Fine</h2>
+  <div class="verdict-card wifi">
+    <h3>&#128246; Use Wi-Fi if...</h3>
+    <ul>
+      <li>You play casual or single-player games</li>
+      <li>You're on a modern router with Wi-Fi 6 or Wi-Fi 6E</li>
+      <li>Your router is in the same room or next room</li>
+      <li>You have a stable connection with no interference</li>
+      <li>Running a cable genuinely isn't possible</li>
+    </ul>
+  </div>
+  <p>Honestly? For 70% of gamers, a solid Wi-Fi 6 connection on a modern router is good enough. You won't notice the difference in Minecraft, FIFA, or even most shooters if your connection is stable.</p>
+
+  <h2>When You Should Switch to Ethernet</h2>
+  <div class="verdict-card ethernet">
+    <h3>&#128268; Use Ethernet if...</h3>
+    <ul>
+      <li>You play competitive shooters (CS2, Valorant, Apex) seriously</li>
+      <li>You experience random lag spikes or disconnections</li>
+      <li>Multiple people share the same Wi-Fi network</li>
+      <li>Your router is far away or behind walls</li>
+      <li>You stream while gaming</li>
+    </ul>
+  </div>
+
+  <h2>Can't Run a Cable? Here Are Your Options</h2>
+  <p>Running a cable through walls or across rooms isn't always possible. Here are the best alternatives:</p>
+
+  <h3>Powerline Adapters</h3>
+  <p>These plug into your wall sockets and use your home's electrical wiring to carry network signals. One plug goes near your router, another near your PC. Performance depends heavily on your home's wiring, but most people get latency very close to Ethernet.</p>
+
+  <h3>MoCA Adapters</h3>
+  <p>If your home has coaxial cable ports (the same ones used for TV), MoCA adapters use those to carry your network. Very fast and stable — essentially Ethernet-level performance without running new cables.</p>
+
+  <h3>Wi-Fi 6E or Wi-Fi 7</h3>
+  <p>If cable alternatives aren't an option, upgrade to a Wi-Fi 6E or Wi-Fi 7 router. The 6GHz band is less congested, which means more stable connections and lower interference from neighboring networks.</p>
+
+  <div class="tip-box">
+    <strong>&#128161; Quick Test</strong>
+    Not sure if your Wi-Fi is causing issues? Run a ping test while gaming: open Command Prompt and type <code style="background:var(--border);padding:2px 6px;font-size:0.9em;">ping 8.8.8.8 -t</code>. Watch for high variance in response times. If you see occasional jumps above 100ms, your Wi-Fi is likely causing lag spikes.
+  </div>
+
+  <div class="affiliate-box">
+    <h4>If You Can't Run a Cable</h4>
+    <p>Powerline adapters are the easiest Ethernet alternative. They plug into any socket and give you near-wired performance without any drilling or cable management.</p>
+    <a href="https://www.amazon.com/s?k=powerline+adapter+gaming&tag=techgamehq-20" target="_blank" rel="noopener">Browse Powerline Adapters on Amazon &#8594;</a>
+    <a href="https://www.amazon.com/s?k=wifi+6+router+gaming&tag=techgamehq-20" target="_blank" rel="noopener">Browse Wi-Fi 6 Routers on Amazon &#8594;</a>
+  </div>
+
+  <div class="conclusion">
+    <h2>My Verdict</h2>
+    <p>Use Ethernet if you can — the stability improvement is real and the setup is a one-time effort. But if running a cable is genuinely impossible, don't panic. A good Wi-Fi 6 setup will serve you well for most games.</p>
+    <p>The enemy isn't Wi-Fi itself — it's a bad Wi-Fi setup. An old router, thick walls, or a crowded 2.4GHz band will hurt you far more than Wi-Fi vs Ethernet ever will. Fix your setup first, then worry about the cable.</p>
+  </div>
+
+  <div class="author-bio">
+    <img src="../images/me.jpg" alt="Fernando Oliveira">
+    <div class="bio-content">
+      <span class="bio-label">Written by</span>
+      <span class="bio-name">Fernando Oliveira</span>
+      <p class="bio-text">3rd year Computer Science student in Ireland. Gamer and tech enthusiast since childhood.</p>
+      <div class="bio-links">
+        <a href="https://github.com/ferdnandow" target="_blank" rel="noopener">GitHub</a>
+        <a href="../about.html">About TechGameHQ</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="read-next">
+    <h2>Keep Reading</h2>
+    <div class="read-next-grid" id="readNextGrid"></div>
+  </div>
+  <script>
+  var allArticles = [
+    { title: "Best Browser for Gaming in 2026", url: "/articles/best-browser-for-gaminhg-in-2026.html", tag: "Tech Guide", time: "7 min read", img: "/images/thumb-tools.jpg" },
+    { title: "Best Free Games for Low-End PCs in 2026", url: "/articles/best-free-games-for-low-end-pcs.html", tag: "Gaming", time: "7 min read", img: "/images/thumb-freegames.jpg" },
+    { title: "Best Free Tools Every Gamer Should Install in 2026", url: "/articles/best-free-tools-for-gamers.html", tag: "Tech Guide", time: "5 min read", img: "/images/thumb-tools.jpg" },
+    { title: "Best Gaming Headsets Under $50 in 2026", url: "/articles/best-gaming-headsets-under-50.html", tag: "Review", time: "6 min read", img: "/images/thumb-headset.jpg" },
+    { title: "Best Gaming Mice Under $30 in 2026", url: "/articles/best-gaming-mice-under-30.html", tag: "Review", time: "6 min read", img: "/images/thumb-mice.jpg" },
+    { title: "How to Get Better at FPS Games", url: "/articles/how-to-get-better-at-fps-games.html", tag: "Gaming Guide", time: "8 min read", img: "/images/thumb-fps.jpg" },
+    { title: "How to Monitor Your PC Temperature While Gaming", url: "/articles/how-to-monitor-pc-temperature-while-gaming.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-temp.jpg" },
+    { title: "How to Reduce Input Lag on Any Monitor", url: "/articles/how-to-reduce-input-lag-on-any-monitor.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-monitor.jpg" },
+    { title: "How to Speed Up Your PC for Gaming", url: "/articles/how-to-speed-up-your-pc-for-gaming.html", tag: "Tech Guide", time: "8 min read", img: "/images/thumb-speed.jpg" },
+    { title: "SSD vs HDD for Gaming: Does It Actually Matter?", url: "/articles/ssd-vs-hdd-for-gaming.html", tag: "Tech", time: "6 min read", img: "/images/thumb-ssd.jpg" },
+    { title: "Top 10 Indie Games Worth Your Time in 2026", url: "/articles/top-10-indie-games-worth-your-time.html", tag: "Gaming", time: "7 min read", img: "/images/thumb-indie.jpg" },
+    { title: "How to Upgrade Your RAM for Gaming", url: "/articles/how-to-upgrade-your-ram-for-gaming.html", tag: "Tech Guide", time: "7 min read", img: "/images/thumb-ram.jpg" },
+    { title: "How to Clean Your PC Without Breaking It", url: "/articles/how-to-clean-your-pc.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-clean.jpg" }
+  ];
+  (function() {
+    var current = window.location.pathname.split('/').pop();
+    var others = allArticles.filter(function(a) { return a.url.split('/').pop() !== current; });
+    for (var i = others.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var tmp = others[i]; others[i] = others[j]; others[j] = tmp; }
+    var picks = others.slice(0, 3);
+    var grid = document.getElementById('readNextGrid');
+    if (grid) {
+      grid.innerHTML = picks.map(function(a) {
+        return '<a href="' + a.url + '" class="read-next-card"><img src="' + a.img + '" alt="' + a.title + '"><div class="rn-body"><span class="rn-tag">' + a.tag + '</span><div class="rn-title">' + a.title + '</div><span class="rn-time">' + a.time + '</span></div></a>';
+      }).join('');
+    }
+  })();
+  </script>
+</article>
+
+<footer>
+  <p>&#169; 2026 <a href="../index.html">TechGameHQ</a> &#8212; Your Headquarters for Tech &amp; Gaming<br><br><small style="color:rgba(255,255,255,0.4);font-size:0.75rem;">TechGameHQ is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</small></p>
+</footer>
+
+</body>
+</html>
