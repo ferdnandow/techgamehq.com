@@ -41,6 +41,17 @@
   .btn { display: inline-block; background: var(--accent); color: var(--white); padding: 12px 28px; text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; transition: all 0.2s; }
   .btn:hover { background: var(--accent-warm); }
 
+  .team { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+  .team-card { border: 1px solid var(--border); border-top: 4px solid var(--accent); padding: 1.75rem; background: var(--off-white); display: flex; gap: 1.25rem; align-items: flex-start; }
+  .team-card img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .team-avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; color: #fff; flex-shrink: 0; }
+  .team-info { flex: 1; }
+  .team-role { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.25rem; }
+  .team-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; display: block; margin-bottom: 0.5rem; }
+  .team-bio { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.75rem; line-height: 1.6; }
+  .team-links a { font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; margin-right: 1rem; }
+  .team-links a:hover { text-decoration: underline; }
+
   footer { background: var(--text); padding: 2rem; text-align: center; margin-top: 4rem; }
   footer p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
   footer a { color: var(--accent); text-decoration: none; }
@@ -93,6 +104,32 @@
     <div class="value-card">
       <h3>Independent</h3>
       <p>Our opinions are our own. We're not paid to recommend anything.</p>
+    </div>
+  </div>
+
+  <h2>Who We Are</h2>
+  <div class="team">
+    <div class="team-card">
+      <img src="images/me.jpg" alt="Fernando Oliveira">
+      <div class="team-info">
+        <span class="team-role">Founder &amp; Author</span>
+        <span class="team-name">Fernando Oliveira</span>
+        <p class="team-bio">3rd year Computer Science student in Ireland. Gamer and tech enthusiast since childhood — obsessed with getting the most out of every setup, regardless of budget.</p>
+        <div class="team-links">
+          <a href="https://github.com/ferdnandow" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">TG</div>
+      <div class="team-info">
+        <span class="team-role">Editorial Team</span>
+        <span class="team-name">TechGameHQ Staff</span>
+        <p class="team-bio">The TechGameHQ editorial team covers guides, reviews, and tech roundups. Every piece is tested, fact-checked, and written with the budget gamer in mind.</p>
+        <div class="team-links">
+          <a href="index.html">Read Our Articles</a>
+        </div>
+      </div>
     </div>
   </div>
 
