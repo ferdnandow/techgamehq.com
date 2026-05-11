@@ -57,6 +57,29 @@
   footer a { color: var(--accent); text-decoration: none; }
 
   @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } }
+
+  /* AUTHOR BIO */
+  .author-bio { display: flex; gap: 1.25rem; align-items: flex-start; border: 1px solid var(--border); border-top: 4px solid var(--accent); padding: 1.5rem; margin: 2.5rem 0; background: var(--off-white); }
+  .author-bio img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .author-avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: #fff; flex-shrink: 0; }
+  .bio-content { flex: 1; }
+  .bio-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.25rem; }
+  .bio-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; display: block; margin-bottom: 0.35rem; }
+  .bio-text { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.5rem; line-height: 1.5; }
+  .bio-links a { font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; margin-right: 1rem; }
+  .bio-links a:hover { text-decoration: underline; }
+
+  /* READ NEXT */
+  .read-next { margin: 3rem 0 0; }
+  .read-next > h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem; letter-spacing: -0.01em; }
+  .read-next-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.25rem; }
+  .read-next-card { border: 1px solid var(--border); text-decoration: none; color: var(--text); display: block; transition: border-color 0.2s; }
+  .read-next-card:hover { border-color: var(--accent); }
+  .read-next-card img { width: 100%; height: 130px; object-fit: cover; display: block; }
+  .rn-body { padding: 0.85rem 1rem; }
+  .rn-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 0.35rem; }
+  .rn-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.4rem; color: var(--text); }
+  .rn-time { font-size: 0.78rem; color: var(--muted); }
 </style>
 </head>
 <body>
