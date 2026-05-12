@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Clean Your PC Without Breaking It &#8212; TechGameHQ</title>
-<meta name="description" content="Step-by-step guide to cleaning your PC safely. Remove dust, lower temperatures, and improve performance without damaging any components.">
+<title>How to Record Your Gameplay for Free — TechGameHQ</title>
+<meta name="description" content="How to record gameplay for free in 2026. OBS Studio, NVIDIA ShadowPlay, AMD ReLive — we compare the best free recording tools and show you how to set them up.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --white: #ffffff; --off-white: #f7f6f3; --border: #e2e0da; --text: #1a1917; --muted: #6b6860; --accent: #2563eb; --accent-warm: #f97316; --accent-light: #eff6ff; }
+  :root { --white: #ffffff; --off-white: #f7f6f3; --border: #e2e0da; --text: #1a1917; --muted: #6b6860; --accent: #2563eb; --accent-warm: #f97316; --accent-light: #eff6ff; --win: #16a34a; }
   body { background: var(--white); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.75; }
   nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 2px solid var(--text); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
   .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; text-decoration: none; color: var(--text); letter-spacing: -0.02em; }
@@ -22,47 +22,31 @@
   .article-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; color: var(--muted); font-size: 0.82rem; font-weight: 500; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
   .intro { font-size: 1.15rem; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
   h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; margin: 2.5rem 0 1rem; letter-spacing: -0.01em; }
-  h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.6rem; color: var(--text); }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.6rem; }
   p { margin-bottom: 1.25rem; color: #3a3835; }
   ul, ol { margin: 0 0 1.25rem 1.5rem; color: #3a3835; }
   li { margin-bottom: 0.4rem; }
-
-  .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
-  .tool-item { border: 1px solid var(--border); padding: 1rem 1.25rem; background: var(--off-white); }
-  .tool-item strong { display: block; font-size: 0.95rem; margin-bottom: 0.25rem; }
-  .tool-item span { font-size: 0.85rem; color: var(--muted); }
-
+  code { background: var(--border); padding: 1px 6px; font-size: 0.88em; }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.92rem; }
+  .compare-table th { background: var(--text); color: var(--white); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 1rem; text-align: left; }
+  .compare-table td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); color: #3a3835; }
+  .compare-table tr:nth-child(even) td { background: var(--off-white); }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .good { color: var(--win); font-weight: 600; }
+  .ok { color: var(--accent-warm); font-weight: 600; }
   .step { border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; margin: 1.25rem 0; background: var(--off-white); }
   .step-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 0.4rem; }
   .step h3 { margin-top: 0; margin-bottom: 0.5rem; font-size: 1rem; }
   .step p { margin: 0; font-size: 0.95rem; }
-
   .tip-box { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
   .tip-box strong { color: var(--accent); display: block; margin-bottom: 0.5rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
-
-  .warn-box { background: #fff7ed; border-left: 4px solid var(--accent-warm); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
-  .warn-box strong { color: var(--accent-warm); display: block; margin-bottom: 0.5rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
-
-  .dont-list { list-style: none; margin-left: 0; }
-  .dont-list li { padding-left: 1.5rem; position: relative; margin-bottom: 0.6rem; }
-  .dont-list li::before { content: '\2715'; position: absolute; left: 0; color: #dc2626; font-weight: 700; }
-
-  .affiliate-box { border: 1px solid var(--border); border-top: 4px solid var(--accent-warm); padding: 1.5rem; margin: 2.5rem 0; background: var(--off-white); }
-  .affiliate-box h4 { color: var(--accent-warm); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; font-family: 'Source Sans 3', sans-serif; }
-  .affiliate-box p { margin: 0 0 0.75rem; font-size: 0.9rem; }
-  .affiliate-box a { color: var(--accent); font-size: 0.9rem; font-weight: 600; text-decoration: none; display: block; margin-top: 0.4rem; }
-  .affiliate-box a:hover { text-decoration: underline; }
-
   .conclusion { background: var(--text); color: var(--white); padding: 2rem; margin-top: 3rem; }
   .conclusion h2 { color: var(--white); margin-top: 0; font-size: 1.4rem; font-family: 'Playfair Display', serif; }
   .conclusion p { color: rgba(255,255,255,0.8); margin-bottom: 1rem; }
   .conclusion p:last-child { margin-bottom: 0; }
-
   footer { background: var(--text); padding: 2rem; text-align: center; margin-top: 4rem; }
   footer p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
   footer a { color: var(--accent); text-decoration: none; }
-
-  /* AUTHOR BIO */
   .author-bio { display: flex; gap: 1.25rem; align-items: flex-start; border: 1px solid var(--border); border-top: 4px solid var(--accent); padding: 1.5rem; margin: 2.5rem 0; background: var(--off-white); }
   .author-avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: #fff; flex-shrink: 0; }
   .bio-content { flex: 1; }
@@ -71,8 +55,6 @@
   .bio-text { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.5rem; line-height: 1.5; }
   .bio-links a { font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; margin-right: 1rem; }
   .bio-links a:hover { text-decoration: underline; }
-
-  /* READ NEXT */
   .read-next { margin: 3rem 0 0; }
   .read-next > h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem; letter-spacing: -0.01em; }
   .read-next-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.25rem; }
@@ -86,140 +68,97 @@
 </style>
 </head>
 <body>
-
 <nav>
   <a href="../index.html" class="logo">TechGame<span>HQ</span></a>
   <a href="../index.html" class="back">&#8592; Back to Home</a>
 </nav>
-
 <article class="article-wrap">
-  <img src="/images/thumb-clean.jpg" style="width:100%;height:400px;object-fit:cover;object-position:center;margin-bottom:1rem;" alt="How to Clean Your PC">
+  <img src="/images/thumb-record.jpg" style="width:100%;height:400px;object-fit:cover;object-position:center;margin-bottom:1rem;" alt="How to Record Your Gameplay for Free">
   <span class="article-tag">Tech Guide</span>
-  <h1>How to Clean Your PC Without Breaking It</h1>
+  <h1>How to Record Your Gameplay for Free</h1>
   <div class="article-meta">
     <span>By TechGameHQ Staff</span>
     <span>May 2026</span>
     <span>6 min read</span>
     <span>Tech Guide</span>
   </div>
-  <p class="intro">Dust is the silent enemy of every PC. It clogs fans, insulates heat, and slowly throttles your performance without you even noticing. A clean PC runs cooler, quieter, and longer &#8212; and the whole process takes about 20 minutes.</p>
+  <p class="intro">You don't need expensive software to record high-quality gameplay. The best recording tools are completely free &#8212; some are built into your GPU drivers. Here's which one to use depending on your setup, and how to configure it properly.</p>
 
-  <h2>Why Cleaning Actually Matters</h2>
-  <p>Dust acts as insulation. When it builds up on heatsinks, GPU coolers, and case fans, it traps heat against the components. Your CPU and GPU respond by thermal throttling &#8212; automatically reducing their speed to avoid overheating. The result is lower FPS, stuttering, and longer load times, even on hardware that should handle your games fine.</p>
-  <p>In extreme cases, dust buildup causes crashes and premature hardware failure. Cleaning your PC every 6&#8211;12 months is cheap insurance against all of this.</p>
+  <h2>Which Tool Should You Use?</h2>
+  <table class="compare-table">
+    <thead><tr><th>Tool</th><th>Best For</th><th>GPU Required</th><th>Performance Impact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>OBS Studio</strong></td><td>Streaming + recording</td><td>Any</td><td class="ok">Low&#8211;Medium</td></tr>
+      <tr><td><strong>NVIDIA ShadowPlay</strong></td><td>NVIDIA GPU owners</td><td>NVIDIA only</td><td class="good">Very Low</td></tr>
+      <tr><td><strong>AMD ReLive</strong></td><td>AMD GPU owners</td><td>AMD only</td><td class="good">Very Low</td></tr>
+      <tr><td><strong>Xbox Game Bar</strong></td><td>Quick clips only</td><td>Any</td><td class="ok">Medium</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Short answer:</strong> If you have an NVIDIA GPU, use ShadowPlay. AMD GPU, use ReLive. Neither? Use OBS Studio. All three are free and produce great results.</p>
 
-  <h2>What You Need</h2>
-  <div class="tools-grid">
-    <div class="tool-item">
-      <strong>Compressed Air Can</strong>
-      <span>Essential. Blows dust out of tight spaces and heatsink fins.</span>
-    </div>
-    <div class="tool-item">
-      <strong>Soft Brush</strong>
-      <span>A clean paintbrush or makeup brush for stubborn dust.</span>
-    </div>
-    <div class="tool-item">
-      <strong>Microfiber Cloth</strong>
-      <span>For wiping surfaces and the outside of the case.</span>
-    </div>
-    <div class="tool-item">
-      <strong>Isopropyl Alcohol (90%+)</strong>
-      <span>For cleaning thermal paste off the CPU/GPU if reapplying.</span>
-    </div>
-    <div class="tool-item">
-      <strong>Phillips Screwdriver</strong>
-      <span>To remove side panels and some fan covers.</span>
-    </div>
-    <div class="tool-item">
-      <strong>Anti-static Wrist Strap</strong>
-      <span>Optional but recommended to avoid static discharge.</span>
-    </div>
+  <h2>Option 1: NVIDIA ShadowPlay (GeForce Experience)</h2>
+  <p>ShadowPlay uses your GPU's dedicated video encoder, meaning it records at near-zero performance cost. You won't even notice it's running.</p>
+
+  <div class="step">
+    <span class="step-num">Setup</span>
+    <h3>How to set up ShadowPlay</h3>
+    <p>Install <strong>GeForce Experience</strong> from NVIDIA's website. Open it, go to <strong>Settings &#8594; In-Game Overlay</strong> and enable it. Press <code>Alt + Z</code> in any game to open the overlay. Click <strong>Record</strong> to start/stop, or use <strong>Instant Replay</strong> to automatically save the last 5&#8211;20 minutes of gameplay. Set quality to 1080p 60fps for the best balance.</p>
   </div>
 
-  <div class="tip-box">
-    <strong>&#128161; Before You Start</strong>
-    Do this outside or in a well-ventilated area. You'll be blowing dust into the air and you don't want it settling back inside the PC or in your lungs. A garage or outdoors on a dry day is ideal.
+  <h2>Option 2: AMD ReLive (Adrenalin Software)</h2>
+  <p>AMD's equivalent to ShadowPlay. Same idea &#8212; hardware-accelerated recording with minimal performance impact.</p>
+
+  <div class="step">
+    <span class="step-num">Setup</span>
+    <h3>How to set up ReLive</h3>
+    <p>Install <strong>AMD Adrenalin</strong> drivers from AMD's website. Open the software, go to <strong>Gaming &#8594; Recordings</strong> and enable ReLive. Press <code>Alt + Z</code> to open the overlay in-game. Enable <strong>Instant GIF</strong> or full recording depending on what you need. Set bitrate to 50Mbps for 1080p 60fps quality.</p>
   </div>
 
-  <h2>Step-by-Step Cleaning Guide</h2>
+  <h2>Option 3: OBS Studio (Any GPU)</h2>
+  <p>OBS is the most powerful free recording and streaming tool available. It works on any hardware and gives you full control over quality, format, and output. Slightly more setup than the GPU options but worth it.</p>
 
   <div class="step">
     <span class="step-num">Step 1</span>
-    <h3>Shut down and unplug everything</h3>
-    <p>Power off completely, unplug from the wall, and disconnect all cables. Press the power button once after unplugging to discharge capacitors. Leave it for 5 minutes.</p>
+    <h3>Download and install OBS</h3>
+    <p>Download OBS Studio free from <a href="https://obsproject.com" style="color:var(--accent);font-weight:600;">obsproject.com</a>. Run the Auto-Configuration Wizard on first launch &#8212; it will detect your hardware and set optimal settings automatically.</p>
   </div>
 
   <div class="step">
     <span class="step-num">Step 2</span>
-    <h3>Take it outside and remove the side panels</h3>
-    <p>Most cases use thumbscrews on the back panel. Remove both side panels if possible for better access. Place the PC on its side on a flat surface.</p>
+    <h3>Add a Game Capture source</h3>
+    <p>In OBS, click the <strong>+</strong> button under Sources and add <strong>Game Capture</strong>. Set it to <strong>Capture any fullscreen application</strong>. This automatically detects your game when you launch it.</p>
   </div>
 
   <div class="step">
     <span class="step-num">Step 3</span>
-    <h3>Blow out the case fans</h3>
-    <p>Hold each fan still with your finger before spraying &#8212; letting a fan spin freely from compressed air can generate voltage and damage the motor. Use short bursts at an angle to push dust out of the case, not further in.</p>
+    <h3>Set output settings</h3>
+    <p>Go to <strong>Settings &#8594; Output</strong> and set the recording path to a drive with plenty of space. Set encoder to <strong>NVENC</strong> (NVIDIA) or <strong>AMF</strong> (AMD) for hardware encoding &#8212; this cuts CPU usage significantly. For quality: Rate Control = CQP, CQ Level = 18&#8211;23 (lower = better quality, larger files).</p>
   </div>
 
   <div class="step">
     <span class="step-num">Step 4</span>
-    <h3>Clean the CPU cooler</h3>
-    <p>The CPU heatsink collects the most dust. Use compressed air to blow through the fins, then follow up with a soft brush for any stuck dust. If you have a large tower cooler, remove it for a deeper clean once a year.</p>
+    <h3>Set a hotkey and start recording</h3>
+    <p>Go to <strong>Settings &#8594; Hotkeys</strong> and assign a key to Start/Stop Recording (e.g., <code>F9</code>). Press it in-game to start recording. OBS runs in the background &#8212; you won't see it while gaming.</p>
   </div>
 
-  <div class="step">
-    <span class="step-num">Step 5</span>
-    <h3>Clean the GPU</h3>
-    <p>Blow compressed air through the GPU fans and heatsink fins. For a deeper clean, you can remove the GPU from the PCIe slot for better access. Don't tilt the compressed air can &#8212; it can spray liquid propellant.</p>
+  <div class="tip-box">
+    <strong>&#128161; Storage Warning</strong>
+    Gameplay recordings eat storage fast. 1 hour of 1080p 60fps at high quality = 10&#8211;30GB depending on settings. Always record to your HDD (not your SSD) and keep an eye on free space. Delete raw recordings after editing or uploading.
   </div>
 
-  <div class="step">
-    <span class="step-num">Step 6</span>
-    <h3>Clean dust filters</h3>
-    <p>Most modern cases have removable dust filters on the front, bottom, and top. Pull them out, tap them gently to shake off dust, or rinse with water if very dirty. Let them dry completely before reinstalling.</p>
-  </div>
-
-  <div class="step">
-    <span class="step-num">Step 7</span>
-    <h3>Wipe down surfaces</h3>
-    <p>Use a dry microfiber cloth to wipe the inside surfaces of the case. For stubborn marks, lightly dampen the cloth with isopropyl alcohol. Never spray liquid directly into the case.</p>
-  </div>
-
-  <div class="step">
-    <span class="step-num">Step 8</span>
-    <h3>Reassemble and test</h3>
-    <p>Reinstall side panels, reconnect all cables, and power on. Check your temperatures after 30 minutes of gaming &#8212; you should see noticeably lower numbers than before.</p>
-  </div>
-
-  <h2>What NOT to Do</h2>
-  <ul class="dont-list">
-    <li>Don't use a household vacuum &#8212; it generates static electricity that can damage components</li>
-    <li>Don't let fans spin freely from compressed air &#8212; hold them still while spraying</li>
-    <li>Don't tilt compressed air cans &#8212; they spray liquid when tilted</li>
-    <li>Don't spray isopropyl directly onto the motherboard &#8212; apply to a cloth first</li>
-    <li>Don't clean while the PC is plugged in</li>
-    <li>Don't use paper towels &#8212; they leave fibres behind</li>
+  <h2>Recommended Settings for YouTube Upload</h2>
+  <ul>
+    <li><strong>Resolution:</strong> 1920&#215;1080</li>
+    <li><strong>Frame rate:</strong> 60fps</li>
+    <li><strong>Encoder:</strong> NVENC / AMF (hardware) or x264 (software)</li>
+    <li><strong>Bitrate:</strong> 50&#8211;80 Mbps for local recording</li>
+    <li><strong>Format:</strong> MP4 (compatible with everything)</li>
   </ul>
-
-  <h2>How Often Should You Clean?</h2>
-  <p>It depends on your environment. A PC on the floor in a house with pets needs cleaning every 3&#8211;4 months. A PC on a desk in a clean room can go 6&#8211;12 months between cleans. A simple rule: if you can see visible dust on the fans or vents, it's time.</p>
-
-  <div class="warn-box">
-    <strong>&#9888;&#65039; Check Your Temperatures First</strong>
-    Before cleaning, note your idle and load temperatures using a tool like HWMonitor or MSI Afterburner. After cleaning, compare. If your GPU was running at 85&#176;C and drops to 72&#176;C after a clean, that's a massive real-world improvement that translates directly to better performance.
-  </div>
-
-  <div class="affiliate-box">
-    <h4>Cleaning Kit Essentials</h4>
-    <p>You don't need much to keep your PC clean. A can of compressed air and a soft brush handle 90% of the job.</p>
-    <a href="https://www.amazon.com/s?k=compressed+air+can+pc+cleaning&tag=techgamehq-20" target="_blank" rel="noopener">Compressed Air Cans on Amazon &#8594;</a>
-    <a href="https://www.amazon.com/s?k=pc+cleaning+kit&tag=techgamehq-20" target="_blank" rel="noopener">PC Cleaning Kits on Amazon &#8594;</a>
-  </div>
 
   <div class="conclusion">
     <h2>The Verdict</h2>
-    <p>Cleaning your PC is one of the highest-ROI maintenance tasks you can do. 20 minutes of work, once or twice a year, can recover several degrees of temperature headroom, reduce fan noise, and extend the life of your components significantly.</p>
-    <p>If you've never cleaned your PC and it's over a year old, do it this weekend. The before and after temperatures will speak for themselves.</p>
+    <p>If you have an NVIDIA or AMD GPU, use the built-in recording tool first &#8212; it's the easiest setup with the lowest performance impact. If you want more control, or you're on integrated graphics, OBS Studio is the best free option available and used by professional streamers worldwide.</p>
+    <p>Recording your gameplay is one of the best ways to improve &#8212; watching your own footage reveals mistakes you miss in the moment. Start recording, start learning.</p>
   </div>
 
   <div class="author-bio">
@@ -228,12 +167,9 @@
       <span class="bio-label">Written by</span>
       <span class="bio-name">TechGameHQ Staff</span>
       <p class="bio-text">The TechGameHQ editorial team &#8212; honest guides, real testing, and budget-friendly picks for gamers and tech enthusiasts.</p>
-      <div class="bio-links">
-        <a href="../about.html">About TechGameHQ</a>
-      </div>
+      <div class="bio-links"><a href="../about.html">About TechGameHQ</a></div>
     </div>
   </div>
-
   <div class="read-next">
     <h2>Keep Reading</h2>
     <div class="read-next-grid" id="readNextGrid"></div>
@@ -252,7 +188,15 @@
     { title: "SSD vs HDD for Gaming: Does It Actually Matter?", url: "/articles/ssd-vs-hdd-for-gaming.html", tag: "Tech", time: "6 min read", img: "/images/thumb-ssd.jpg" },
     { title: "Top 10 Indie Games Worth Your Time in 2026", url: "/articles/top-10-indie-games-worth-your-time.html", tag: "Gaming", time: "7 min read", img: "/images/thumb-indie.jpg" },
     { title: "How to Upgrade Your RAM for Gaming", url: "/articles/how-to-upgrade-your-ram-for-gaming.html", tag: "Tech Guide", time: "7 min read", img: "/images/thumb-ram.jpg" },
-    { title: "Wi-Fi vs Ethernet for Gaming", url: "/articles/wifi-vs-ethernet-for-gaming.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-wifi.jpg" }
+    { title: "Wi-Fi vs Ethernet for Gaming", url: "/articles/wifi-vs-ethernet-for-gaming.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-wifi.jpg" },
+    { title: "How to Clean Your PC Without Breaking It", url: "/articles/how-to-clean-your-pc.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-clean.jpg" },
+    { title: "Best Free Antivirus for Gamers in 2026", url: "/articles/best-free-antivirus-for-gamers.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-antivirus.jpg" },
+    { title: "Best Budget Gaming Monitors Under $200", url: "/articles/best-budget-gaming-monitors-under-200.html", tag: "Review", time: "7 min read", img: "/images/thumb-monitor-budget.jpg" },
+    { title: "Best Budget Smartphones for Gaming", url: "/articles/best-budget-smartphones-for-gaming.html", tag: "Review", time: "7 min read", img: "/images/thumb-phones.jpg" },
+    { title: "How to Optimize Windows 11 for Gaming", url: "/articles/how-to-optimize-windows-11-for-gaming.html", tag: "Tech Guide", time: "7 min read", img: "/images/thumb-win11.jpg" },
+    { title: "Best Mechanical Keyboards Under $50", url: "/articles/best-mechanical-keyboards-under-50.html", tag: "Review", time: "6 min read", img: "/images/thumb-keyboard.jpg" },
+    { title: "How to Fix High Ping in Online Games", url: "/articles/how-to-fix-high-ping.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-ping.jpg" },
+    { title: "Best Free PC Games on Steam in 2026", url: "/articles/best-free-pc-games-on-steam-2026.html", tag: "Gaming", time: "7 min read", img: "/images/thumb-steam.jpg" }
   ];
   (function() {
     var current = window.location.pathname.split('/').pop();
@@ -268,10 +212,8 @@
   })();
   </script>
 </article>
-
 <footer>
   <p>&#169; 2026 <a href="../index.html">TechGameHQ</a> &#8212; Your Headquarters for Tech &amp; Gaming<br><br><small style="color:rgba(255,255,255,0.4);font-size:0.75rem;">TechGameHQ is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</small></p>
 </footer>
-
 </body>
 </html>

@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Clean Your PC Without Breaking It &#8212; TechGameHQ</title>
-<meta name="description" content="Step-by-step guide to cleaning your PC safely. Remove dust, lower temperatures, and improve performance without damaging any components.">
+<title>How to Fix High Ping in Online Games — TechGameHQ</title>
+<meta name="description" content="Step-by-step guide to fixing high ping in online games. Reduce latency, eliminate lag spikes, and improve your connection for competitive gaming.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --white: #ffffff; --off-white: #f7f6f3; --border: #e2e0da; --text: #1a1917; --muted: #6b6860; --accent: #2563eb; --accent-warm: #f97316; --accent-light: #eff6ff; }
+  :root { --white: #ffffff; --off-white: #f7f6f3; --border: #e2e0da; --text: #1a1917; --muted: #6b6860; --accent: #2563eb; --accent-warm: #f97316; --accent-light: #eff6ff; --win: #16a34a; --lose: #dc2626; }
   body { background: var(--white); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.75; }
   nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 2px solid var(--text); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
   .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; text-decoration: none; color: var(--text); letter-spacing: -0.02em; }
@@ -22,47 +22,36 @@
   .article-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; color: var(--muted); font-size: 0.82rem; font-weight: 500; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
   .intro { font-size: 1.15rem; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
   h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; margin: 2.5rem 0 1rem; letter-spacing: -0.01em; }
-  h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.6rem; color: var(--text); }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.6rem; }
   p { margin-bottom: 1.25rem; color: #3a3835; }
   ul, ol { margin: 0 0 1.25rem 1.5rem; color: #3a3835; }
   li { margin-bottom: 0.4rem; }
-
-  .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
-  .tool-item { border: 1px solid var(--border); padding: 1rem 1.25rem; background: var(--off-white); }
-  .tool-item strong { display: block; font-size: 0.95rem; margin-bottom: 0.25rem; }
-  .tool-item span { font-size: 0.85rem; color: var(--muted); }
-
+  code { background: var(--border); padding: 1px 6px; font-size: 0.88em; }
   .step { border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; margin: 1.25rem 0; background: var(--off-white); }
   .step-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 0.4rem; }
   .step h3 { margin-top: 0; margin-bottom: 0.5rem; font-size: 1rem; }
   .step p { margin: 0; font-size: 0.95rem; }
-
+  .impact { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; margin-left: 0.5rem; vertical-align: middle; }
+  .impact.high { background: #dcfce7; color: #16a34a; }
+  .impact.medium { background: #fff7ed; color: var(--accent-warm); }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.92rem; }
+  .compare-table th { background: var(--text); color: var(--white); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 1rem; text-align: left; }
+  .compare-table td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); color: #3a3835; }
+  .compare-table tr:nth-child(even) td { background: var(--off-white); }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .good { color: var(--win); font-weight: 600; }
+  .bad { color: var(--lose); font-weight: 600; }
   .tip-box { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
   .tip-box strong { color: var(--accent); display: block; margin-bottom: 0.5rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
-
   .warn-box { background: #fff7ed; border-left: 4px solid var(--accent-warm); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
   .warn-box strong { color: var(--accent-warm); display: block; margin-bottom: 0.5rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
-
-  .dont-list { list-style: none; margin-left: 0; }
-  .dont-list li { padding-left: 1.5rem; position: relative; margin-bottom: 0.6rem; }
-  .dont-list li::before { content: '\2715'; position: absolute; left: 0; color: #dc2626; font-weight: 700; }
-
-  .affiliate-box { border: 1px solid var(--border); border-top: 4px solid var(--accent-warm); padding: 1.5rem; margin: 2.5rem 0; background: var(--off-white); }
-  .affiliate-box h4 { color: var(--accent-warm); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; font-family: 'Source Sans 3', sans-serif; }
-  .affiliate-box p { margin: 0 0 0.75rem; font-size: 0.9rem; }
-  .affiliate-box a { color: var(--accent); font-size: 0.9rem; font-weight: 600; text-decoration: none; display: block; margin-top: 0.4rem; }
-  .affiliate-box a:hover { text-decoration: underline; }
-
   .conclusion { background: var(--text); color: var(--white); padding: 2rem; margin-top: 3rem; }
   .conclusion h2 { color: var(--white); margin-top: 0; font-size: 1.4rem; font-family: 'Playfair Display', serif; }
   .conclusion p { color: rgba(255,255,255,0.8); margin-bottom: 1rem; }
   .conclusion p:last-child { margin-bottom: 0; }
-
   footer { background: var(--text); padding: 2rem; text-align: center; margin-top: 4rem; }
   footer p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
   footer a { color: var(--accent); text-decoration: none; }
-
-  /* AUTHOR BIO */
   .author-bio { display: flex; gap: 1.25rem; align-items: flex-start; border: 1px solid var(--border); border-top: 4px solid var(--accent); padding: 1.5rem; margin: 2.5rem 0; background: var(--off-white); }
   .author-avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: #fff; flex-shrink: 0; }
   .bio-content { flex: 1; }
@@ -71,8 +60,6 @@
   .bio-text { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.5rem; line-height: 1.5; }
   .bio-links a { font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; margin-right: 1rem; }
   .bio-links a:hover { text-decoration: underline; }
-
-  /* READ NEXT */
   .read-next { margin: 3rem 0 0; }
   .read-next > h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem; letter-spacing: -0.01em; }
   .read-next-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.25rem; }
@@ -86,140 +73,92 @@
 </style>
 </head>
 <body>
-
 <nav>
   <a href="../index.html" class="logo">TechGame<span>HQ</span></a>
   <a href="../index.html" class="back">&#8592; Back to Home</a>
 </nav>
-
 <article class="article-wrap">
-  <img src="/images/thumb-clean.jpg" style="width:100%;height:400px;object-fit:cover;object-position:center;margin-bottom:1rem;" alt="How to Clean Your PC">
+  <img src="/images/thumb-ping.jpg" style="width:100%;height:400px;object-fit:cover;object-position:center;margin-bottom:1rem;" alt="How to Fix High Ping">
   <span class="article-tag">Tech Guide</span>
-  <h1>How to Clean Your PC Without Breaking It</h1>
+  <h1>How to Fix High Ping in Online Games</h1>
   <div class="article-meta">
     <span>By TechGameHQ Staff</span>
     <span>May 2026</span>
     <span>6 min read</span>
     <span>Tech Guide</span>
   </div>
-  <p class="intro">Dust is the silent enemy of every PC. It clogs fans, insulates heat, and slowly throttles your performance without you even noticing. A clean PC runs cooler, quieter, and longer &#8212; and the whole process takes about 20 minutes.</p>
+  <p class="intro">High ping ruins games. One moment you're winning a fight, the next you're dead because your packets arrived late. Most ping problems are fixable &#8212; and the solution is often simpler than you think. Here's how to diagnose and fix them, step by step.</p>
 
-  <h2>Why Cleaning Actually Matters</h2>
-  <p>Dust acts as insulation. When it builds up on heatsinks, GPU coolers, and case fans, it traps heat against the components. Your CPU and GPU respond by thermal throttling &#8212; automatically reducing their speed to avoid overheating. The result is lower FPS, stuttering, and longer load times, even on hardware that should handle your games fine.</p>
-  <p>In extreme cases, dust buildup causes crashes and premature hardware failure. Cleaning your PC every 6&#8211;12 months is cheap insurance against all of this.</p>
+  <h2>First: Understand What Ping Actually Is</h2>
+  <p>Ping (latency) is the time in milliseconds it takes for data to travel from your PC to the game server and back. Lower is always better:</p>
+  <table class="compare-table">
+    <thead><tr><th>Ping</th><th>Feel</th><th>Competitive Gaming</th></tr></thead>
+    <tbody>
+      <tr><td>1&#8211;30ms</td><td class="good">Excellent</td><td class="good">Ideal</td></tr>
+      <tr><td>31&#8211;60ms</td><td class="good">Good</td><td class="good">Fine for most games</td></tr>
+      <tr><td>61&#8211;100ms</td><td>Noticeable</td><td>Playable but disadvantaged</td></tr>
+      <tr><td>100ms+</td><td class="bad">Laggy</td><td class="bad">Frustrating, avoid</td></tr>
+    </tbody>
+  </table>
 
-  <h2>What You Need</h2>
-  <div class="tools-grid">
-    <div class="tool-item">
-      <strong>Compressed Air Can</strong>
-      <span>Essential. Blows dust out of tight spaces and heatsink fins.</span>
-    </div>
-    <div class="tool-item">
-      <strong>Soft Brush</strong>
-      <span>A clean paintbrush or makeup brush for stubborn dust.</span>
-    </div>
-    <div class="tool-item">
-      <strong>Microfiber Cloth</strong>
-      <span>For wiping surfaces and the outside of the case.</span>
-    </div>
-    <div class="tool-item">
-      <strong>Isopropyl Alcohol (90%+)</strong>
-      <span>For cleaning thermal paste off the CPU/GPU if reapplying.</span>
-    </div>
-    <div class="tool-item">
-      <strong>Phillips Screwdriver</strong>
-      <span>To remove side panels and some fan covers.</span>
-    </div>
-    <div class="tool-item">
-      <strong>Anti-static Wrist Strap</strong>
-      <span>Optional but recommended to avoid static discharge.</span>
-    </div>
+  <h2>Fixes — Start Here</h2>
+
+  <div class="step">
+    <span class="step-num">Fix 1 <span class="impact high">High Impact</span></span>
+    <h3>Switch to Ethernet</h3>
+    <p>If you're on Wi-Fi, this single change can drop your ping by 10&#8211;40ms and eliminate random lag spikes entirely. Run an Ethernet cable from your router to your PC. If that's not possible, use a powerline adapter. Nothing else on this list matters as much as a stable wired connection.</p>
+  </div>
+
+  <div class="step">
+    <span class="step-num">Fix 2 <span class="impact high">High Impact</span></span>
+    <h3>Select the Correct Server Region</h3>
+    <p>Always connect to the server closest to your physical location. Playing on a North American server from Europe adds 80&#8211;120ms of unavoidable ping &#8212; no software fix can overcome physical distance. Check your game's server selection settings and always pick your region.</p>
+  </div>
+
+  <div class="step">
+    <span class="step-num">Fix 3 <span class="impact high">High Impact</span></span>
+    <h3>Close Background Apps Using Bandwidth</h3>
+    <p>Open Task Manager (<code>Ctrl + Shift + Esc</code>), go to the <strong>Network</strong> column, and sort by usage. Close anything consuming bandwidth while you game &#8212; especially YouTube, Twitch streams, cloud backups (OneDrive, Google Drive), and torrent clients. Even a slow download in the background causes ping spikes.</p>
+  </div>
+
+  <div class="step">
+    <span class="step-num">Fix 4 <span class="impact medium">Medium Impact</span></span>
+    <h3>Update Your Network Drivers</h3>
+    <p>Open Device Manager, expand <strong>Network Adapters</strong>, right-click your Ethernet or Wi-Fi adapter, and select <strong>Update driver</strong>. Outdated network drivers cause inconsistent packet delivery &#8212; a common cause of lag spikes that appear even on good connections.</p>
+  </div>
+
+  <div class="step">
+    <span class="step-num">Fix 5 <span class="impact medium">Medium Impact</span></span>
+    <h3>Disable Windows Update Delivery Optimization</h3>
+    <p>Go to <code>Settings</code> &#8594; <code>Windows Update</code> &#8594; <code>Advanced options</code> &#8594; <code>Delivery Optimization</code> and turn off <strong>Allow downloads from other PCs</strong>. This feature uses your connection to share Windows updates with other computers &#8212; often without you knowing.</p>
+  </div>
+
+  <div class="step">
+    <span class="step-num">Fix 6 <span class="impact medium">Medium Impact</span></span>
+    <h3>Use a Gaming DNS Server</h3>
+    <p>Your ISP's default DNS can be slow. Switch to a faster one: open <code>Network Settings</code> &#8594; <code>Change adapter options</code> &#8594; right-click your connection &#8594; <code>Properties</code> &#8594; <code>IPv4</code>. Set preferred DNS to <strong>1.1.1.1</strong> (Cloudflare) or <strong>8.8.8.8</strong> (Google). This won't fix high ping but reduces initial connection time.</p>
+  </div>
+
+  <div class="step">
+    <span class="step-num">Fix 7 <span class="impact medium">Medium Impact</span></span>
+    <h3>Enable QoS on Your Router</h3>
+    <p>Quality of Service (QoS) tells your router to prioritize gaming traffic over other devices. Log into your router admin panel (usually <code>192.168.1.1</code>), find the QoS settings, and set gaming as high priority. This helps when multiple people share the same connection.</p>
   </div>
 
   <div class="tip-box">
-    <strong>&#128161; Before You Start</strong>
-    Do this outside or in a well-ventilated area. You'll be blowing dust into the air and you don't want it settling back inside the PC or in your lungs. A garage or outdoors on a dry day is ideal.
+    <strong>&#128161; Test Before and After</strong>
+    Use <a href="https://fast.com" style="color:var(--accent);font-weight:600;">fast.com</a> or <a href="https://www.speedtest.net" style="color:var(--accent);font-weight:600;">speedtest.net</a> to check your ping to nearby servers before and after each fix. In-game, enable the network stats overlay (most games have one) to monitor ping and packet loss in real time.
   </div>
-
-  <h2>Step-by-Step Cleaning Guide</h2>
-
-  <div class="step">
-    <span class="step-num">Step 1</span>
-    <h3>Shut down and unplug everything</h3>
-    <p>Power off completely, unplug from the wall, and disconnect all cables. Press the power button once after unplugging to discharge capacitors. Leave it for 5 minutes.</p>
-  </div>
-
-  <div class="step">
-    <span class="step-num">Step 2</span>
-    <h3>Take it outside and remove the side panels</h3>
-    <p>Most cases use thumbscrews on the back panel. Remove both side panels if possible for better access. Place the PC on its side on a flat surface.</p>
-  </div>
-
-  <div class="step">
-    <span class="step-num">Step 3</span>
-    <h3>Blow out the case fans</h3>
-    <p>Hold each fan still with your finger before spraying &#8212; letting a fan spin freely from compressed air can generate voltage and damage the motor. Use short bursts at an angle to push dust out of the case, not further in.</p>
-  </div>
-
-  <div class="step">
-    <span class="step-num">Step 4</span>
-    <h3>Clean the CPU cooler</h3>
-    <p>The CPU heatsink collects the most dust. Use compressed air to blow through the fins, then follow up with a soft brush for any stuck dust. If you have a large tower cooler, remove it for a deeper clean once a year.</p>
-  </div>
-
-  <div class="step">
-    <span class="step-num">Step 5</span>
-    <h3>Clean the GPU</h3>
-    <p>Blow compressed air through the GPU fans and heatsink fins. For a deeper clean, you can remove the GPU from the PCIe slot for better access. Don't tilt the compressed air can &#8212; it can spray liquid propellant.</p>
-  </div>
-
-  <div class="step">
-    <span class="step-num">Step 6</span>
-    <h3>Clean dust filters</h3>
-    <p>Most modern cases have removable dust filters on the front, bottom, and top. Pull them out, tap them gently to shake off dust, or rinse with water if very dirty. Let them dry completely before reinstalling.</p>
-  </div>
-
-  <div class="step">
-    <span class="step-num">Step 7</span>
-    <h3>Wipe down surfaces</h3>
-    <p>Use a dry microfiber cloth to wipe the inside surfaces of the case. For stubborn marks, lightly dampen the cloth with isopropyl alcohol. Never spray liquid directly into the case.</p>
-  </div>
-
-  <div class="step">
-    <span class="step-num">Step 8</span>
-    <h3>Reassemble and test</h3>
-    <p>Reinstall side panels, reconnect all cables, and power on. Check your temperatures after 30 minutes of gaming &#8212; you should see noticeably lower numbers than before.</p>
-  </div>
-
-  <h2>What NOT to Do</h2>
-  <ul class="dont-list">
-    <li>Don't use a household vacuum &#8212; it generates static electricity that can damage components</li>
-    <li>Don't let fans spin freely from compressed air &#8212; hold them still while spraying</li>
-    <li>Don't tilt compressed air cans &#8212; they spray liquid when tilted</li>
-    <li>Don't spray isopropyl directly onto the motherboard &#8212; apply to a cloth first</li>
-    <li>Don't clean while the PC is plugged in</li>
-    <li>Don't use paper towels &#8212; they leave fibres behind</li>
-  </ul>
-
-  <h2>How Often Should You Clean?</h2>
-  <p>It depends on your environment. A PC on the floor in a house with pets needs cleaning every 3&#8211;4 months. A PC on a desk in a clean room can go 6&#8211;12 months between cleans. A simple rule: if you can see visible dust on the fans or vents, it's time.</p>
 
   <div class="warn-box">
-    <strong>&#9888;&#65039; Check Your Temperatures First</strong>
-    Before cleaning, note your idle and load temperatures using a tool like HWMonitor or MSI Afterburner. After cleaning, compare. If your GPU was running at 85&#176;C and drops to 72&#176;C after a clean, that's a massive real-world improvement that translates directly to better performance.
-  </div>
-
-  <div class="affiliate-box">
-    <h4>Cleaning Kit Essentials</h4>
-    <p>You don't need much to keep your PC clean. A can of compressed air and a soft brush handle 90% of the job.</p>
-    <a href="https://www.amazon.com/s?k=compressed+air+can+pc+cleaning&tag=techgamehq-20" target="_blank" rel="noopener">Compressed Air Cans on Amazon &#8594;</a>
-    <a href="https://www.amazon.com/s?k=pc+cleaning+kit&tag=techgamehq-20" target="_blank" rel="noopener">PC Cleaning Kits on Amazon &#8594;</a>
+    <strong>&#9888;&#65039; When It's Not Your Problem</strong>
+    If you've done everything above and still have high ping, the issue may be with your ISP or the game server itself. Check websites like <strong>Downdetector</strong> to see if others are reporting the same issue. If it's consistent and only to one game, contact your ISP &#8212; some ISPs throttle gaming traffic.
   </div>
 
   <div class="conclusion">
     <h2>The Verdict</h2>
-    <p>Cleaning your PC is one of the highest-ROI maintenance tasks you can do. 20 minutes of work, once or twice a year, can recover several degrees of temperature headroom, reduce fan noise, and extend the life of your components significantly.</p>
-    <p>If you've never cleaned your PC and it's over a year old, do it this weekend. The before and after temperatures will speak for themselves.</p>
+    <p>Start with Ethernet and correct server region &#8212; those two fixes alone resolve most high ping issues. Then work down the list. Most ping problems are local and fixable within 20 minutes.</p>
+    <p>If after all these steps your ping is still high, the problem is either your ISP or the game server &#8212; and neither is something you can fix with a software tweak.</p>
   </div>
 
   <div class="author-bio">
@@ -228,12 +167,9 @@
       <span class="bio-label">Written by</span>
       <span class="bio-name">TechGameHQ Staff</span>
       <p class="bio-text">The TechGameHQ editorial team &#8212; honest guides, real testing, and budget-friendly picks for gamers and tech enthusiasts.</p>
-      <div class="bio-links">
-        <a href="../about.html">About TechGameHQ</a>
-      </div>
+      <div class="bio-links"><a href="../about.html">About TechGameHQ</a></div>
     </div>
   </div>
-
   <div class="read-next">
     <h2>Keep Reading</h2>
     <div class="read-next-grid" id="readNextGrid"></div>
@@ -252,7 +188,15 @@
     { title: "SSD vs HDD for Gaming: Does It Actually Matter?", url: "/articles/ssd-vs-hdd-for-gaming.html", tag: "Tech", time: "6 min read", img: "/images/thumb-ssd.jpg" },
     { title: "Top 10 Indie Games Worth Your Time in 2026", url: "/articles/top-10-indie-games-worth-your-time.html", tag: "Gaming", time: "7 min read", img: "/images/thumb-indie.jpg" },
     { title: "How to Upgrade Your RAM for Gaming", url: "/articles/how-to-upgrade-your-ram-for-gaming.html", tag: "Tech Guide", time: "7 min read", img: "/images/thumb-ram.jpg" },
-    { title: "Wi-Fi vs Ethernet for Gaming", url: "/articles/wifi-vs-ethernet-for-gaming.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-wifi.jpg" }
+    { title: "Wi-Fi vs Ethernet for Gaming", url: "/articles/wifi-vs-ethernet-for-gaming.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-wifi.jpg" },
+    { title: "How to Clean Your PC Without Breaking It", url: "/articles/how-to-clean-your-pc.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-clean.jpg" },
+    { title: "Best Free Antivirus for Gamers in 2026", url: "/articles/best-free-antivirus-for-gamers.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-antivirus.jpg" },
+    { title: "Best Budget Gaming Monitors Under $200", url: "/articles/best-budget-gaming-monitors-under-200.html", tag: "Review", time: "7 min read", img: "/images/thumb-monitor-budget.jpg" },
+    { title: "Best Budget Smartphones for Gaming", url: "/articles/best-budget-smartphones-for-gaming.html", tag: "Review", time: "7 min read", img: "/images/thumb-phones.jpg" },
+    { title: "How to Optimize Windows 11 for Gaming", url: "/articles/how-to-optimize-windows-11-for-gaming.html", tag: "Tech Guide", time: "7 min read", img: "/images/thumb-win11.jpg" },
+    { title: "Best Mechanical Keyboards Under $50", url: "/articles/best-mechanical-keyboards-under-50.html", tag: "Review", time: "6 min read", img: "/images/thumb-keyboard.jpg" },
+    { title: "Best Free PC Games on Steam in 2026", url: "/articles/best-free-pc-games-on-steam-2026.html", tag: "Gaming", time: "7 min read", img: "/images/thumb-steam.jpg" },
+    { title: "How to Record Your Gameplay for Free", url: "/articles/how-to-record-gameplay-for-free.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-record.jpg" }
   ];
   (function() {
     var current = window.location.pathname.split('/').pop();
@@ -268,10 +212,8 @@
   })();
   </script>
 </article>
-
 <footer>
   <p>&#169; 2026 <a href="../index.html">TechGameHQ</a> &#8212; Your Headquarters for Tech &amp; Gaming<br><br><small style="color:rgba(255,255,255,0.4);font-size:0.75rem;">TechGameHQ is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</small></p>
 </footer>
-
 </body>
 </html>
