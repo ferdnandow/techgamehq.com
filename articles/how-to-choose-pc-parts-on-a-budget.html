@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Choose PC Parts on a Budget — TechGameHQ</title>
+<meta name="description" content="Learn how to choose PC parts on a budget without wasting money. CPU, GPU, RAM, storage — a practical guide to building a capable gaming PC without overspending.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --white: #ffffff; --off-white: #f7f6f3; --border: #e2e0da; --text: #1a1917; --muted: #6b6860; --accent: #2563eb; --accent-warm: #f97316; --accent-light: #eff6ff; --win: #16a34a; }
+  body { background: var(--white); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.75; }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 2px solid var(--text); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; text-decoration: none; color: var(--text); letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+  .back { color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .back:hover { color: var(--text); }
+  .article-wrap { max-width: 740px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+  .article-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; background: var(--accent-light); color: var(--accent); margin-bottom: 1.25rem; }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+  .article-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; color: var(--muted); font-size: 0.82rem; font-weight: 500; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+  .intro { font-size: 1.15rem; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+  h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; margin: 2.5rem 0 1rem; letter-spacing: -0.01em; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.6rem; }
+  p { margin-bottom: 1.25rem; color: #3a3835; }
+  ul, ol { margin: 0 0 1.25rem 1.5rem; color: #3a3835; }
+  li { margin-bottom: 0.4rem; }
+  .part-block { border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; margin: 1.5rem 0; background: var(--off-white); }
+  .part-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 0.35rem; }
+  .part-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .part-block p { margin: 0; font-size: 0.95rem; }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.92rem; }
+  .compare-table th { background: var(--text); color: var(--white); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 1rem; text-align: left; }
+  .compare-table td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); color: #3a3835; }
+  .compare-table tr:nth-child(even) td { background: var(--off-white); }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .good { color: var(--win); font-weight: 600; }
+  .ok { color: var(--accent-warm); font-weight: 600; }
+  .tip-box { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
+  .tip-box strong { color: var(--accent); display: block; margin-bottom: 0.5rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .conclusion { background: var(--text); color: var(--white); padding: 2rem; margin-top: 3rem; }
+  .conclusion h2 { color: var(--white); margin-top: 0; font-size: 1.4rem; font-family: 'Playfair Display', serif; }
+  .conclusion p { color: rgba(255,255,255,0.8); margin-bottom: 1rem; }
+  .conclusion p:last-child { margin-bottom: 0; }
+  footer { background: var(--text); padding: 2rem; text-align: center; margin-top: 4rem; }
+  footer p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+  .author-bio { display: flex; gap: 1.25rem; align-items: flex-start; border: 1px solid var(--border); border-top: 4px solid var(--accent); padding: 1.5rem; margin: 2.5rem 0; background: var(--off-white); }
+  .author-avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: #fff; flex-shrink: 0; }
+  .bio-content { flex: 1; }
+  .bio-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.25rem; }
+  .bio-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; display: block; margin-bottom: 0.35rem; }
+  .bio-text { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.5rem; line-height: 1.5; }
+  .bio-links a { font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; margin-right: 1rem; }
+  .bio-links a:hover { text-decoration: underline; }
+  .read-next { margin: 3rem 0 0; }
+  .read-next > h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem; letter-spacing: -0.01em; }
+  .read-next-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.25rem; }
+  .read-next-card { border: 1px solid var(--border); text-decoration: none; color: var(--text); display: block; transition: border-color 0.2s; }
+  .read-next-card:hover { border-color: var(--accent); }
+  .read-next-card img { width: 100%; height: 130px; object-fit: cover; display: block; }
+  .rn-body { padding: 0.85rem 1rem; }
+  .rn-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 0.35rem; }
+  .rn-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.4rem; color: var(--text); }
+  .rn-time { font-size: 0.78rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="logo">TechGame<span>HQ</span></a>
+  <a href="../index.html" class="back">&#8592; Back to Home</a>
+</nav>
+<article class="article-wrap">
+  <img src="/images/thumb-pc-parts.jpg" style="width:100%;height:400px;object-fit:cover;object-position:center;margin-bottom:1rem;" alt="How to Choose PC Parts on a Budget">
+  <span class="article-tag">Tech Guide</span>
+  <h1>How to Choose PC Parts on a Budget</h1>
+  <div class="article-meta">
+    <span>By Fernando Oliveira</span>
+    <span>May 2026</span>
+    <span>7 min read</span>
+    <span>Tech Guide</span>
+  </div>
+  <p class="intro">Building a gaming PC on a budget isn&#8217;t about buying the cheapest parts &#8212; it&#8217;s about knowing where to spend and where to save. Spend wrong and you end up with a bottlenecked build that underperforms. Spend right and you get 80% of the performance for 50% of the price.</p>
+
+  <h2>Budget Allocation: Where Your Money Should Go</h2>
+  <p>Most people building on a budget make the same mistake: they spread money evenly across all parts. Don&#8217;t. The GPU and CPU are what determine gaming performance. Everything else supports them.</p>
+  <table class="compare-table">
+    <thead><tr><th>Component</th><th>Budget Priority</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td><strong>GPU</strong></td><td class="good">Highest</td><td>Biggest impact on gaming FPS</td></tr>
+      <tr><td><strong>CPU</strong></td><td class="good">High</td><td>Bottlenecks GPU if too weak</td></tr>
+      <tr><td><strong>RAM</strong></td><td class="ok">Medium</td><td>16GB is enough; speed matters less</td></tr>
+      <tr><td><strong>Storage</strong></td><td class="ok">Medium</td><td>SSD is required; NVMe vs SATA minor</td></tr>
+      <tr><td><strong>Motherboard</strong></td><td>Low&#8211;Medium</td><td>Get compatible, not premium</td></tr>
+      <tr><td><strong>PSU</strong></td><td>Medium</td><td>Don&#8217;t cheap out &#8212; reliability matters</td></tr>
+      <tr><td><strong>Case</strong></td><td>Low</td><td>Airflow matters; looks don&#8217;t</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Part-by-Part Buying Guide</h2>
+
+  <div class="part-block">
+    <span class="part-label">GPU &#8212; Spend the most here</span>
+    <div class="part-title">Graphics Card</div>
+    <p>The GPU is the single most important component for gaming. In 2026, the sweet spot for budget gaming is the <strong>RX 7600</strong> (AMD) or <strong>RTX 4060</strong> (NVIDIA) &#8212; both handle 1080p at high settings with ease. Going lower (RX 6600, RTX 3060) is viable if you find a good used deal. Avoid GPUs older than 3 generations &#8212; driver support and VRAM become limiting factors.</p>
+  </div>
+
+  <div class="part-block">
+    <span class="part-label">CPU &#8212; Match your GPU tier</span>
+    <div class="part-title">Processor</div>
+    <p>Don&#8217;t pair a weak CPU with a strong GPU &#8212; it creates a bottleneck. For a mid-range GPU, the <strong>AMD Ryzen 5 7600</strong> or <strong>Intel Core i5-13400F</strong> are the best value options. Both handle any modern game comfortably. Avoid the highest-end CPUs &#8212; gaming performance doesn&#8217;t scale significantly above 6&#8211;8 cores at 1080p.</p>
+  </div>
+
+  <div class="part-block">
+    <span class="part-label">RAM &#8212; 16GB minimum, 32GB if on sale</span>
+    <div class="part-title">Memory</div>
+    <p><strong>16GB DDR4 or DDR5</strong> is the minimum for gaming in 2026. Go for a dual-channel kit (2&#215;8GB) rather than a single 16GB stick &#8212; dual-channel gives a free 5&#8211;15% performance boost. Speed above DDR4-3200 or DDR5-5200 has diminishing returns for gaming. Don&#8217;t pay a premium for RGB RAM &#8212; the LEDs contribute nothing to performance.</p>
+  </div>
+
+  <div class="part-block">
+    <span class="part-label">Storage &#8212; SSD required, NVMe preferred</span>
+    <div class="part-title">Storage</div>
+    <p>Get at least a <strong>500GB NVMe SSD</strong> for your OS and main games. HDDs are acceptable for secondary game storage only &#8212; never as the boot drive. The difference between a SATA SSD and a budget NVMe SSD is minor in games; both are dramatically better than an HDD. Budget NVMe drives (Kingston NV3, WD Green SN350) cost the same as SATA and perform better.</p>
+  </div>
+
+  <div class="part-block">
+    <span class="part-label">Motherboard &#8212; Compatible, not premium</span>
+    <div class="part-title">Motherboard</div>
+    <p>The motherboard&#8217;s job is compatibility. For AMD Ryzen 7000, get a <strong>B650 board</strong>. For Intel 13th/14th gen, get a <strong>B760 board</strong>. You don&#8217;t need Z-series unless you plan to overclock, which isn&#8217;t worth the complexity on a budget build. Check that the board has the M.2 slots you need for your NVMe SSD and USB ports you&#8217;ll actually use.</p>
+  </div>
+
+  <div class="part-block">
+    <span class="part-label">PSU &#8212; Don&#8217;t cheap out here</span>
+    <div class="part-title">Power Supply</div>
+    <p>A bad PSU can damage your entire build. Stick to reputable brands: <strong>Corsair, Seasonic, EVGA, be quiet!</strong>. Get at least <strong>80 Plus Bronze</strong> certification. For a mid-range build (RTX 4060 + Ryzen 5), a <strong>650W</strong> PSU is sufficient. Modular or semi-modular PSUs make cable management easier &#8212; worth the small price difference.</p>
+  </div>
+
+  <div class="part-block">
+    <span class="part-label">Case &#8212; Airflow over aesthetics</span>
+    <div class="part-title">PC Case</div>
+    <p>A good case improves thermals, which extends component life. Look for mesh front panels (not solid) for intake airflow. The <strong>Fractal Design Focus 2</strong> and <strong>Lian Li Lancool 205</strong> are popular budget options with excellent airflow. Avoid cases with solid metal fronts &#8212; they restrict intake and raise temperatures.</p>
+  </div>
+
+  <div class="tip-box">
+    <strong>&#128161; Use PCPartPicker Before You Buy Anything</strong>
+    <a href="https://pcpartpicker.com" style="color:var(--accent);font-weight:600;" target="_blank" rel="noopener">PCPartPicker.com</a> checks compatibility between all your chosen parts automatically &#8212; CPU socket vs motherboard, PSU wattage vs total system draw, RAM compatibility, case clearance. It also tracks prices across multiple retailers. Use it to build your parts list before spending a cent.
+  </div>
+
+  <h2>New vs Used: When to Buy Used Parts</h2>
+  <p>Used parts can stretch your budget significantly if you buy smart:</p>
+  <ul>
+    <li><strong>GPU:</strong> Good used buys &#8212; especially previous-gen cards (RTX 3060, RX 6700 XT). Check for mining wear.</li>
+    <li><strong>CPU:</strong> Safe to buy used &#8212; CPUs rarely fail if handled correctly.</li>
+    <li><strong>RAM:</strong> Fine used. DDR4 is cheap new too &#8212; compare prices before committing.</li>
+    <li><strong>PSU:</strong> Avoid used PSUs &#8212; they degrade over time and a failure can kill your whole build.</li>
+    <li><strong>Motherboard:</strong> Risky used &#8212; hard to test without full build. Buy new if budget allows.</li>
+  </ul>
+
+  <h2>Sample Budget Build: ~$600</h2>
+  <ul>
+    <li><strong>GPU:</strong> RX 7600 &#8212; ~$250</li>
+    <li><strong>CPU:</strong> Ryzen 5 7600 &#8212; ~$180 (includes cooler)</li>
+    <li><strong>RAM:</strong> 16GB DDR5-5200 (2&#215;8GB) &#8212; ~$45</li>
+    <li><strong>Storage:</strong> 500GB NVMe SSD &#8212; ~$40</li>
+    <li><strong>Motherboard:</strong> B650 (budget) &#8212; ~$90</li>
+    <li><strong>PSU:</strong> 650W 80+ Bronze &#8212; ~$60</li>
+    <li><strong>Case:</strong> Budget mesh case &#8212; ~$50</li>
+  </ul>
+  <p>This build handles 1080p gaming at high-ultra settings in virtually every title in 2026. Add an SSD upgrade or more RAM later &#8212; the platform supports it.</p>
+
+  <div class="conclusion">
+    <h2>The Golden Rule</h2>
+    <p>Put the most money into your GPU. Match it with a CPU that won&#8217;t bottleneck it. Use PCPartPicker to verify everything is compatible before buying. Don&#8217;t overspend on RAM speed, RGB, or a premium motherboard &#8212; those dollars are better spent on the parts that actually move the frame counter.</p>
+    <p>A well-planned $600 build will outperform a poorly-planned $900 build. The research is free &#8212; do it before you spend.</p>
+  </div>
+
+  <div class="author-bio">
+    <div class="author-avatar">FO</div>
+    <div class="bio-content">
+      <span class="bio-label">Written by</span>
+      <span class="bio-name">Fernando Oliveira</span>
+      <p class="bio-text">Third-year Computer Science student in Ireland, gamer and tech enthusiast since childhood. Fernando writes hands-on guides and honest reviews for TechGameHQ.</p>
+      <div class="bio-links"><a href="../about.html">About the Author</a></div>
+    </div>
+  </div>
+  <div class="read-next">
+    <h2>Keep Reading</h2>
+    <div class="read-next-grid" id="readNextGrid"></div>
+  </div>
+  <script>
+  var allArticles = [
+    { title: "Best Browser for Gaming in 2026", url: "/articles/best-browser-for-gaminhg-in-2026.html", tag: "Tech Guide", time: "7 min read", img: "/images/thumb-tools.jpg" },
+    { title: "Best Free Games for Low-End PCs in 2026", url: "/articles/best-free-games-for-low-end-pcs.html", tag: "Gaming", time: "7 min read", img: "/images/thumb-freegames.jpg" },
+    { title: "Best Free Tools Every Gamer Should Install in 2026", url: "/articles/best-free-tools-for-gamers.html", tag: "Tech Guide", time: "5 min read", img: "/images/thumb-tools.jpg" },
+    { title: "Best Gaming Headsets Under $50 in 2026", url: "/articles/best-gaming-headsets-under-50.html", tag: "Review", time: "6 min read", img: "/images/thumb-headset.jpg" },
+    { title: "Best Gaming Mice Under $30 in 2026", url: "/articles/best-gaming-mice-under-30.html", tag: "Review", time: "6 min read", img: "/images/thumb-mice.jpg" },
+    { title: "How to Get Better at FPS Games", url: "/articles/how-to-get-better-at-fps-games.html", tag: "Gaming Guide", time: "8 min read", img: "/images/thumb-fps.jpg" },
+    { title: "How to Monitor Your PC Temperature While Gaming", url: "/articles/how-to-monitor-pc-temperature-while-gaming.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-temp.jpg" },
+    { title: "How to Reduce Input Lag on Any Monitor", url: "/articles/how-to-reduce-input-lag-on-any-monitor.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-monitor.jpg" },
+    { title: "How to Speed Up Your PC for Gaming", url: "/articles/how-to-speed-up-your-pc-for-gaming.html", tag: "Tech Guide", time: "8 min read", img: "/images/thumb-speed.jpg" },
+    { title: "SSD vs HDD for Gaming: Does It Actually Matter?", url: "/articles/ssd-vs-hdd-for-gaming.html", tag: "Tech", time: "6 min read", img: "/images/thumb-ssd.jpg" },
+    { title: "Top 10 Indie Games Worth Your Time in 2026", url: "/articles/top-10-indie-games-worth-your-time.html", tag: "Gaming", time: "7 min read", img: "/images/thumb-indie.jpg" },
+    { title: "How to Upgrade Your RAM for Gaming", url: "/articles/how-to-upgrade-your-ram-for-gaming.html", tag: "Tech Guide", time: "7 min read", img: "/images/thumb-ram.jpg" },
+    { title: "Wi-Fi vs Ethernet for Gaming", url: "/articles/wifi-vs-ethernet-for-gaming.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-wifi.jpg" },
+    { title: "How to Clean Your PC Without Breaking It", url: "/articles/how-to-clean-your-pc.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-clean.jpg" },
+    { title: "Best Free Antivirus for Gamers in 2026", url: "/articles/best-free-antivirus-for-gamers.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-antivirus.jpg" },
+    { title: "Best Budget Gaming Monitors Under $200", url: "/articles/best-budget-gaming-monitors-under-200.html", tag: "Review", time: "7 min read", img: "/images/thumb-monitor-budget.jpg" },
+    { title: "Best Budget Smartphones for Gaming", url: "/articles/best-budget-smartphones-for-gaming.html", tag: "Review", time: "7 min read", img: "/images/thumb-phones.jpg" },
+    { title: "How to Optimize Windows 11 for Gaming", url: "/articles/how-to-optimize-windows-11-for-gaming.html", tag: "Tech Guide", time: "7 min read", img: "/images/thumb-win11.jpg" },
+    { title: "Best Mechanical Keyboards Under $50", url: "/articles/best-mechanical-keyboards-under-50.html", tag: "Review", time: "6 min read", img: "/images/thumb-keyboard.jpg" },
+    { title: "How to Fix High Ping in Online Games", url: "/articles/how-to-fix-high-ping.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-ping.jpg" },
+    { title: "Best Free PC Games on Steam in 2026", url: "/articles/best-free-pc-games-on-steam-2026.html", tag: "Gaming", time: "7 min read", img: "/images/thumb-steam.jpg" },
+    { title: "How to Record Your Gameplay for Free", url: "/articles/how-to-record-gameplay-for-free.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-record.jpg" },
+    { title: "How to Set Up Dual Monitors for Gaming", url: "/articles/how-to-set-up-dual-monitors-for-gaming.html", tag: "Tech Guide", time: "7 min read", img: "/images/thumb-dual-monitors.jpg" },
+    { title: "Best Gaming Chairs Under $150", url: "/articles/best-gaming-chairs-under-150.html", tag: "Review", time: "6 min read", img: "/images/thumb-gaming-chair.jpg" },
+    { title: "Best Free Mobile Games in 2026", url: "/articles/best-free-mobile-games-2026.html", tag: "Gaming", time: "7 min read", img: "/images/thumb-mobile-games.jpg" },
+    { title: "How to Extend Your Phone Battery Life for Gaming", url: "/articles/how-to-extend-phone-battery-for-gaming.html", tag: "Tech Guide", time: "6 min read", img: "/images/thumb-battery.jpg" },
+    { title: "Best Gaming Earbuds Under $50", url: "/articles/best-gaming-earbuds-under-50.html", tag: "Review", time: "6 min read", img: "/images/thumb-earbuds.jpg" }
+  ];
+  (function() {
+    var current = window.location.pathname.split('/').pop();
+    var others = allArticles.filter(function(a) { return a.url.split('/').pop() !== current; });
+    for (var i = others.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var tmp = others[i]; others[i] = others[j]; others[j] = tmp; }
+    var picks = others.slice(0, 3);
+    var grid = document.getElementById('readNextGrid');
+    if (grid) {
+      grid.innerHTML = picks.map(function(a) {
+        return '<a href="' + a.url + '" class="read-next-card"><img src="' + a.img + '" alt="' + a.title + '"><div class="rn-body"><span class="rn-tag">' + a.tag + '</span><div class="rn-title">' + a.title + '</div><span class="rn-time">' + a.time + '</span></div></a>';
+      }).join('');
+    }
+  })();
+  </script>
+</article>
+<footer>
+  <p>&#169; 2026 <a href="../index.html">TechGameHQ</a> &#8212; Your Headquarters for Tech &amp; Gaming<br><br><small style="color:rgba(255,255,255,0.4);font-size:0.75rem;">TechGameHQ is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</small></p>
+</footer>
+</body>
+</html>
