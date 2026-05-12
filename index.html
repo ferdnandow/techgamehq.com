@@ -972,6 +972,7 @@
 
         <div class="load-more-wrap">
           <button class="btn-load-more" id="load-more-btn">+ Load More Articles</button>
+          <button class="btn-load-more" id="load-less-btn" style="display:none;margin-left:0.75rem;background:var(--muted);">&#8722; Show Less</button>
         </div>
 
       </div><!-- /compact-grid -->
@@ -1060,16 +1061,27 @@
 
 <script>
 (function() {
-  var btn = document.getElementById('load-more-btn');
-  if (!btn) return;
+  var moreBtn = document.getElementById('load-more-btn');
+  var lessBtn = document.getElementById('load-less-btn');
+  if (!moreBtn) return;
   var hidden = Array.prototype.slice.call(document.querySelectorAll('.ccard.hidden'));
   var shown = 0;
   var batch = 6;
-  btn.addEventListener('click', function() {
+
+  moreBtn.addEventListener('click', function() {
     var toShow = hidden.slice(shown, shown + batch);
     toShow.forEach(function(c) { c.classList.remove('hidden'); });
     shown += toShow.length;
-    if (shown >= hidden.length) btn.style.display = 'none';
+    if (shown >= hidden.length) moreBtn.style.display = 'none';
+    lessBtn.style.display = 'inline-block';
+  });
+
+  lessBtn.addEventListener('click', function() {
+    hidden.forEach(function(c) { c.classList.add('hidden'); });
+    shown = 0;
+    moreBtn.style.display = 'inline-block';
+    lessBtn.style.display = 'none';
+    document.getElementById('more').scrollIntoView({ behavior: 'smooth' });
   });
 })();
 </script>
