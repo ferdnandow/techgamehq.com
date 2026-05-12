@@ -161,27 +161,70 @@
     margin-top: 0.3rem;
   }
 
-  /* ── CATEGORIES BAR ── */
-  .categories {
-    border-bottom: 1px solid var(--border);
-    background: var(--off-white);
+  /* ── CATEGORIES NAV (dropdown) ── */
+  .cat-nav {
+    background: #1e1d1b;
+    border-bottom: 3px solid var(--accent-warm);
+    position: relative; z-index: 90;
   }
-  .categories-inner {
+  .cat-nav-inner {
     max-width: 1200px; margin: 0 auto;
     padding: 0 2rem;
-    display: flex; gap: 0; overflow-x: auto;
+    display: flex; align-items: stretch;
   }
-  .cat-link {
-    display: flex; align-items: center; gap: 6px;
-    padding: 0.9rem 1.4rem;
-    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em;
+  .cat-nav-list {
+    display: flex; list-style: none; margin: 0; padding: 0;
+  }
+  .cat-nav-item { position: relative; }
+  .cat-nav-link {
+    display: flex; align-items: center; gap: 5px;
+    padding: 0.75rem 1.2rem;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.07em;
     text-transform: uppercase; text-decoration: none;
-    color: var(--muted); border-right: 1px solid var(--border);
-    white-space: nowrap; transition: all 0.2s;
+    color: rgba(255,255,255,0.72);
+    white-space: nowrap;
+    border-right: 1px solid rgba(255,255,255,0.07);
+    transition: color 0.2s, background 0.2s;
   }
-  .cat-link:first-child { border-left: 1px solid var(--border); }
-  .cat-link:hover { background: var(--white); color: var(--text); }
-  .cat-link.active { background: var(--text); color: var(--white); }
+  .cat-nav-link svg { width: 9px; height: 9px; opacity: 0.45; flex-shrink: 0; }
+  .cat-nav-item:hover > .cat-nav-link { color: #fff; background: rgba(255,255,255,0.09); }
+  /* Dropdown panel */
+  .cat-dropdown {
+    position: absolute; top: 100%; left: 0;
+    min-width: 248px;
+    background: var(--white);
+    border-top: 3px solid var(--accent-warm);
+    box-shadow: 0 10px 32px rgba(0,0,0,0.18);
+    z-index: 200;
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transform: translateY(-5px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  }
+  .cat-nav-item:hover .cat-dropdown {
+    opacity: 1; visibility: visible; pointer-events: auto;
+    transform: translateY(0);
+  }
+  .cat-dropdown-list { list-style: none; padding: 0.5rem 0; margin: 0; }
+  .cat-dropdown-link {
+    display: block; padding: 0.6rem 1.2rem;
+    font-size: 0.88rem; line-height: 1.4;
+    color: var(--text); text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: background 0.14s, color 0.14s, border-color 0.14s;
+  }
+  .cat-dropdown-link:hover {
+    background: var(--off-white); color: var(--accent);
+    border-left-color: var(--accent-warm);
+  }
+  .cat-dropdown-divider { height: 1px; background: var(--border); margin: 0.4rem 0; }
+  .cat-dropdown-see-all {
+    display: block; padding: 0.55rem 1.2rem;
+    font-size: 0.74rem; font-weight: 700; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--accent); text-decoration: none;
+    transition: color 0.15s;
+  }
+  .cat-dropdown-see-all:hover { color: var(--accent-warm); }
+  @media (max-width: 960px) { .cat-nav { display: none; } }
 
   /* ── SITE CONTENT WRAPPER ── */
   .site-content { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
@@ -483,17 +526,109 @@
   </div>
 </div>
 
-<!-- ══ CATEGORIES BAR ══ -->
-<div class="categories">
-  <div class="categories-inner">
-    <a href="#" class="cat-link active">All</a>
-    <a href="#tech-guides" class="cat-link">Tech Guides</a>
-    <a href="#gaming" class="cat-link">Gaming</a>
-    <a href="#reviews" class="cat-link">Reviews</a>
-    <a href="#more" class="cat-link">PC Setup</a>
-    <a href="#more" class="cat-link">Mobile</a>
+<!-- ══ CATEGORIES NAV ══ -->
+<nav class="cat-nav" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <ul class="cat-nav-list">
+
+      <li class="cat-nav-item">
+        <a href="#tech-guides" class="cat-nav-link">
+          Tech Guides
+          <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 1l4 4 4-4"/></svg>
+        </a>
+        <div class="cat-dropdown">
+          <ul class="cat-dropdown-list">
+            <li><a href="articles/how-to-optimize-windows-11-for-gaming.html" class="cat-dropdown-link">Optimize Windows 11 for Gaming</a></li>
+            <li><a href="articles/how-to-upgrade-your-ram-for-gaming.html" class="cat-dropdown-link">How to Upgrade Your RAM for Gaming</a></li>
+            <li><a href="articles/how-to-speed-up-your-pc-for-gaming.html" class="cat-dropdown-link">Speed Up Your PC for Gaming</a></li>
+            <li><a href="articles/how-to-fix-high-ping.html" class="cat-dropdown-link">How to Fix High Ping</a></li>
+            <li><a href="articles/ssd-vs-hdd-for-gaming.html" class="cat-dropdown-link">SSD vs HDD for Gaming</a></li>
+            <li><a href="articles/wifi-vs-ethernet-for-gaming.html" class="cat-dropdown-link">Wi-Fi vs Ethernet for Gaming</a></li>
+            <li class="cat-dropdown-divider"></li>
+            <li><a href="#tech-guides" class="cat-dropdown-see-all">See all Tech Guides &#8594;</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="cat-nav-item">
+        <a href="#gaming" class="cat-nav-link">
+          Gaming
+          <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 1l4 4 4-4"/></svg>
+        </a>
+        <div class="cat-dropdown">
+          <ul class="cat-dropdown-list">
+            <li><a href="articles/top-10-indie-games-worth-your-time.html" class="cat-dropdown-link">Top 10 Indie Games Worth Your Time</a></li>
+            <li><a href="articles/best-free-pc-games-on-steam-2026.html" class="cat-dropdown-link">Best Free PC Games on Steam 2026</a></li>
+            <li><a href="articles/best-free-games-for-low-end-pcs.html" class="cat-dropdown-link">Best Free Games for Low-End PCs</a></li>
+            <li><a href="articles/how-to-get-better-at-fps-games.html" class="cat-dropdown-link">How to Get Better at FPS Games</a></li>
+            <li><a href="articles/best-free-mobile-games-2026.html" class="cat-dropdown-link">Best Free Mobile Games 2026</a></li>
+            <li class="cat-dropdown-divider"></li>
+            <li><a href="#gaming" class="cat-dropdown-see-all">See all Gaming &#8594;</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="cat-nav-item">
+        <a href="#reviews" class="cat-nav-link">
+          Reviews
+          <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 1l4 4 4-4"/></svg>
+        </a>
+        <div class="cat-dropdown">
+          <ul class="cat-dropdown-list">
+            <li><a href="articles/best-budget-graphics-cards-2026.html" class="cat-dropdown-link">Best Budget Graphics Cards 2026</a></li>
+            <li><a href="articles/best-budget-gaming-monitors-under-200.html" class="cat-dropdown-link">Best Gaming Monitors Under $200</a></li>
+            <li><a href="articles/best-gaming-headsets-under-50.html" class="cat-dropdown-link">Best Gaming Headsets Under $50</a></li>
+            <li><a href="articles/best-gaming-chairs-under-150.html" class="cat-dropdown-link">Best Gaming Chairs Under $150</a></li>
+            <li><a href="articles/best-mechanical-keyboards-under-50.html" class="cat-dropdown-link">Best Mechanical Keyboards Under $50</a></li>
+            <li><a href="articles/best-gaming-mice-under-30.html" class="cat-dropdown-link">Best Gaming Mice Under $30</a></li>
+            <li class="cat-dropdown-divider"></li>
+            <li><a href="#reviews" class="cat-dropdown-see-all">See all Reviews &#8594;</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="cat-nav-item">
+        <a href="#more" class="cat-nav-link">
+          PC Setup
+          <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 1l4 4 4-4"/></svg>
+        </a>
+        <div class="cat-dropdown">
+          <ul class="cat-dropdown-list">
+            <li><a href="articles/how-to-set-up-a-gaming-room-on-a-budget.html" class="cat-dropdown-link">Set Up a Gaming Room on a Budget</a></li>
+            <li><a href="articles/how-to-set-up-dual-monitors-for-gaming.html" class="cat-dropdown-link">How to Set Up Dual Monitors</a></li>
+            <li><a href="articles/how-to-clean-your-pc.html" class="cat-dropdown-link">How to Clean Your PC</a></li>
+            <li><a href="articles/how-to-monitor-pc-temperature-while-gaming.html" class="cat-dropdown-link">Monitor Your PC Temperature</a></li>
+            <li><a href="articles/how-to-reduce-input-lag-on-any-monitor.html" class="cat-dropdown-link">Reduce Input Lag on Any Monitor</a></li>
+            <li class="cat-dropdown-divider"></li>
+            <li><a href="#more" class="cat-dropdown-see-all">See all PC Setup &#8594;</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="cat-nav-item">
+        <a href="#more" class="cat-nav-link">
+          Mobile
+          <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 1l4 4 4-4"/></svg>
+        </a>
+        <div class="cat-dropdown">
+          <ul class="cat-dropdown-list">
+            <li><a href="articles/best-free-mobile-games-2026.html" class="cat-dropdown-link">Best Free Mobile Games 2026</a></li>
+            <li><a href="articles/mobile-gaming-tips-to-get-better.html" class="cat-dropdown-link">Mobile Gaming Tips to Get Better</a></li>
+            <li><a href="articles/how-to-extend-phone-battery-for-gaming.html" class="cat-dropdown-link">Extend Phone Battery for Gaming</a></li>
+            <li><a href="articles/best-budget-smartphones-for-gaming.html" class="cat-dropdown-link">Best Budget Smartphones for Gaming</a></li>
+            <li class="cat-dropdown-divider"></li>
+            <li><a href="#more" class="cat-dropdown-see-all">See all Mobile &#8594;</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="cat-nav-item">
+        <a href="about.html" class="cat-nav-link">About</a>
+      </li>
+
+    </ul>
   </div>
-</div>
+</nav>
 
 <!-- ══ MAIN CONTENT ══ -->
 <div class="site-content">
