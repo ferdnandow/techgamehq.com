@@ -37,7 +37,7 @@ $cssToAdd = @'
 
 $fernandoBio = @'
 <div class="author-bio">
-  <img src="../images/me.jpg" alt="Fernando Oliveira">
+  <img src="../images/fernando.jpg" alt="Fernando Oliveira">
   <div class="bio-content">
     <span class="bio-label">Written by</span>
     <span class="bio-name">Fernando Oliveira</span>
