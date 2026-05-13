@@ -97,12 +97,12 @@
   <span class="article-tag">Tech Guide</span>
   <h1>How to Upgrade Your RAM for Gaming</h1>
   <div class="article-meta">
-    <span>By TechGameHQ Staff</span>
+    <span>By Fernando Oliveira</span>
     <span>May 2026</span>
-    <span>7 min read</span>
+    <span>10 min read</span>
     <span>Tech Guide</span>
   </div>
-  <p class="intro">A RAM upgrade is one of the cheapest and most impactful things you can do for your PC. More RAM means fewer stutters, smoother multitasking, and better performance in modern games — and it takes under 10 minutes to install.</p>
+  <p class="intro">A RAM upgrade is one of the cheapest and most impactful things you can do for your PC. More RAM means fewer stutters, smoother multitasking, and better performance in modern games — and it takes under 10 minutes to install. Whether you're on 8GB struggling through Warzone lobbies or already on 16GB wanting to future-proof your rig, this guide covers everything you need to know. If you're planning a bigger upgrade at the same time, check out our guide on <a href="../articles/how-to-choose-pc-parts-on-a-budget.html">how to choose PC parts on a budget</a>.</p>
 
   <h2>How Much RAM Do You Actually Need?</h2>
   <p>Not all RAM upgrades are equal. The difference between 8GB and 16GB is massive for gaming. The jump from 16GB to 32GB is noticeable but not essential for most players.</p>
@@ -119,7 +119,7 @@
     </tbody>
   </table>
 
-  <p>If you have 8GB, upgrading to 16GB will be one of the most noticeable improvements you can make. If you already have 16GB and games feel smooth, there's no rush to upgrade.</p>
+  <p>If you have 8GB, upgrading to 16GB will be one of the most noticeable improvements you can make. If you already have 16GB and games feel smooth, there's no rush to upgrade. For the full picture on what's bottlenecking your system, read our guide on how to <a href="../articles/how-to-monitor-pc-temperature-while-gaming.html">monitor your PC temperature</a> — thermal throttling can cause stutters that look exactly like insufficient RAM.</p>
 
   <h2>DDR4 vs DDR5 — Which Do You Have?</h2>
   <p>Your motherboard determines which type of RAM you can use — you cannot mix DDR4 and DDR5, and they are not interchangeable.</p>
@@ -140,7 +140,7 @@
     <li><strong>Maximum speed your motherboard supports</strong> — check your motherboard's spec sheet or manufacturer website</li>
     <li><strong>Number of free slots</strong> — most motherboards have 2 or 4 slots. If all slots are full, you'll need to replace existing sticks.</li>
   </ol>
-  <p>For best performance, always buy RAM in matched pairs (a kit of 2 sticks). This enables dual-channel mode, which gives a noticeable performance boost over a single stick of the same total capacity.</p>
+  <p>For best performance, always buy RAM in matched pairs (a kit of 2 sticks). This enables dual-channel mode, which gives a noticeable performance boost over a single stick of the same total capacity. And if you're wondering whether to prioritize RAM or a new display for your budget, check out the <a href="../articles/best-budget-gaming-monitors-under-200.html">best budget gaming monitors under $200</a> — sometimes the monitor upgrade has more visible impact than going from 16GB to 32GB.</p>
 
   <h2>Step-by-Step: Installing RAM</h2>
 
@@ -189,6 +189,53 @@
     <a href="https://www.amazon.com/s?k=32gb+ddr5+gaming+ram&tag=techgamehq-20" target="_blank" rel="noopener">Browse 32GB DDR5 RAM Kits on Amazon &#8594;</a>
   </div>
 
+  <h2>Understanding RAM Speed and Timings</h2>
+  <p>RAM speed is measured in MHz (e.g., DDR4-3200 or DDR5-5600). Higher numbers generally mean faster data transfer, but the gains are smaller than you might expect for gaming. Going from DDR4-3200 to DDR4-3600 typically yields a 2–5% FPS improvement in CPU-limited scenarios. Timings (like CL16 or CL18) represent latency — lower is better. A DDR4-3200 CL16 kit performs similarly to a DDR4-3600 CL18 kit for most games.</p>
+  <p>For AMD Ryzen processors, RAM speed matters more than for Intel. The Ryzen "Infinity Fabric" connects different parts of the CPU and runs at half your RAM speed. Ryzen systems with DDR4-3600 run the Infinity Fabric at 1800MHz, which is its ideal operating point — faster RAM can require manual tuning or may actually perform worse if the fabric runs out of sync.</p>
+
+  <h2>Dual-Channel vs Single-Channel: A Real-World Difference</h2>
+  <p>Dual-channel mode means your RAM sticks work in parallel, effectively doubling the data path between your CPU and memory. Installing two 8GB sticks instead of one 16GB stick gives you this free performance bonus with no extra cost — just make sure to install them in the correct slots (usually slots 2 and 4, but check your motherboard manual).</p>
+  <p>In games, dual-channel can improve average FPS by 5–15% and reduce 1% lows significantly. For integrated graphics (laptops or APUs), the difference can be 20–30% since the GPU shares the same memory bus. Always buy a matched kit of two sticks rather than a single stick, even if they have the same total capacity.</p>
+
+  <div class="tip-box">
+    <strong>Pro Tip: Use JEDEC-Compliant RAM First</strong>
+    If you're upgrading an older system and aren't sure about XMP compatibility, start with a DDR4-2666 or DDR4-3000 kit. These run at spec without needing BIOS changes. Once you've confirmed stability, you can experiment with faster kits.
+  </div>
+
+  <h2>How to Check If Your Upgrade Actually Worked</h2>
+  <p>After installing and enabling XMP/EXPO, run a quick benchmark to confirm performance improved. Use <strong>UserBenchmark</strong> (free) or the built-in Windows Memory Diagnostic to check for errors. In games, check your 1% low FPS — this is where RAM upgrades show the biggest impact, as more RAM reduces the frequency of hitches and stutters that cause those spikes.</p>
+  <p>You can also watch <a href="../articles/how-to-monitor-pc-temperature-while-gaming.html">how to monitor your PC temperature</a> while running benchmarks — RAM doesn't generate much heat, but stress testing everything at once is a good way to confirm system stability. And if you notice your system feeling slow even after the upgrade, consider reading our guide on how to <a href="../articles/ssd-vs-hdd-for-gaming.html">SSD vs HDD for gaming</a> — sometimes sluggishness is storage-related, not RAM.</p>
+
+  <h2>Common Mistakes to Avoid</h2>
+  <ul>
+    <li><strong>Mixing kits:</strong> Even identical-looking sticks from different batches can have incompatible chips, causing instability or boot failures. Always buy a matched dual-channel kit.</li>
+    <li><strong>Skipping XMP/EXPO:</strong> Without enabling this in BIOS, your DDR4-3200 kit runs at 2133MHz — less than two-thirds of what you paid for.</li>
+    <li><strong>Installing in the wrong slots:</strong> Putting both sticks in slots 1 and 2 instead of 1 and 3 (or 2 and 4) disables dual-channel. Check your motherboard manual for the correct pairing.</li>
+    <li><strong>Buying more than you need:</strong> 64GB of RAM has zero gaming benefit over 32GB. Save that money for your GPU.</li>
+    <li><strong>Touching the gold contacts:</strong> Oils from your fingers can cause oxidation. Hold sticks by the edges only.</li>
+    <li><strong>Not discharging static:</strong> Touch a metal part of your case before handling components to discharge any static electricity buildup.</li>
+  </ul>
+
+  <h2>Advanced Tips</h2>
+  <h3>Manual RAM Overclocking (XMP Beyond)</h3>
+  <p>If you want to push further than XMP allows, you can manually enter RAM timings in BIOS. This is advanced and can cause instability if done incorrectly, but tight timings on DDR4-3600 can approach DDR4-4000 performance. Use <strong>MemTest86</strong> (free bootable tool) to verify stability after any changes — run it for at least two passes overnight.</p>
+
+  <h3>Using Task Manager to Monitor RAM Usage</h3>
+  <p>Open Task Manager (Ctrl+Shift+Esc) → Performance → Memory. Watch the "In Use" reading while gaming. If it approaches your total RAM amount and you see regular hitching, you've found your bottleneck. Games like Microsoft Flight Simulator 2024 and Hogwarts Legacy can use 12–14GB alone, making 16GB tight if you have a browser open.</p>
+
+  <h3>Optimize Windows Virtual Memory</h3>
+  <p>Windows uses a page file on your SSD as overflow RAM. With 16GB of physical RAM, set the page file to 1.5× your RAM (24GB) to give Windows headroom for memory spikes. Go to System Properties → Advanced → Performance Settings → Advanced → Virtual Memory. If you pair this RAM upgrade with a switch to an <a href="../articles/ssd-vs-hdd-for-gaming.html">SSD vs HDD for gaming</a>, the page file will be much faster too.</p>
+
+  <h2>Frequently Asked Questions</h2>
+  <h3>Can I add RAM to my laptop?</h3>
+  <p>Many laptops have upgradeable RAM, but some modern thin-and-light laptops (especially Apple Silicon Macs and some ultrabooks) have RAM soldered to the motherboard. Check your laptop's service manual or use Crucial's online compatibility tool before purchasing. Most gaming laptops have two SO-DIMM slots and support upgrades.</p>
+
+  <h3>Does RAM brand matter?</h3>
+  <p>Not much for performance — Corsair, G.Skill, Kingston, and Crucial all use similar underlying chips. What matters is the chip manufacturer (Samsung B-die is highly regarded for overclocking, but any reputable brand works). Stick to established brands for warranty support and avoid no-name RAM from unknown sellers.</p>
+
+  <h3>My PC won't boot after installing new RAM — what do I do?</h3>
+  <p>First, try reseating the sticks firmly until both clips click. If it still fails, try booting with just one stick in slot A2 (the second slot from the CPU). If that works, the other stick or slot may be faulty. Also check that XMP is disabled for your first boot — it's easier to troubleshoot at stock speeds before enabling XMP.</p>
+
   <div class="conclusion">
     <h2>The Verdict</h2>
     <p>If you're on 8GB, upgrade to 16GB — it's the single best value improvement you can make right now. Install it in dual-channel, enable XMP/EXPO, and you'll notice the difference immediately in load times, stutter reduction, and multitasking.</p>
@@ -196,14 +243,12 @@
   </div>
 
   <div class="author-bio">
-    <div class="author-avatar">TG</div>
+    <div class="author-avatar">FO</div>
     <div class="bio-content">
       <span class="bio-label">Written by</span>
-      <span class="bio-name">TechGameHQ Staff</span>
-      <p class="bio-text">The TechGameHQ editorial team &#8212; honest guides, real testing, and budget-friendly picks for gamers and tech enthusiasts.</p>
-      <div class="bio-links">
-        <a href="../about.html">About TechGameHQ</a>
-      </div>
+      <span class="bio-name">Fernando Oliveira</span>
+      <p class="bio-text">Third-year Computer Science student in Ireland, gamer and tech enthusiast since childhood. Fernando writes hands-on guides and honest reviews for TechGameHQ.</p>
+      <div class="bio-links"><a href="../about.html">About the Author</a></div>
     </div>
   </div>
 

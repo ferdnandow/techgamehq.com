@@ -82,9 +82,9 @@
   <span class="article-tag">Tech Guide</span>
   <h1>How to Fix High Ping in Online Games</h1>
   <div class="article-meta">
-    <span>By TechGameHQ Staff</span>
+    <span>By Fernando Oliveira</span>
     <span>May 2026</span>
-    <span>6 min read</span>
+    <span>12 min read</span>
     <span>Tech Guide</span>
   </div>
   <p class="intro">High ping ruins games. One moment you're winning a fight, the next you're dead because your packets arrived late. Most ping problems are fixable &#8212; and the solution is often simpler than you think. Here's how to diagnose and fix them, step by step.</p>
@@ -155,6 +155,44 @@
     If you've done everything above and still have high ping, the issue may be with your ISP or the game server itself. Check websites like <strong>Downdetector</strong> to see if others are reporting the same issue. If it's consistent and only to one game, contact your ISP &#8212; some ISPs throttle gaming traffic.
   </div>
 
+  <h2>Common Mistakes That Keep Your Ping High</h2>
+  <p>These are the fixes people try first that either don't work or make things worse. Save yourself the time.</p>
+  <ul>
+    <li><strong>Using a VPN to "reduce ping"</strong> — VPNs add routing overhead and almost always increase ping. Unless your ISP is specifically routing game traffic poorly and a VPN bypasses it, a VPN will make latency worse, not better. Skip the paid "gaming VPN" marketing.</li>
+    <li><strong>Restarting just the game, not the router</strong> — if your router has been on for weeks, its memory and connection tables become bloated. A full router restart (unplug, wait 30 seconds, plug back in) often resolves persistent high ping that a game restart won't fix.</li>
+    <li><strong>Blaming your PC when the issue is the network</strong> — high ping is almost never a CPU or RAM issue. It's a network issue. Upgrading hardware won't help if your connection to the server is the bottleneck.</li>
+    <li><strong>Ignoring packet loss</strong> — ping alone doesn't tell the full story. Packet loss of even 1–2% causes severe rubber-banding and lag that feels much worse than 100ms stable ping. Check your packet loss percentage in-game, not just latency.</li>
+    <li><strong>Playing on Wi-Fi through walls or floors</strong> — every wall and floor your Wi-Fi signal passes through degrades it. If Ethernet isn't possible, at minimum move closer to your router or upgrade to a Wi-Fi 6 router with better range.</li>
+  </ul>
+
+  <h2>Advanced Tips: Digging Deeper</h2>
+  <p>If basic fixes haven't solved your ping, here are more targeted approaches worth investigating.</p>
+
+  <h3>Run a PathPing to diagnose where the lag is</h3>
+  <p>Open Command Prompt and run <code>pathping [game server IP]</code> or <code>tracert [game server IP]</code>. This shows every hop your connection takes between your PC and the server, and how much latency is added at each step. If you see a huge latency spike at one specific hop, that's where the bottleneck is — often inside your ISP's network, which you can report to them.</p>
+
+  <h3>Check for ISP peak-hour throttling</h3>
+  <p>Many ISPs deliver different speeds at peak times (evenings and weekends) versus off-peak (early morning). Run ping tests at different times of day. If your ping is consistently good at 7am but terrible at 8pm, that's ISP congestion — not anything you can fix locally. Document the pattern and contact your ISP with evidence.</p>
+
+  <h3>Switch to a wired powerline adapter if Ethernet isn't possible</h3>
+  <p>Powerline adapters send your internet signal through your home's electrical wiring. They're not as good as a direct Ethernet cable but dramatically more stable than Wi-Fi — typically 5–15ms better ping and almost no spike variance. A starter kit costs $30–50 and plugs into any outlet. This pairs well with our full <a href="../articles/wifi-vs-ethernet-for-gaming.html">Wi-Fi vs Ethernet for gaming</a> comparison if you want to understand the tradeoffs in detail.</p>
+
+  <h3>Optimize your in-game network settings</h3>
+  <p>Many games have network-related settings that affect perceived lag: server tick rate selection, interpolation, and network bandwidth limits. In games like Valorant and CS2, set <code>cl_interp</code> and network rate settings to match your connection speed. Check the specific game's network optimization guide for exact values.</p>
+
+  <p>Don't forget that network performance is just one part of overall gaming experience. If you've fixed your ping but still feel sluggish, check whether you need to <a href="../articles/how-to-optimize-windows-11-for-gaming.html">optimize Windows 11 for gaming</a> or <a href="../articles/how-to-reduce-input-lag-on-any-monitor.html">reduce input lag on any monitor</a> — both affect how responsive the game feels even with good ping. And if you're on a wireless connection, the full <a href="../articles/wifi-vs-ethernet-for-gaming.html">Wi-Fi vs Ethernet for gaming</a> breakdown explains why a wired connection is the definitive solution for competitive play.</p>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>What is considered good ping for competitive gaming?</h3>
+  <p>Anything under 40ms is excellent for competitive play. 40–80ms is perfectly playable for most players. Above 100ms, you'll start noticing meaningful disadvantages in fast-paced games like Valorant, CS2, or Warzone — enemies will appear to teleport, and your shots may register late. The goal should always be to get as close to your physical minimum as possible, which is limited by your distance from the server.</p>
+
+  <h3>Can my modem cause high ping even with a good router?</h3>
+  <p>Yes. An old or failing modem creates poor signal quality between your home and your ISP, which directly increases latency. If your modem is more than 4–5 years old and you've done all other fixes, ask your ISP to test the line quality. Many ISPs will replace outdated equipment for free or at low cost if signal degradation is confirmed.</p>
+
+  <h3>Does ping affect FPS games more than other genres?</h3>
+  <p>Yes, significantly. In turn-based or strategy games, 150ms ping is barely noticeable. In FPS games, battle royales, and fighting games, even 60–80ms creates a meaningful disadvantage because hit registration and character animations are tightly tied to the server tick rate. The faster and more reaction-based the game, the more every millisecond of latency matters.</p>
+
   <div class="conclusion">
     <h2>The Verdict</h2>
     <p>Start with Ethernet and correct server region &#8212; those two fixes alone resolve most high ping issues. Then work down the list. Most ping problems are local and fixable within 20 minutes.</p>
@@ -162,12 +200,12 @@
   </div>
 
   <div class="author-bio">
-    <div class="author-avatar">TG</div>
+    <div class="author-avatar">FO</div>
     <div class="bio-content">
       <span class="bio-label">Written by</span>
-      <span class="bio-name">TechGameHQ Staff</span>
-      <p class="bio-text">The TechGameHQ editorial team &#8212; honest guides, real testing, and budget-friendly picks for gamers and tech enthusiasts.</p>
-      <div class="bio-links"><a href="../about.html">About TechGameHQ</a></div>
+      <span class="bio-name">Fernando Oliveira</span>
+      <p class="bio-text">Third-year Computer Science student in Ireland, gamer and tech enthusiast since childhood. Fernando writes hands-on guides and honest reviews for TechGameHQ.</p>
+      <div class="bio-links"><a href="../about.html">About the Author</a></div>
     </div>
   </div>
   <div class="read-next">

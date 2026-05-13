@@ -79,7 +79,7 @@
   <div class="article-meta">
     <span>By Fernando Oliveira</span>
     <span>May 2026</span>
-    <span>7 min read</span>
+    <span>13 min read</span>
     <span>Tech Guide</span>
   </div>
   <p class="intro">A second monitor changes how you game. Keep Discord, YouTube, or a walkthrough open while you play &#8212; without alt-tabbing and tanking your performance. Here&#8217;s exactly how to set it up from scratch.</p>
@@ -176,6 +176,43 @@
     <strong>&#128161; Pro tip: NVIDIA Surround vs Dual Monitor</strong>
     NVIDIA Surround combines both monitors into one giant display for gaming. Looks impressive but causes letterboxing issues in most games and isn&#8217;t worth the hassle. Stick with Extend mode &#8212; game on one, everything else on the other.
   </div>
+
+  <h2>Optimizing the Dual Monitor Experience</h2>
+  <p>Getting both monitors detected is just the start. Here's how to make the dual-monitor setup work as smoothly as possible for gaming specifically.</p>
+
+  <h3>Disable the second monitor's G-Sync or FreeSync</h3>
+  <p>If your secondary monitor has adaptive sync (G-Sync or FreeSync), disable it in your GPU control panel for that display. Running adaptive sync on two monitors simultaneously can cause compatibility issues, particularly on NVIDIA cards. Your primary gaming monitor should have adaptive sync enabled; the secondary typically doesn't need it.</p>
+
+  <h3>Match taskbar behavior to dual monitors</h3>
+  <p>Right-click the taskbar and go to <strong>Taskbar settings</strong>. Under <strong>Multiple displays</strong>, you can choose whether to show the taskbar on both screens or just the main one, and whether taskbar buttons appear on all displays or only the relevant one. Most gamers prefer taskbar on both screens so you can access apps without moving the mouse all the way to the primary display.</p>
+
+  <h3>Set per-monitor scaling correctly</h3>
+  <p>If your two monitors are different sizes or resolutions, Windows may set the wrong scaling on one of them. Go to <strong>Display settings</strong>, click each monitor, and set the Scale to 100% for 1080p monitors. Getting this right prevents apps from appearing blurry or too small when moved between screens.</p>
+
+  <h3>Configure audio output per application</h3>
+  <p>If your second monitor has built-in speakers, Windows might switch audio to those speakers automatically. Right-click the volume icon, go to <strong>Open Sound settings &#8594; App volume and device preferences</strong>, and assign each app to the correct audio output. This ensures game audio stays on your headset or speakers while system sounds go elsewhere.</p>
+
+  <h2>Common Dual Monitor Mistakes to Avoid</h2>
+  <p>These mistakes trip up almost everyone setting up dual monitors for the first time.</p>
+  <ul>
+    <li><strong>Using the motherboard's display output for one monitor</strong> — both monitors should be plugged into your GPU. Using one GPU port and one motherboard port disables GPU acceleration on the motherboard-connected screen and can interfere with gaming performance.</li>
+    <li><strong>Mismatched resolutions without scaling adjustment</strong> — running one 1080p and one 1440p monitor is fine, but make sure Windows scaling is correct on both. Blurry text or oversized interface elements are almost always a scaling issue, not a cable or hardware issue.</li>
+    <li><strong>Forgetting to set the primary monitor back after rearranging</strong> — if you physically move your monitors and change the layout in Display Settings, double-check that the correct monitor is still set as primary. Games and apps spawn on the primary by default.</li>
+    <li><strong>Running high refresh rate on both monitors when your GPU can't handle it</strong> — driving two 144Hz monitors requires more GPU bandwidth than one. If you're getting performance issues, cap the secondary at 60Hz since you're not gaming on it.</li>
+  </ul>
+
+  <p>For a complete gaming setup, dual monitors pair naturally with a well-organized desk space. If you're building from scratch, our <a href="../articles/how-to-set-up-a-gaming-room-on-a-budget.html">gaming room setup guide</a> covers desk sizing, cable management, and everything else around the monitors. You should also check our <a href="../articles/best-budget-gaming-monitors-under-200.html">best budget gaming monitors</a> guide if you're looking for a second screen on a tight budget. Once your dual setup is running, make sure you've also <a href="../articles/how-to-optimize-windows-11-for-gaming.html">optimized Windows 11 for gaming</a> — display settings and per-monitor scaling are part of a broader optimization picture.</p>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Can my PC handle dual monitors for gaming?</h3>
+  <p>Any modern GPU with two display outputs can handle dual monitors. The GPU only renders the game on your primary monitor; the secondary display uses very little GPU resources to show static content like Discord or a browser. Even mid-range GPUs from the last 5 years can run dual monitors without any meaningful performance impact on gaming.</p>
+
+  <h3>Does dual monitor setup reduce FPS in games?</h3>
+  <p>In Borderless Windowed mode with a static second screen, the FPS impact is minimal — typically 1–3% at most. Running a video or animation on the second screen uses more GPU resources and can cause slight FPS drops in demanding games. If you're squeezing every frame out of a competitive game, close anything resource-heavy on your second screen before a serious session.</p>
+
+  <h3>My second monitor keeps going to sleep while gaming — how do I fix it?</h3>
+  <p>Go to <strong>Settings &#8594; System &#8594; Power &amp; sleep</strong> and set the screen timeout to "Never" or a longer duration. Also check if your GPU control panel has a display power-saving setting that's putting inactive monitors to sleep. Some monitors also have their own auto-off timer in the OSD menu — check yours and disable it if present.</p>
 
   <div class="conclusion">
     <h2>Final Setup Checklist</h2>

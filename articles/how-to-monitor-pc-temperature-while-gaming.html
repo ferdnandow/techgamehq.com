@@ -93,15 +93,15 @@
   <span class="article-tag">Tech Guide</span>
   <h1>How to Monitor Your PC Temperature While Gaming</h1>
   <div class="article-meta">
-    <span>By TechGameHQ Staff</span>
+    <span>By Fernando Oliveira</span>
     <span>May 2026</span>
-    <span>6 min read</span>
+    <span>10 min read</span>
     <span>Tech</span>
   </div>
-  <p class="intro">High temperatures are the silent killer of gaming PCs. Your PC could be thermal throttling right now — cutting your FPS in half to protect itself — and you'd never know without monitoring. Here's how to check and fix it for free.</p>
+  <p class="intro">High temperatures are the silent killer of gaming PCs. Your PC could be thermal throttling right now — cutting your FPS in half to protect itself — and you'd never know without monitoring. Here's how to check and fix it for free. If you're also seeing general sluggishness beyond temperature issues, our guide on <a href="../articles/how-to-speed-up-your-pc-for-gaming.html">how to speed up your PC for gaming</a> covers the software side of the equation.</p>
 
   <h2>Why Temperature Monitoring Matters</h2>
-  <p>When your CPU or GPU gets too hot, they automatically reduce their performance to avoid damage. This is called thermal throttling. It causes stutters, FPS drops, and crashes — symptoms that look exactly like a hardware problem but are actually just a cooling issue you can fix for free.</p>
+  <p>When your CPU or GPU gets too hot, they automatically reduce their performance to avoid damage. This is called thermal throttling. It causes stutters, FPS drops, and crashes — symptoms that look exactly like a hardware problem but are actually just a cooling issue you can fix for free. If you've recently done a <a href="../articles/how-to-upgrade-your-ram-for-gaming.html">RAM upgrade</a> or changed hardware and temperatures spiked, a recheck of your cooler installation and airflow is the first step.</p>
 
   <h2>Safe Temperature Ranges</h2>
   <table class="temp-table">
@@ -154,28 +154,74 @@
   <p>Thermal paste between your CPU and cooler dries out over time. Replacing it costs about $5-10 and can drop CPU temps by 10-15°C on older systems.</p>
 
   <h3>4. Undervolt Your GPU (Free)</h3>
-  <p>Using MSI Afterburner, you can reduce your GPU's voltage while keeping the same clock speed. This reduces heat and power consumption with no performance loss. Search "GPU undervolt [your GPU model]" on YouTube for a guide specific to your card.</p>
+  <p>Using MSI Afterburner, you can reduce your GPU's voltage while keeping the same clock speed. This reduces heat and power consumption with no performance loss. Search "GPU undervolt [your GPU model]" on YouTube for a guide specific to your card. While you're optimizing performance, also check out <a href="../articles/how-to-reduce-input-lag-on-any-monitor.html">how to reduce input lag on any monitor</a> — lower temperatures and better system responsiveness often go hand-in-hand.</p>
 
   <div class="warning-box">
-    <strong>⚠️ When to Worry</strong>
+    <strong>&#9888;&#65039; When to Worry</strong>
     If your CPU hits 100°C or your GPU hits 90°C+ consistently during gaming, stop playing and investigate immediately. Sustained extreme temps can permanently damage your hardware.
   </div>
+
+  <h2>How to Log Temperatures for Diagnosis</h2>
+  <p>Checking temps in real time is useful, but logging them over a full gaming session gives you far more insight. HWiNFO64 has a built-in logging feature — enable it before you play, run your most demanding game for 30 minutes, then stop logging and open the CSV file. Sort by maximum values to identify your worst-case temperatures and exactly which component hit them.</p>
+  <p>This is especially useful for diagnosing intermittent crashes. If your PC shuts down unexpectedly every 45 minutes, the temperature log will show whether a thermal limit was hit right before the crash or whether the temperature looked normal (pointing to a different cause like a PSU issue or memory error).</p>
+
+  <h2>Thermal Throttling: How to Confirm It's Happening</h2>
+  <p>Thermal throttling is when your CPU or GPU automatically reduces its clock speed to avoid damage. It causes stutters, FPS drops, and sluggish performance that looks like a hardware problem. To confirm throttling: in HWiNFO64, look for a sensor called "CPU Power Limit Throttling" or "Thermal Throttling" — it will show as a percentage. Any value above 0% means throttling is occurring.</p>
+  <p>In MSI Afterburner, watch the GPU clock speed graph. If you see it consistently dropping below its boost clock (say, your GPU is rated 2.5GHz but runs at 1.8GHz during load), it's likely throttling due to heat or power limits. If you've already tried cleaning and re-pasting with no improvement, consider whether your case airflow needs work — a good case with front mesh intake can drop GPU temps by 5–10°C versus a solid-front design.</p>
+
+  <div class="tip-box">
+    <strong>Pro Tip: Monitor Fan Speeds Too</strong>
+    HWiNFO64 shows your fan RPMs alongside temperatures. If your CPU fan is running at only 800 RPM at 90°C, the fan curve may need adjustment. You can set custom fan curves in MSI Afterburner (for GPU) or SpeedFan / BIOS (for CPU). A more aggressive curve at high temps keeps things cooler without making your PC loud during light use.
+  </div>
+
+  <h2>When Cleaning Isn't Enough: Hardware Solutions</h2>
+  <h3>Upgrade Your CPU Cooler</h3>
+  <p>The stock coolers that come with most CPUs are designed for typical office use, not sustained gaming loads. A budget aftermarket cooler like the <strong>Cooler Master Hyper 212</strong> (~$35) can drop CPU temps by 15–25°C compared to a stock Intel or AMD cooler. For high-end CPUs or overclocked systems, a 240mm AIO liquid cooler keeps temps flatter under sustained load.</p>
+
+  <h3>Improve Case Airflow</h3>
+  <p>Airflow is about pressure: you want more cool air coming in than hot air going out, with a positive pressure setup (more intake fans than exhaust). This keeps hot air from sitting inside the case. Ideal setup: 2–3 front intake fans, 1 rear exhaust, 1 top exhaust. Avoid cases with solid metal fronts — they restrict intake severely. The <a href="../articles/how-to-clean-your-pc.html">how to clean your PC</a> guide also covers checking and replacing case fans.</p>
+
+  <h3>Replace Thermal Paste Properly</h3>
+  <p>When re-pasting your CPU, use a pea-sized amount in the center of the IHS (the metal lid). Don't spread it manually — the cooler spreads it evenly when you tighten it down. Spreading it manually can trap air bubbles. Popular affordable thermal pastes: <strong>Arctic MX-4</strong> and <strong>Thermal Grizzly Kryonaut</strong> — both perform similarly and cost $5–15.</p>
+
+  <h2>Common Mistakes to Avoid</h2>
+  <ul>
+    <li><strong>Only checking idle temps:</strong> Idle temps mean nothing for gaming. Always check temps under load — run a game for 20–30 minutes before trusting your readings.</li>
+    <li><strong>Ignoring junction temperature on AMD GPUs:</strong> AMD Radeon cards report two temps: GPU temp and junction (hotspot) temp. The junction temp will always be higher. Values up to 110°C on the junction are normal and expected — don't panic unless it exceeds that or the edge temp hits 90°C.</li>
+    <li><strong>Over-applying thermal paste:</strong> More paste doesn't mean better cooling. Excess paste can squeeze out onto the motherboard and cause shorts. A pea-sized amount in the center is correct every time.</li>
+    <li><strong>Using the PC on carpet or enclosed spaces:</strong> Carpet blocks bottom intake fans and builds up static. Enclosed desks and cabinets trap heat. Place your PC on a hard, elevated surface with clearance on all ventilated sides.</li>
+  </ul>
+
+  <h2>Advanced Tips</h2>
+  <h3>Undervolting Your CPU</h3>
+  <p>Modern Intel and AMD CPUs can often be undervolted — running at lower voltage for the same clock speeds. This reduces heat and power consumption with no performance loss. On Intel, use <strong>Intel XTU</strong> (free). On AMD Ryzen, the BIOS includes a "Precision Boost Override" that can be used to find a lower-voltage stable configuration. Undervolting a laptop CPU can yield 10–20°C lower temps with zero performance cost.</p>
+
+  <h3>Set Quieter Fan Curves</h3>
+  <p>A common mistake is letting the GPU fans stay at 0% until 65°C (the default on many cards) and then spin up aggressively. Setting a gentle fan curve that starts spinning at 40°C and ramps slowly keeps temps flatter and more consistent, reducing the thermal cycling that wears on components over time.</p>
+
+  <h2>Frequently Asked Questions</h2>
+  <h3>Is 80°C bad for a GPU while gaming?</h3>
+  <p>80°C is within the acceptable range for most GPUs under gaming load. Most GPUs are designed to operate safely up to 83–85°C at the edge temperature. If you consistently hit 83°C+, it's worth improving your case airflow or cleaning dust from the card, but it's not an emergency. What matters more is stability — consistent 80°C is fine, spiking between 65°C and 92°C indicates a cooling problem.</p>
+
+  <h3>My CPU is 40°C at idle — is that too hot?</h3>
+  <p>40°C at idle is perfectly normal for most desktop CPUs. Modern processors run warm even when doing very little because of their small die sizes. Concern starts at idle temps consistently above 60°C, which suggests poor thermal contact (old paste, loose cooler) or poor case airflow. AMD Ryzen CPUs especially run warm at idle due to their power management behavior.</p>
+
+  <h3>Do I need to worry about SSD temperatures?</h3>
+  <p>NVMe SSDs can throttle performance when they get hot, typically above 70°C. In daily gaming use, most NVMe drives stay under 60°C. If you're stress-testing with sustained reads/writes (like transferring large game installations), an M.2 heatsink (often included on modern motherboards) keeps temperatures stable. Check SSD temps in HWiNFO64 — look for the drive temperature sensor, not just CPU and GPU.</p>
 
   <div class="conclusion">
     <h2>Bottom Line</h2>
     <p>Install MSI Afterburner, enable the in-game overlay, and play your most demanding game for 30 minutes. Check your peak temperatures. If you're under 85°C on CPU and GPU, you're fine. If you're hitting 90°C+, start with cleaning your PC — it's free and fixes most overheating issues instantly.</p>
   </div>
-<div class="author-bio">
-  <div class="author-avatar">TG</div>
-  <div class="bio-content">
-    <span class="bio-label">Written by</span>
-    <span class="bio-name">TechGameHQ Staff</span>
-    <p class="bio-text">The TechGameHQ editorial team — honest guides, real testing, and budget-friendly picks for gamers and tech enthusiasts.</p>
-    <div class="bio-links">
-      <a href="../about.html">About TechGameHQ</a>
+  <div class="author-bio">
+    <div class="author-avatar">FO</div>
+    <div class="bio-content">
+      <span class="bio-label">Written by</span>
+      <span class="bio-name">Fernando Oliveira</span>
+      <p class="bio-text">Third-year Computer Science student in Ireland, gamer and tech enthusiast since childhood. Fernando writes hands-on guides and honest reviews for TechGameHQ.</p>
+      <div class="bio-links"><a href="../about.html">About the Author</a></div>
     </div>
   </div>
-</div>
 <div class="read-next">
   <h2>Keep Reading</h2>
   <div class="read-next-grid" id="readNextGrid"></div>

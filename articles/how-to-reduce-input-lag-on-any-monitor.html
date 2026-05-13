@@ -80,15 +80,15 @@
   <span class="article-tag">Tech Guide</span>
   <h1>How to Reduce Input Lag on Any Monitor</h1>
   <div class="article-meta">
-    <span>By TechGameHQ Staff</span>
+    <span>By Fernando Oliveira</span>
     <span>May 2026</span>
-    <span>6 min read</span>
+    <span>10 min read</span>
     <span>Tech</span>
   </div>
-  <p class="intro">Input lag is the delay between moving your mouse or pressing a key and seeing the result on screen. Even a few milliseconds can make games feel sluggish. Here's how to minimize it — mostly for free.</p>
+  <p class="intro">Input lag is the delay between moving your mouse or pressing a key and seeing the result on screen. Even a few milliseconds can make games feel sluggish. Here's how to minimize it — mostly for free. For a complete hardware picture, also check out the <a href="../articles/best-budget-gaming-monitors-under-200.html">best budget gaming monitors</a> if you're considering a display upgrade, and our guide to <a href="../articles/how-to-get-better-at-fps-games.html">getting better at FPS games</a> where settings optimization is covered alongside skill improvement.</p>
 
   <h2>What Causes Input Lag?</h2>
-  <p>Input lag comes from multiple sources stacking up: your monitor's response time, V-Sync adding delay, Windows processing, and your GPU render queue. The good news is most of these can be reduced through settings alone.</p>
+  <p>Input lag comes from multiple sources stacking up: your monitor's response time, V-Sync adding delay, Windows processing, and your GPU render queue. The good news is most of these can be reduced through settings alone. If your system still feels sluggish after these fixes, it might be thermal throttling rather than input lag — check our guide on <a href="../articles/how-to-monitor-pc-temperature-while-gaming.html">monitoring your PC temperature</a> to rule that out.</p>
 
   <h2>Fix 1: Turn Off V-Sync</h2>
   <div class="fix-card">
@@ -102,7 +102,7 @@
   <div class="fix-card">
     <span class="fix-badge badge-free">Free</span>
     <h3>Windows Game Mode Reduces Background Interference</h3>
-    <p>Press Windows + I → Gaming → Game Mode → Toggle ON. This prioritizes your game for system resources and reduces background process interference, which can shave off a few ms of input lag.</p>
+    <p>Press Windows + I → Gaming → Game Mode → Toggle ON. This prioritizes your game for system resources and reduces background process interference, which can shave off a few ms of input lag. For a broader set of Windows optimizations, our guide on <a href="../articles/how-to-optimize-windows-11-for-gaming.html">optimizing Windows 11 for gaming</a> covers additional tweaks that work alongside this.</p>
   </div>
 
   <h2>Fix 3: Use Your Monitor's Game Mode</h2>
@@ -140,6 +140,59 @@
     <li><strong>Overdrive/Response Time</strong> — set to Medium, not Maximum (causes overshoot)</li>
   </ul>
 
+  <h2>Fix 7: Optimize Your GPU Driver Settings</h2>
+  <div class="fix-card">
+    <span class="fix-badge badge-free">Free — NVIDIA Users</span>
+    <h3>Enable NVIDIA Reflex (or Low Latency Mode)</h3>
+    <p>NVIDIA Reflex is supported in Valorant, Fortnite, Apex Legends, and many other competitive titles. It reduces the render queue depth, which is one of the primary sources of GPU-side input lag. Enable it in your game's settings (look for "NVIDIA Reflex" or "Reflex Low Latency"). The "Enabled + Boost" setting is often the best choice for most systems.</p>
+    <p>If your game doesn't support Reflex, go to NVIDIA Control Panel → Manage 3D Settings → Low Latency Mode → set to "Ultra". This does the same job for unsupported titles, at the cost of slightly lower maximum FPS.</p>
+  </div>
+
+  <div class="fix-card">
+    <span class="fix-badge badge-free">Free — AMD Users</span>
+    <h3>Enable AMD Anti-Lag</h3>
+    <p>AMD's equivalent to NVIDIA Reflex is Anti-Lag and Anti-Lag+. Enable it in AMD Software: Adrenalin Edition under the Gaming tab for your game. Anti-Lag+ works at the driver level and is compatible with a wider range of titles. Combined with turning off V-Sync, this can reduce total system latency by 10–30ms depending on your setup.</p>
+  </div>
+
+  <h2>How to Measure Your Input Lag</h2>
+  <p>Feeling the improvement is useful, but measuring it gives you hard numbers to compare. Use <strong>RTSS (RivaTuner Statistics Server)</strong> combined with the FrameTime view to see your render pipeline latency. For monitor-specific lag, tools like <strong>NVIDIA FrameView</strong> report PC-side latency. The most accurate consumer tool is a high-speed camera filming your screen and mouse simultaneously, but that's overkill for most people — RTSS data is more than sufficient for tuning.</p>
+  <p>If you want an accessible check: play a fast-paced game and pay attention to how the game "feels" with V-Sync off vs. on. The difference with V-Sync enabled is typically noticeable as a slight mushiness in mouse movement. If you can feel that difference, you can feel the other improvements too.</p>
+
+  <h2>The Role of Your Monitor Panel Type</h2>
+  <p>Not all monitors process images at the same speed. Panel type has a significant effect on response time and perceived input lag:</p>
+  <ul>
+    <li><strong>TN panels:</strong> Fastest response times (1ms GtG), lowest input lag. Colors and viewing angles are poor. Still popular for competitive esports at 240Hz+.</li>
+    <li><strong>IPS panels:</strong> Good colors, acceptable response times (1–4ms GtG on fast gaming panels). The standard choice for most gamers — good balance of quality and responsiveness.</li>
+    <li><strong>VA panels:</strong> Best contrast ratio, slowest response on dark transitions ("black smearing"). Good for movies, suboptimal for fast-paced FPS games.</li>
+    <li><strong>OLED panels:</strong> Near-instant response times, stunning contrast. Expensive, with burn-in risk if displaying static HUD elements for extended hours. Increasingly viable as prices drop.</li>
+  </ul>
+  <p>If you're in the market for a new display, check the <a href="../articles/best-budget-gaming-monitors-under-200.html">best budget gaming monitors under $200</a> — there are solid 144Hz IPS options that deliver genuinely low input lag without breaking the bank. You might also want to look into whether <a href="../articles/how-to-set-up-dual-monitors-for-gaming.html">setting up dual monitors</a> makes sense for your workflow.</p>
+
+  <h2>Common Mistakes to Avoid</h2>
+  <ul>
+    <li><strong>Enabling V-Sync and blaming the hardware:</strong> V-Sync is the single biggest source of added input lag on most systems. It's almost always the first thing to disable, and many gamers forget they enabled it months ago in a game's settings.</li>
+    <li><strong>Running HDR on a budget monitor:</strong> Software HDR on monitors without real local dimming adds significant image processing delay and doesn't improve image quality. Disable it.</li>
+    <li><strong>Mistaking FPS for refresh rate:</strong> Your monitor can only display as many frames as its refresh rate allows. If your monitor is 60Hz, getting 300 FPS in-game does nothing for smoothness — but it does reduce input lag because the GPU renders a more recent frame right before your monitor refreshes. Cap FPS to 2–3x your refresh rate for the best balance.</li>
+    <li><strong>Ignoring in-game resolution scale:</strong> Rendering at 110% resolution scale for sharper images adds significant GPU processing time and increases input lag. Always render at 100% for the best responsiveness.</li>
+  </ul>
+
+  <h2>Advanced Tips</h2>
+  <h3>USB Polling Rate for Your Mouse</h3>
+  <p>Most gaming mice poll at 1000Hz, meaning they send position data to your PC 1000 times per second (every 1ms). Some newer mice support 4000Hz or 8000Hz polling, which reduces the average latency from mouse movement to display update. This is a micro-optimization — you'd need to measure it to notice it — but for ultra-competitive players, it's available. Check your mouse software for polling rate settings.</p>
+
+  <h3>Disable Xbox Game Bar</h3>
+  <p>Xbox Game Bar (Windows + G) runs as an overlay and can add input lag by consuming system resources in the background. Disable it: Settings → Gaming → Xbox Game Bar → toggle off. Also disable "Game DVR" background recording if enabled, as continuous recording has a measurable impact on both performance and input lag.</p>
+
+  <h2>Frequently Asked Questions</h2>
+  <h3>Does a faster SSD reduce input lag?</h3>
+  <p>No. Storage speed affects load times, not input lag. Input lag is entirely in the render pipeline — CPU, GPU, monitor, and OS. An NVMe SSD will make your game load faster and reduce texture pop-in in open-world games, but it has no effect on how responsive your controls feel in-game.</p>
+
+  <h3>Is G-Sync worth it for reducing input lag?</h3>
+  <p>G-Sync (NVIDIA) and FreeSync (AMD) are variable refresh rate technologies that sync your monitor's refresh rate to your GPU's current frame output. They eliminate screen tearing without the input lag penalty of V-Sync. For most gamers, FreeSync monitors paired with an AMD or NVIDIA GPU (G-Sync Compatible mode) offer the best of both worlds — no tearing, minimal added lag. Pure G-Sync modules have slightly better performance but cost significantly more.</p>
+
+  <h3>My game feels laggy even at 144Hz — why?</h3>
+  <p>A high refresh rate monitor doesn't automatically mean low input lag. Check: V-Sync may be enabled, your GPU may be rendering below 144 FPS (meaning your monitor can't display 144 distinct frames per second), or monitor features like Super Resolution, HDR, or black equalization may be adding processing delay. Work through the fixes in this article systematically and you should identify the culprit.</p>
+
   <div class="conclusion">
     <h2>Quick Checklist</h2>
     <p>Do these right now and your games will feel noticeably more responsive:</p>
@@ -152,17 +205,15 @@
       <li>Cap FPS just below your refresh rate</li>
     </ol>
   </div>
-<div class="author-bio">
-  <div class="author-avatar">TG</div>
-  <div class="bio-content">
-    <span class="bio-label">Written by</span>
-    <span class="bio-name">TechGameHQ Staff</span>
-    <p class="bio-text">The TechGameHQ editorial team — honest guides, real testing, and budget-friendly picks for gamers and tech enthusiasts.</p>
-    <div class="bio-links">
-      <a href="../about.html">About TechGameHQ</a>
+  <div class="author-bio">
+    <div class="author-avatar">FO</div>
+    <div class="bio-content">
+      <span class="bio-label">Written by</span>
+      <span class="bio-name">Fernando Oliveira</span>
+      <p class="bio-text">Third-year Computer Science student in Ireland, gamer and tech enthusiast since childhood. Fernando writes hands-on guides and honest reviews for TechGameHQ.</p>
+      <div class="bio-links"><a href="../about.html">About the Author</a></div>
     </div>
   </div>
-</div>
 <div class="read-next">
   <h2>Keep Reading</h2>
   <div class="read-next-grid" id="readNextGrid"></div>

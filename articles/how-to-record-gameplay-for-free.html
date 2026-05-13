@@ -77,9 +77,9 @@
   <span class="article-tag">Tech Guide</span>
   <h1>How to Record Your Gameplay for Free</h1>
   <div class="article-meta">
-    <span>By TechGameHQ Staff</span>
+    <span>By Fernando Oliveira</span>
     <span>May 2026</span>
-    <span>6 min read</span>
+    <span>12 min read</span>
     <span>Tech Guide</span>
   </div>
   <p class="intro">You don't need expensive software to record high-quality gameplay. The best recording tools are completely free &#8212; some are built into your GPU drivers. Here's which one to use depending on your setup, and how to configure it properly.</p>
@@ -155,6 +155,43 @@
     <li><strong>Format:</strong> MP4 (compatible with everything)</li>
   </ul>
 
+  <h2>Advanced OBS Settings for Better Quality</h2>
+  <p>If you're using OBS and want to take your recordings to the next level, these settings make a significant quality difference without dramatically increasing file size.</p>
+
+  <h3>Use hardware encoding, not software (x264)</h3>
+  <p>The default OBS encoder is x264 (software). This uses your CPU and can tank FPS in demanding games. Always switch to hardware encoding: <strong>NVENC</strong> for NVIDIA, <strong>AMF</strong> for AMD, or <strong>QuickSync</strong> for Intel. Go to <strong>Settings &#8594; Output &#8594; Encoder</strong> to change this. Hardware encoding produces the same quality at a fraction of the CPU cost.</p>
+
+  <h3>Set the correct recording format</h3>
+  <p>OBS defaults to MKV format. While MKV is good for preventing corrupt recordings (it saves in chunks), most video editors and YouTube prefer MP4. Go to <strong>Settings &#8594; Output &#8594; Recording Format</strong> and set it to MP4. Alternatively, set OBS to record in MKV and use the built-in <strong>Remux Recordings</strong> feature to convert to MP4 after each session.</p>
+
+  <h3>Use multi-track audio recording</h3>
+  <p>OBS can record game audio and microphone audio on separate tracks. This is useful for editing — you can adjust mic volume independently or cut commentary without affecting game sounds. Go to <strong>Settings &#8594; Output &#8594; Audio</strong> and enable track 1 for desktop audio and track 2 for microphone. Make sure your editor can handle multi-track audio (DaVinci Resolve and Kdenlive both handle it for free).</p>
+
+  <h3>Instant Replay: Record only the best moments</h3>
+  <p>Both OBS (via the Replay Buffer feature) and ShadowPlay/ReLive have an "Instant Replay" mode that constantly records the last X minutes in a rolling buffer. Nothing is saved to disk until you hit a hotkey. This means you never miss a great clip, but you also don't fill your drive with hours of footage. Enable Replay Buffer in OBS's Output settings and set a hotkey — this is how most highlight clip creators work.</p>
+
+  <h2>Common Recording Mistakes to Avoid</h2>
+  <p>These mistakes either reduce quality or cause recordings to fail mid-session.</p>
+  <ul>
+    <li><strong>Recording to the same drive your game is on</strong> — this creates disk contention, causing both game stutters and frame drops in recordings. Always record to a separate drive from your game. A secondary HDD works fine for recording storage even if your game runs on an SSD.</li>
+    <li><strong>Not checking free space before a long session</strong> — a 3-hour gaming session at high bitrate can fill 40–80GB. Check your drive before starting. Running out of space mid-recording causes OBS to silently stop writing — you won't know until the session ends.</li>
+    <li><strong>Using too high a bitrate for upload</strong> — if you're uploading to YouTube, a 50–80Mbps local recording is overkill for the final upload. Record high quality locally, then re-export at 15–20Mbps for YouTube. This saves upload time without visible quality loss after YouTube's own compression.</li>
+    <li><strong>Forgetting to set up audio sources</strong> — always do a 30-second test recording before a long session. Confirm your microphone is captured, game audio is captured, and the levels aren't clipping. Nothing is worse than a perfect gaming session with no audio in the recording.</li>
+  </ul>
+
+  <p>Recording gameplay pairs naturally with setting up a clean streaming environment. If you're running OBS with a <a href="../articles/how-to-set-up-dual-monitors-for-gaming.html">dual monitor setup</a>, put your OBS preview and chat on the second screen so you can monitor your stream without leaving the game. And if performance takes a hit while recording, check our guide on how to <a href="../articles/how-to-speed-up-your-pc-for-gaming.html">speed up your PC for gaming</a> — hardware encoding should minimize the impact, but general optimizations help too. Storage space is also a real concern for recording; check whether <a href="../articles/ssd-vs-hdd-for-gaming.html">SSD vs HDD for gaming</a> matters for your recording drive choice.</p>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Does recording gameplay lower my FPS significantly?</h3>
+  <p>With hardware encoding (NVENC for NVIDIA, AMF for AMD), the FPS impact is typically 1–5% — barely noticeable. Software encoding with x264 can cost 10–30% FPS depending on your CPU. Always use hardware encoding for gaming recordings. If you're unsure which encoder you're using, check OBS Output settings and confirm it says NVENC or AMF, not x264.</p>
+
+  <h3>How much storage does gameplay recording use?</h3>
+  <p>At 1080p 60fps with a 50Mbps bitrate, expect roughly 20–25GB per hour of footage. At 1440p or with higher bitrate settings, it can be 40–60GB per hour. Always record to a drive with at least 200GB free if you plan long sessions. Raw footage should be trimmed and exported before archiving — keep a high-quality export, not the raw OBS file, for storage efficiency.</p>
+
+  <h3>Can I record and stream at the same time with OBS?</h3>
+  <p>Yes. OBS supports simultaneous streaming and recording. Go to <strong>Settings &#8594; Output &#8594; Recording</strong> and enable it alongside streaming. The key is to use hardware encoding for both — streaming to Twitch/YouTube and recording locally at the same time uses more bandwidth and encoding resources but is very manageable on modern hardware with NVENC or AMF. Make sure your internet upload speed is sufficient for streaming before adding the local recording load.</p>
+
   <div class="conclusion">
     <h2>The Verdict</h2>
     <p>If you have an NVIDIA or AMD GPU, use the built-in recording tool first &#8212; it's the easiest setup with the lowest performance impact. If you want more control, or you're on integrated graphics, OBS Studio is the best free option available and used by professional streamers worldwide.</p>
@@ -162,12 +199,12 @@
   </div>
 
   <div class="author-bio">
-    <div class="author-avatar">TG</div>
+    <div class="author-avatar">FO</div>
     <div class="bio-content">
       <span class="bio-label">Written by</span>
-      <span class="bio-name">TechGameHQ Staff</span>
-      <p class="bio-text">The TechGameHQ editorial team &#8212; honest guides, real testing, and budget-friendly picks for gamers and tech enthusiasts.</p>
-      <div class="bio-links"><a href="../about.html">About TechGameHQ</a></div>
+      <span class="bio-name">Fernando Oliveira</span>
+      <p class="bio-text">Third-year Computer Science student in Ireland, gamer and tech enthusiast since childhood. Fernando writes hands-on guides and honest reviews for TechGameHQ.</p>
+      <div class="bio-links"><a href="../about.html">About the Author</a></div>
     </div>
   </div>
   <div class="read-next">

@@ -95,7 +95,7 @@
     <span>6 min read</span>
     <span>Tech</span>
   </div>
-  <p class="intro">The short answer: yes, it matters — but not in the way most people think. An SSD won't boost your FPS. But it will dramatically change how you experience gaming in ways that are just as important.</p>
+  <p class="intro">The short answer: yes, it matters — but not in the way most people think. An SSD won't boost your FPS. But it will dramatically change how you experience gaming in ways that are just as important. If you're building or upgrading a full system, see our guide on <a href="../articles/how-to-choose-pc-parts-on-a-budget.html">how to choose PC parts on a budget</a> to understand where storage fits in your overall spending priorities.</p>
 
   <h2>What Actually Changes With an SSD</h2>
   <p>Let's be clear about what an SSD does and doesn't do for gaming:</p>
@@ -189,23 +189,84 @@
     <a href="https://amzn.to/49q9zSn">WD Black SN7100 1TB on Amazon →</a>
   </div>
 
+  <h2>How to Migrate Your System from HDD to SSD</h2>
+  <p>Switching to an SSD doesn't mean reinstalling Windows from scratch. Most SSD manufacturers provide free cloning software:</p>
+  <ul>
+    <li><strong>Samsung Magician</strong> (for Samsung SSDs) — includes a clone tool that copies your entire OS partition to the new drive</li>
+    <li><strong>Acronis True Image for Crucial</strong> (for Crucial SSDs) — free with purchase</li>
+    <li><strong>Macrium Reflect Free</strong> — works with any drive, highly reliable</li>
+  </ul>
+  <p>The process: install the new SSD while keeping your old HDD connected, run the clone tool, wait 20–60 minutes depending on how much data you have, then swap boot drives in BIOS. Your Windows install, game library, and settings all come with it. No reinstall needed.</p>
+  <p>One important step: after cloning and booting from the SSD, delete the old Windows partition from the HDD (it's no longer bootable and just takes up space). Use that HDD as a secondary drive for game storage and large files.</p>
+
+  <h2>SSD vs HDD for Specific Game Types</h2>
+  <p>The impact of an SSD varies significantly by game genre:</p>
+
+  <h3>Open World Games (Biggest Improvement)</h3>
+  <p>Cyberpunk 2077, Red Dead Redemption 2, and Microsoft Flight Simulator stream massive amounts of data from storage as you move through the world. On an HDD, this causes texture pop-in (objects appearing blurry before loading to full quality) and micro-stutters when entering new areas. An SSD makes these nearly invisible because data loads faster than you can move through the world.</p>
+
+  <h3>Battle Royale Games</h3>
+  <p>Games like Fortnite and Warzone load large maps with hundreds of assets. The initial load is faster, and in-game, SSD players are typically fully loaded and in-game 30–60 seconds before HDD players. In Fortnite specifically, being in-game during the bus means you can get your preferred landing spot before other players have even loaded in — a genuine competitive advantage.</p>
+
+  <h3>RPGs and Story Games</h3>
+  <p>Any game with frequent scene transitions, fast-travel, or save-and-load cycles benefits enormously. Elden Ring on an SSD loads from a Site of Grace in about 4 seconds. On an HDD, that same load takes 20–30 seconds. Across a full playthrough with hundreds of deaths and reloads, this adds up to hours of your life.</p>
+
+  <h3>Indie and 2D Games</h3>
+  <p>Most indie games are small and load quickly even on HDDs. Hollow Knight, Stardew Valley, and most 2D titles see minimal improvement from an SSD. These are worth keeping on your HDD if storage space is a concern. If you're looking for titles to test your new setup, check out the <a href="../articles/top-10-indie-games-worth-your-time.html">top indie games worth playing</a> for a great selection across genres.</p>
+
+  <div class="tip-box">
+    <strong>Pro Tip: Install Your Most-Played Games on SSD First</strong>
+    You don't need everything on the SSD. Move your current main games and Windows to the SSD. Keep your backlog and occasional-play titles on the HDD. Game libraries can be moved between drives easily in Steam, Epic, or GOG Galaxy without reinstalling — right-click the game and look for "Manage" or "Move Install Folder."
+  </div>
+
+  <h2>NVMe Generations: Does It Matter?</h2>
+  <p>There are currently three generations of NVMe SSDs: PCIe 3.0, PCIe 4.0, and PCIe 5.0. Here's the honest gaming picture:</p>
+  <ul>
+    <li><strong>PCIe 3.0 NVMe:</strong> ~3,500 MB/s read. Fast enough for every current game. Still excellent value.</li>
+    <li><strong>PCIe 4.0 NVMe:</strong> ~7,000 MB/s read. The current sweet spot — widely available, prices are competitive.</li>
+    <li><strong>PCIe 5.0 NVMe:</strong> ~14,000 MB/s read. Overkill for gaming. Expensive and runs hot. Skip unless you have specific use cases.</li>
+  </ul>
+  <p>The jump from SATA SSD (~550 MB/s) to PCIe 3.0 NVMe (~3,500 MB/s) is more impactful for gaming than the jump from PCIe 3.0 to PCIe 5.0. Don't spend extra money chasing the fastest NVMe generation — even a budget PCIe 3.0 drive is transformative compared to any HDD. After the SSD upgrade, consider whether <a href="../articles/how-to-upgrade-your-ram-for-gaming.html">upgrading your RAM for gaming</a> is the next logical step for your system.</p>
+
+  <h2>Common Mistakes to Avoid</h2>
+  <ul>
+    <li><strong>Buying a 256GB SSD and immediately filling it:</strong> Windows alone takes 30–40GB, and most modern games are 50–150GB each. A 256GB SSD fills up embarrassingly fast. Get at least 500GB, and 1TB is strongly recommended as your OS drive.</li>
+    <li><strong>Leaving an SSD above 90% full:</strong> SSDs slow down when nearly full due to how they manage write operations. Keep at least 10–15% free space on your SSD for consistent performance.</li>
+    <li><strong>Buying a used SSD without checking health:</strong> SSD cells have a finite number of write cycles. Run <strong>CrystalDiskInfo</strong> (free) to check the drive's health status and Total Bytes Written (TBW) before buying used.</li>
+    <li><strong>Not enabling AHCI mode:</strong> If upgrading from an HDD, your BIOS might have the storage controller set to IDE mode, which disables SSD optimizations. Make sure AHCI mode is enabled for your SSD controller in BIOS settings.</li>
+  </ul>
+
+  <h2>Advanced Tips</h2>
+  <h3>Enable TRIM</h3>
+  <p>TRIM is a command that helps your OS keep your SSD healthy over time by cleaning up deleted data blocks. In Windows 11, TRIM is enabled by default for SSDs. Verify it's active by opening Command Prompt as administrator and typing: <code style="background:var(--off-white);padding:2px 6px;">fsutil behavior query DisableDeleteNotify</code>. A result of 0 means TRIM is enabled.</p>
+
+  <h3>Check SSD Health Regularly</h3>
+  <p>Use <strong>CrystalDiskInfo</strong> (free) monthly to check your SSD's health status, temperature, and reallocated sector count. Most SSDs have a health indicator of "Good," "Caution," or "Bad." If you see "Caution," back up your data immediately — it's still functional but showing early warning signs.</p>
+
+  <h2>Frequently Asked Questions</h2>
+  <h3>Does an SSD help with game stuttering?</h3>
+  <p>Yes, in specific scenarios. Stutters caused by slow asset streaming in open-world games are largely eliminated by an SSD. However, stutters caused by insufficient RAM, CPU bottlenecks, or shader compilation are not affected by storage speed. If your stuttering persists after upgrading to an SSD, the cause is elsewhere — check our guide on <a href="../articles/how-to-monitor-pc-temperature-while-gaming.html">how to monitor your PC temperature</a> to rule out thermal throttling as a cause.</p>
+
+  <h3>Is a 2TB HDD worth keeping alongside an SSD?</h3>
+  <p>Absolutely. A 2TB HDD for storing your game library (games you play occasionally, large files, backups) alongside a 500GB–1TB SSD for Windows and active games is the ideal budget setup. HDD prices per GB are still 3–5x cheaper than SSD. Keep your current games on the SSD and move completed or rarely-played titles to the HDD.</p>
+
+  <h3>Will an SSD make my old PC feel new?</h3>
+  <p>For most tasks, yes. Even on a 10-year-old CPU, switching from HDD to SSD makes Windows boot in 15 seconds instead of 2 minutes, apps open instantly, and game load times drop dramatically. It's often the single most impactful upgrade you can make to an aging machine — more noticeable than a RAM upgrade for day-to-day feel.</p>
+
   <div class="conclusion">
     <h2>The Verdict</h2>
     <p>An SSD won't make you a better gamer or push more frames. But it will make every part of the gaming experience faster and more pleasant — from boot time to load screens to open world streaming. If you're still on an HDD in 2026, upgrading is one of the best value improvements you can make to your PC.</p>
     <p>A good 1TB NVMe SSD costs less than two new games, and you'll feel the difference every single day.</p>
   </div>
-<div class="author-bio">
-  <img src="../images/me.jpg" alt="Fernando Oliveira">
-  <div class="bio-content">
-    <span class="bio-label">Written by</span>
-    <span class="bio-name">Fernando Oliveira</span>
-    <p class="bio-text">3rd year Computer Science student in Ireland. Gamer and tech enthusiast since childhood.</p>
-    <div class="bio-links">
-      <a href="https://github.com/ferdnandow" target="_blank" rel="noopener">GitHub</a>
-      <a href="../about.html">About TechGameHQ</a>
+  <div class="author-bio">
+    <div class="author-avatar">FO</div>
+    <div class="bio-content">
+      <span class="bio-label">Written by</span>
+      <span class="bio-name">Fernando Oliveira</span>
+      <p class="bio-text">Third-year Computer Science student in Ireland, gamer and tech enthusiast since childhood. Fernando writes hands-on guides and honest reviews for TechGameHQ.</p>
+      <div class="bio-links"><a href="../about.html">About the Author</a></div>
     </div>
   </div>
-</div>
 <div class="read-next">
   <h2>Keep Reading</h2>
   <div class="read-next-grid" id="readNextGrid"></div>

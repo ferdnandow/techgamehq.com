@@ -75,9 +75,9 @@
   <span class="article-tag">Tech Guide</span>
   <h1>How to Optimize Windows 11 for Gaming</h1>
   <div class="article-meta">
-    <span>By TechGameHQ Staff</span>
+    <span>By Fernando Oliveira</span>
     <span>May 2026</span>
-    <span>7 min read</span>
+    <span>12 min read</span>
     <span>Tech Guide</span>
   </div>
   <p class="intro">Windows 11 ships with a lot of background processes, visual effects, and settings that hurt gaming performance. None of these tweaks require third-party software &#8212; just built-in Windows settings. Follow all of them and you'll notice the difference.</p>
@@ -148,6 +148,49 @@
     Apps like CCleaner, Advanced SystemCare, or any "PC optimizer" often do more harm than good. They delete files Windows needs, break registry entries, and frequently bundle unwanted software. Everything in this guide uses only built-in Windows tools.
   </div>
 
+  <h2>Common Mistakes to Avoid</h2>
+  <p>Even experienced users make these errors when trying to optimize Windows 11 for gaming. Avoid them and you'll save yourself hours of troubleshooting.</p>
+  <ul>
+    <li><strong>Leaving V-Sync on in-game while also enabling it in GPU control panel</strong> — double V-Sync adds input lag. Pick one location or turn it off entirely if you're not seeing screen tearing.</li>
+    <li><strong>Forgetting to update after a Windows major update</strong> — big Windows updates often reset some settings (power plan, Game Mode) back to defaults. Check these after any major Windows update.</li>
+    <li><strong>Disabling Windows Defender</strong> — some guides tell you to disable antivirus entirely. Don't. The performance cost of Defender is minimal and the risk of running without any protection isn't worth it. Instead, check our <a href="../articles/best-free-antivirus-for-gamers.html">best free antivirus for gamers</a> guide for lightweight options that are specifically designed for gaming.</li>
+    <li><strong>Using third-party "driver updaters"</strong> — only update GPU drivers from NVIDIA or AMD's official websites. Third-party driver tools install wrong or outdated versions regularly.</li>
+    <li><strong>Enabling every tweak you read about online</strong> — some registry tweaks floating around gaming forums are outdated or outright harmful. Stick to the verified settings in this guide.</li>
+  </ul>
+
+  <h2>Advanced Tips for Extra Performance</h2>
+  <p>Once you've done the nine core tweaks, these advanced optimizations can squeeze out additional improvements — especially for competitive gaming where every frame matters.</p>
+
+  <div class="tip-box">
+    <strong>Advanced Tip: MSI Mode for Your GPU</strong>
+    Message Signaled Interrupts (MSI) mode reduces GPU interrupt latency, which translates to more consistent frametimes. You can enable it through GPU driver settings or with a free tool like MSI Utility v3. This is a more advanced tweak — back up your system before attempting it.
+  </div>
+
+  <h3>Enable Resizable BAR (if your hardware supports it)</h3>
+  <p>Resizable BAR allows your CPU to access the full GPU video memory instead of just a 256MB window. This can add 5–15% FPS in supported games. Check your motherboard BIOS for a "Resizable BAR" or "Above 4G Decoding" option. Both your CPU and GPU need to support it — most 2020+ hardware does.</p>
+
+  <h3>Disable Nagle's Algorithm for Online Games</h3>
+  <p>Nagle's Algorithm bundles small network packets together to improve efficiency — which adds latency in games. You can disable it via a registry edit: navigate to <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces</code>, find your network adapter's entry, and add two DWORD values: <code>TcpAckFrequency</code> = 1 and <code>TCPNoDelay</code> = 1. This pairs well with the other <a href="../articles/how-to-fix-high-ping.html">fix high ping</a> tweaks.</p>
+
+  <h3>Use DirectX 12 Ultimate where available</h3>
+  <p>Modern games that support DX12 or Vulkan generally perform better and stutter less than DX11 on Windows 11. If your game has a DX12 or Vulkan option in its settings, use it — Windows 11 is specifically optimized for the newer graphics APIs.</p>
+
+  <h3>Schedule Windows Update for off-hours</h3>
+  <p>Go to <code>Settings &#8594; Windows Update &#8594; Advanced options &#8594; Active hours</code> and set your gaming hours. This prevents Windows from downloading updates and potentially restarting your PC mid-session.</p>
+
+  <p>For even more performance gains, pairing these Windows tweaks with <a href="../articles/how-to-speed-up-your-pc-for-gaming.html">speed up your PC for gaming</a> techniques gives you a comprehensive system-level optimization. And if your hardware is the real bottleneck, our guide on <a href="../articles/how-to-upgrade-your-ram-for-gaming.html">upgrade your RAM for gaming</a> can help identify the next worthwhile investment. Also consider setting up <a href="../articles/how-to-set-up-dual-monitors-for-gaming.html">dual monitors</a> once performance is optimized — Windows 11 handles multi-display setups better than any previous version.</p>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Does Windows 11 actually perform better than Windows 10 for gaming?</h3>
+  <p>In most cases, the difference is marginal — a few percent either way depending on the game and hardware. Windows 11 has better support for DirectStorage and Auto HDR, which can benefit newer games. The bigger factor is always your hardware and whether you've applied the optimizations in this guide, not which version of Windows you're running.</p>
+
+  <h3>Will these tweaks void my warranty or damage my PC?</h3>
+  <p>No. Every tweak in this guide uses built-in Windows settings — no registry edits, no third-party tools, no overclocking. They are completely safe and reversible. If you ever want to undo a change, simply reverse the setting to its default value.</p>
+
+  <h3>How much FPS improvement should I expect?</h3>
+  <p>It depends heavily on your starting point. If you've never optimized your PC before, you can expect 10–30% improvement in average FPS and noticeably smoother frametimes — especially from the power plan, GPU drivers, and startup program tweaks. If your PC was already partially optimized, gains will be smaller but still meaningful.</p>
+
   <div class="conclusion">
     <h2>The Verdict</h2>
     <p>These nine tweaks take about 20 minutes total and cost nothing. The biggest wins are the power plan, HAGS, updated GPU drivers, and disabling startup programs. Do those four first &#8212; you'll notice the improvement before you even finish the list.</p>
@@ -155,12 +198,12 @@
   </div>
 
   <div class="author-bio">
-    <div class="author-avatar">TG</div>
+    <div class="author-avatar">FO</div>
     <div class="bio-content">
       <span class="bio-label">Written by</span>
-      <span class="bio-name">TechGameHQ Staff</span>
-      <p class="bio-text">The TechGameHQ editorial team &#8212; honest guides, real testing, and budget-friendly picks for gamers and tech enthusiasts.</p>
-      <div class="bio-links"><a href="../about.html">About TechGameHQ</a></div>
+      <span class="bio-name">Fernando Oliveira</span>
+      <p class="bio-text">Third-year Computer Science student in Ireland, gamer and tech enthusiast since childhood. Fernando writes hands-on guides and honest reviews for TechGameHQ.</p>
+      <div class="bio-links"><a href="../about.html">About the Author</a></div>
     </div>
   </div>
   <div class="read-next">
