@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -273,7 +273,7 @@
     var grid = document.getElementById('readNextGrid');
     if (grid) {
       grid.innerHTML = picks.map(function(a) {
-        return '<a href="' + a.url + '" class="read-next-card"><img src="' + a.img + '" alt="' + a.title + '"><div class="rn-body"><span class="rn-tag">' + a.tag + '</span><div class="rn-title">' + a.title + '</div><span class="rn-time">' + a.time + '</span></div></a>';
+        return '<a href="' + a.url + '" class="read-next-card"><img loading="lazy" src="' + a.img + '" alt="' + a.title + '"><div class="rn-body"><span class="rn-tag">' + a.tag + '</span><div class="rn-title">' + a.title + '</div><span class="rn-time">' + a.time + '</span></div></a>';
       }).join('');
     }
   })();
@@ -286,3 +286,4 @@
 
 </body>
 </html>
+
