@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — TechGameHQ</title>
+<meta name="description" content="This page does not exist. Head back to TechGameHQ for gaming and tech guides.">
+<meta name="robots" content="noindex">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --white: #ffffff; --off-white: #f7f6f3; --border: #e2e0da; --text: #1a1917; --muted: #6b6860; --accent: #2563eb; --accent-warm: #f97316; }
+  body { background: var(--white); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.75; }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 2px solid var(--text); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; text-decoration: none; color: var(--text); letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+  .back { color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .back:hover { color: var(--text); }
+
+  .hero { background: var(--text); color: var(--white); padding: 5rem 2rem; text-align: center; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin-bottom: 1rem; letter-spacing: -0.02em; }
+  .hero h1 span { color: var(--accent); font-style: italic; }
+  .hero p { font-size: 1.15rem; color: rgba(255,255,255,0.7); max-width: 540px; margin: 0 auto; font-weight: 300; }
+
+  .wrap { max-width: 740px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+
+  h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; margin: 2.5rem 0 1rem; letter-spacing: -0.01em; }
+  p { margin-bottom: 1.25rem; color: #3a3835; }
+
+  .values { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+  .value-card { border: 1px solid var(--border); border-top: 4px solid var(--accent); padding: 1.5rem; background: var(--off-white); }
+  .value-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .value-card p { font-size: 0.9rem; margin: 0; color: var(--muted); }
+
+  .topics { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0; }
+  .topic { background: var(--off-white); border: 1px solid var(--border); padding: 6px 16px; font-size: 0.85rem; font-weight: 600; color: var(--text); }
+
+  .cta-box { background: var(--text); color: var(--white); padding: 2.5rem; text-align: center; margin-top: 3rem; }
+  .cta-box h2 { color: var(--white); margin-top: 0; }
+  .cta-box p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .btn { display: inline-block; background: var(--accent); color: var(--white); padding: 12px 28px; text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; transition: all 0.2s; }
+  .btn:hover { background: var(--accent-warm); }
+
+  .team { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+  .team-card { border: 1px solid var(--border); border-top: 4px solid var(--accent); padding: 1.75rem; background: var(--off-white); display: flex; gap: 1.25rem; align-items: flex-start; }
+  .team-card img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .team-avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; color: #fff; flex-shrink: 0; }
+  .team-info { flex: 1; }
+  .team-role { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.25rem; }
+  .team-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; display: block; margin-bottom: 0.5rem; }
+  .team-bio { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.75rem; line-height: 1.6; }
+  .team-links a { font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; margin-right: 1rem; }
+  .team-links a:hover { text-decoration: underline; }
+
+  footer { background: var(--text); padding: 2rem; text-align: center; margin-top: 4rem; }
+  footer p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+  .nf { max-width: 640px; margin: 0 auto; padding: 6rem 2rem; text-align: center; }
+  .nf h1 { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; margin-bottom: 1rem; }
+  .nf p { color: var(--muted); font-size: 1.1rem; margin-bottom: 2rem; }
+  .nf a.btn { display: inline-block; background: var(--accent); color: #fff; padding: 0.75rem 1.75rem; text-decoration: none; font-weight: 600; border-radius: 4px; }
+  .nf a.btn:hover { background: var(--accent-warm); }
+</style>
+<!-- Analytics loads only after the visitor accepts cookies (see /js/consent.js) -->
+<script src="/js/consent.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo"><img src="/favicon-32x32.png" alt="" style="width:26px;height:26px;vertical-align:middle;margin-right:0.5rem;border-radius:4px;">TechGame<span>HQ</span></a>
+  <a href="/" class="back">← Back to Home</a>
+</nav>
+
+<div class="nf">
+  <h1>Page not found</h1>
+  <p>The page you were looking for doesn't exist or has moved.</p>
+  <a class="btn" href="/">Back to the home page</a>
+</div>
+
+<footer>
+  <p>&#169; 2026 <a href="/">TechGameHQ</a> &mdash; <a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a> &middot; <a href="/privacy-policy.html">Privacy Policy</a> &middot; <a href="/terms.html">Terms of Use</a> &middot; <a href="/privacy-policy.html#cookies" data-cookie-settings>Cookie Settings</a></p>
+</footer>
+
+</body>
+</html>
