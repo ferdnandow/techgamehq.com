@@ -17,38 +17,35 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest"><link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --white: #ffffff; --off-white: #f7f6f3; --border: #e2e0da; --text: #1a1917; --muted: #6b6860; --accent: #2563eb; }
-  body { background: var(--white); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.75; }
-  nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 2px solid var(--text); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
-  .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; text-decoration: none; color: var(--text); letter-spacing: -0.02em; }
-  .logo span { color: var(--accent); }
-  .back { color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
-  .back:hover { color: var(--text); }
-  .wrap { max-width: 740px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
-  h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; margin-bottom: 0.5rem; }
-  .date { color: var(--muted); font-size: 0.85rem; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-  h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin: 2rem 0 0.75rem; }
-  p { margin-bottom: 1.25rem; color: #3a3835; }
-  ul { padding-left: 1.5rem; margin-bottom: 1.25rem; }
-  li { margin-bottom: 0.5rem; color: #3a3835; }
-  a { color: var(--accent); }
-  footer { background: var(--text); padding: 2rem; text-align: center; margin-top: 4rem; }
-  footer p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
-  footer a { color: var(--accent); text-decoration: none; }
-  code { background: var(--off-white, #f7f6f3); padding: 0 0.3em; border-radius: 3px; font-size: 0.9em; }
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
 <!-- Analytics loads only after the visitor accepts cookies (see /js/consent.js) -->
 <script src="/js/consent.js" defer></script>
 </head>
 <body>
-
-<nav>
-  <a href="index.html" class="logo"><img src="/favicon-32x32.png" alt="" style="width:26px;height:26px;vertical-align:middle;margin-right:0.5rem;border-radius:4px;" width="32" height="32">TechGame<span>HQ</span></a>
-  <a href="index.html" class="back">← Back to Home</a>
-</nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a href="/" class="brand"><img src="/favicon-32x32.png" alt="" width="32" height="32">TechGameHQ</a>
+    <nav class="head-links" aria-label="Main">
+      <a href="/#guides">Guides</a>
+      <a href="/#gear">Reviews</a>
+      <a href="/#play">Free games</a>
+      <a href="/about.html">About</a>
+    </nav>
+    <details class="menu">
+      <summary>Menu</summary>
+      <nav aria-label="Mobile">
+        <a href="/#guides">Guides</a>
+        <a href="/#gear">Reviews</a>
+        <a href="/#play">Free games</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<main id="main" class="page page-privacy-policy">
 
 <div class="wrap">
   <h1>Privacy Policy</h1>
@@ -101,8 +98,21 @@
   <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:contact@techgamehq.com">contact@techgamehq.com</a> or through our <a href="contact.html">contact page</a>.</p>
 </div>
 
-<footer>
-  <p>&#169; 2026 <a href="index.html">TechGameHQ</a> &mdash; <a href="about.html">About</a> &middot; <a href="contact.html">Contact</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Use</a> &middot; <a href="/privacy-policy.html#cookies" data-cookie-settings>Cookie Settings</a></p>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <a href="/" class="brand"><img src="/favicon-32x32.png" alt="" width="32" height="32">TechGameHQ</a>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+      <a href="/privacy-policy.html#cookies" data-cookie-settings>Cookie Settings</a>
+    </nav>
+    <p class="foot-copy">&#169; 2026 TechGameHQ</p>
+    <p class="foot-notice">TechGameHQ is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</p>
+  </div>
 </footer>
 
 </body>
