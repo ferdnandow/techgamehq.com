@@ -17,98 +17,38 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest"><link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --white: #ffffff; --off-white: #f7f6f3; --border: #e2e0da; --text: #1a1917; --muted: #6b6860; --accent: #2563eb; --accent-warm: #f97316; --accent-light: #eff6ff; --danger: #dc2626; }
-  body { background: var(--white); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.75; }
-  nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 2px solid var(--text); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
-  .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; text-decoration: none; color: var(--text); letter-spacing: -0.02em; }
-  .logo span { color: var(--accent); }
-  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--text); }
-  @media (max-width: 600px) { .nav-links { display: none; } }
-  .back { color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
-  .back:hover { color: var(--text); }
-  .article-wrap { max-width: 740px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
-  .article-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; background: var(--accent-light); color: var(--accent); margin-bottom: 1.25rem; }
-  h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
-  .article-meta { display: flex; gap: 1.5rem; color: var(--muted); font-size: 0.82rem; font-weight: 500; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
-  .intro { font-size: 1.15rem; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-  h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; margin: 2.5rem 0 1rem; letter-spacing: -0.01em; }
-  h3 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.75rem; color: var(--text); }
-  p { margin-bottom: 1.25rem; color: #3a3835; }
-  ol, ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
-  li { margin-bottom: 0.6rem; color: #3a3835; }
-
-  .step { border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.5rem; margin: 1.5rem 0; background: var(--off-white); }
-  .step-num { font-size: 0.72rem; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; font-family: 'Source Sans 3', sans-serif; }
-
-  .tip-box { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
-  .tip-box strong { color: var(--accent); display: block; margin-bottom: 0.5rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
-
-  .warning-box { background: #fef2f2; border-left: 4px solid var(--danger); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
-  .warning-box strong { color: var(--danger); display: block; margin-bottom: 0.5rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
-
-  .affiliate-box { border: 1px solid var(--border); border-top: 4px solid var(--accent-warm); padding: 1.5rem; margin: 2.5rem 0; background: var(--off-white); display: flex; gap: 1rem; align-items: flex-start; }
-  .affiliate-box .icon { font-size: 2rem; flex-shrink: 0; }
-  .affiliate-box h4 { color: var(--accent-warm); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; font-family: 'Source Sans 3', sans-serif; }
-  .affiliate-box p { margin: 0 0 0.75rem; font-size: 0.9rem; }
-  .affiliate-box a { color: var(--accent); font-size: 0.88rem; font-weight: 600; text-decoration: none; display: block; margin-top: 0.4rem; }
-  .affiliate-box a:hover { text-decoration: underline; }
-
-  .conclusion { background: var(--text); color: var(--white); padding: 2rem; margin-top: 3rem; }
-  .conclusion a { color: #93c5fd; text-decoration: underline; }
-  .conclusion a:hover { color: #ffffff; }
-  .conclusion h2 { color: var(--white); margin-top: 0; font-size: 1.4rem; font-family: 'Playfair Display', serif; }
-  .conclusion p { color: rgba(255,255,255,0.8); margin-bottom: 1rem; }
-  .conclusion p:last-child { margin-bottom: 0; }
-
-  footer { background: var(--text); padding: 2rem; text-align: center; margin-top: 4rem; }
-  footer p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
-  footer a { color: var(--accent); text-decoration: none; }
-  /* AUTHOR BIO */
-  .author-bio { display: flex; gap: 1.25rem; align-items: flex-start; border: 1px solid var(--border); border-top: 4px solid var(--accent); padding: 1.5rem; margin: 2.5rem 0; background: var(--off-white); }
-  .author-bio img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
-  .author-avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: #fff; flex-shrink: 0; }
-  .bio-content { flex: 1; }
-  .bio-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.25rem; }
-  .bio-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; display: block; margin-bottom: 0.35rem; }
-  .bio-text { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.5rem; line-height: 1.5; }
-  .bio-links a { font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; margin-right: 1rem; }
-  .bio-links a:hover { text-decoration: underline; }
-
-  /* READ NEXT */
-  .read-next { margin: 3rem 0 0; }
-  .read-next > h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem; letter-spacing: -0.01em; }
-  .read-next-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.25rem; }
-  .read-next-card { border: 1px solid var(--border); text-decoration: none; color: var(--text); display: block; transition: border-color 0.2s; }
-  .read-next-card:hover { border-color: var(--accent); }
-  .read-next-card img { width: 100%; height: 130px; object-fit: cover; display: block; }
-  .rn-body { padding: 0.85rem 1rem; }
-  .rn-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 0.35rem; }
-  .rn-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.4rem; color: var(--text); }
-  .rn-time { font-size: 0.78rem; color: var(--muted); }
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
 <!-- Analytics loads only after the visitor accepts cookies (see /js/consent.js) -->
 <script src="/js/consent.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Speed Up Your PC for Gaming (Free Methods That Actually Work)", "description": "Learn how to speed up your PC for gaming using free methods. Boost FPS, reduce lag, and improve performance without spending a dime.", "image": "https://techgamehq.com/images/webp/thumb-speed.webp", "mainEntityOfPage": "https://techgamehq.com/articles/how-to-speed-up-your-pc-for-gaming.html", "author": {"@type": "Organization", "name": "TechGameHQ Team", "url": "https://techgamehq.com/about.html"}, "publisher": {"@type": "Organization", "name": "TechGameHQ", "logo": {"@type": "ImageObject", "url": "https://techgamehq.com/android-chrome-512x512.png"}}}</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a href="/" class="brand"><img src="/favicon-32x32.png" alt="" width="32" height="32">TechGameHQ</a>
+    <nav class="head-links" aria-label="Main">
+      <a href="/#guides">Guides</a>
+      <a href="/#gear">Reviews</a>
+      <a href="/#play">Free games</a>
+      <a href="/about.html">About</a>
+    </nav>
+    <details class="menu">
+      <summary>Menu</summary>
+      <nav aria-label="Mobile">
+        <a href="/#guides">Guides</a>
+        <a href="/#gear">Reviews</a>
+        <a href="/#play">Free games</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </details>
+  </div>
+</header>
 
-<nav>
-  <a href="../index.html" class="logo"><img src="/favicon-32x32.png" alt="" style="width:26px;height:26px;vertical-align:middle;margin-right:0.5rem;border-radius:4px;" width="32" height="32">TechGame<span>HQ</span></a>
-    <ul class="nav-links">
-    <li><a href="../index.html#tech-guides">Tech</a></li>
-    <li><a href="../index.html#gaming">Gaming</a></li>
-    <li><a href="../index.html#reviews">Reviews</a></li>
-  </ul>
-  <a href="../index.html" class="back">&#8592; Home</a>
-</nav>
-
+<main id="main">
 <article class="article-wrap">
-  <img src="/images/webp/thumb-speed.webp" style="width:100%;height:400px;object-fit:cover;object-position:center;margin-bottom:1rem;" alt="How to Speed Up Your PC for Gaming (Free Methods That Actually Work)" width="1280" height="683">
   <span class="article-tag">Tech Guide</span>
   <h1>How to Speed Up Your PC for Gaming (Free Methods That Actually Work)</h1>
   <div class="article-meta">
@@ -117,6 +57,7 @@
     <span>8 min read</span>
     <span>Tech</span>
   </div>
+  <img class="article-cover" src="/images/webp/thumb-speed.webp" alt="How to Speed Up Your PC for Gaming (Free Methods That Actually Work)" width="1280" height="683" fetchpriority="high">
   <p class="intro">Your PC is stuttering, your FPS is dropping, and you're getting destroyed in-game because of lag. Before you spend money on new hardware, try these free optimizations first — most gamers see a noticeable improvement within 30 minutes.</p>
 
   <h2>1. Update Your GPU Drivers</h2>
@@ -334,24 +275,26 @@ var allArticles = [
   var grid = document.getElementById('readNextGrid');
   if (grid) {
     grid.innerHTML = picks.map(function(a) {
-      return '<a href="' + a.url + '" class="read-next-card"><img loading="lazy" src="' + a.img + '" alt="' + a.title + '"><div class="rn-body"><span class="rn-tag">' + a.tag + '</span><div class="rn-title">' + a.title + '</div><span class="rn-time">' + a.time + '</span></div></a>';
+      return '<a href="' + a.url + '" class="read-next-card"><img loading="lazy" src="' + a.img.replace('/images/webp/', '/images/sm/') + '" alt="" width="480" height="320"><div class="rn-body"><span class="rn-tag">' + a.tag + '</span><div class="rn-title">' + a.title + '</div><span class="rn-time">' + a.time + '</span></div></a>';
     }).join('');
   }
 })();
 </script>
 </article>
+</main>
 
-<footer>
-  <div style="max-width:900px;margin:0 auto;padding:0 2rem;">
-    <p style="margin-bottom:0.75rem;">&#169; 2026 <a href="../index.html">TechGameHQ</a> &#8212; Your Headquarters for Tech &amp; Gaming</p>
-    <p style="margin-bottom:0.75rem;">
-      <a href="../about.html">About</a> &nbsp;&middot;&nbsp;
-      <a href="../contact.html">Contact</a> &nbsp;&middot;&nbsp;
-      <a href="../privacy-policy.html">Privacy Policy</a> &nbsp;&middot;&nbsp;
-      <a href="../terms.html">Terms of Use</a> &nbsp;&middot;&nbsp;
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <a href="/" class="brand"><img src="/favicon-32x32.png" alt="" width="32" height="32">TechGameHQ</a>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
       <a href="/privacy-policy.html#cookies" data-cookie-settings>Cookie Settings</a>
-    </p>
-    <small style="color:rgba(255,255,255,0.4);font-size:0.75rem;">TechGameHQ is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</small>
+    </nav>
+    <p class="foot-copy">&#169; 2026 TechGameHQ</p>
+    <p class="foot-notice">TechGameHQ is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</p>
   </div>
 </footer>
 
