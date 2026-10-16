@@ -356,7 +356,7 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
 .qp-row + .qp-row { border-top: 1px solid var(--line); }
 .qp-label { font-size: 0.85rem; font-weight: 600; color: var(--acc); }
 .qp-name { font-weight: 600; color: var(--ink); line-height: 1.3; }
-.qp-price { font-size: 0.9rem; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.qp-note { font-size: 0.9rem; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .article-wrap .qp-btn, .article-wrap .gear-btn {
   display: inline-block; white-space: nowrap; text-decoration: none;
   background: var(--acc); color: var(--acc-ink); font-weight: 700; font-size: 0.88rem;
@@ -548,6 +548,24 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
 .page-404 .nf { padding: 40px 0 24px; }
 .page-404 .nf p { font-size: 1.15rem; margin-bottom: 28px; }
 
+/* "New" label and the home "Just added" row (shown by /js/new-badges.js for 30 days) */
+.new-badge { display: inline-block; vertical-align: middle; background: var(--acc); color: var(--acc-ink); font-family: var(--f-body); font-size: 0.75rem; font-weight: 700; letter-spacing: 0; line-height: 1.4; padding: 2px 8px; border-radius: 6px; }
+.new-badge[hidden], .ja-card[hidden], .just-added[hidden] { display: none; }
+.just-added { margin: 0 0 20px; }
+.ja-card { display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: center; padding: 12px; border: 1px solid var(--acc); border-radius: var(--r-card); background: var(--surface); text-decoration: none; }
+.ja-card + .ja-card { margin-top: 10px; }
+.ja-card .thumb { aspect-ratio: 3 / 2; border-radius: 10px; }
+.ja-card b { display: block; font-family: var(--f-display); font-size: 1.1rem; font-weight: 700; line-height: 1.25; margin: 4px 0 2px; }
+.ja-card small { color: var(--muted); font-size: 0.85rem; }
+.rail-body .new-badge { align-self: flex-start; }
+
+/* Hover: every article title on the home and in Keep Reading turns amber.
+   Titles over photos always sit on a dark scrim, so they use the bright amber in both themes. */
+.tile h2, .tile h3, .rail-body b, .fixes b, .rn-title, .ja-card b { transition: color .2s; }
+.tile:hover h2, .tile:hover h3, .tile:focus-visible h2, .tile:focus-visible h3 { color: #efa83f; }
+.rail-card:hover b, .fixes a:hover b, .read-next-card:hover .rn-title, .ja-card:hover b,
+.rail-card:focus-visible b, .fixes a:focus-visible b, .read-next-card:focus-visible .rn-title { color: var(--acc); }
+
 /* ---------- Cookie banner from /js/consent.js, matched to the theme ---------- */
 #tghq-consent {
   background: var(--surface) !important; color: var(--ink) !important;
@@ -581,7 +599,7 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
   .read-next-grid { grid-template-columns: 1fr; }
   .qp-row { grid-template-columns: 1fr auto; padding: 14px 16px; }
   .qp-label { grid-column: 1 / -1; }
-  .qp-price { grid-column: 1; grid-row: 3; }
+  .qp-note { grid-column: 1; grid-row: 3; }
   .qp-btn { grid-column: 2; grid-row: 2 / span 2; }
   .gear-box { padding: 18px 18px 6px; }
   .gear-item { grid-template-columns: 1fr; }
