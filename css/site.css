@@ -209,6 +209,7 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
   display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; font-size: 0.82rem;
 }
 .spec { background: var(--surface-2); color: var(--muted); padding: 4px 10px; border-radius: 6px; font-weight: 500; }
+.mouse-specs > span, .kb-specs > span, .monitor-specs > span, .phone-specs > span, .av-specs > span { background: var(--surface-2); color: var(--muted); padding: 4px 10px; border-radius: 6px; font-weight: 500; }
 
 .pros-cons, .product-pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 18px; font-size: 0.95rem; }
 .pros h4, .cons h4 { font-family: var(--f-body); font-size: 0.85rem; font-weight: 700; margin-bottom: 8px; letter-spacing: 0; }
@@ -348,6 +349,32 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
 .good, .win, .safe { color: var(--good); font-weight: 600; }
 .bad, .lose, .danger { color: var(--bad); font-weight: 600; }
 .ok, .mid, .warn { color: var(--acc); font-weight: 600; }
+
+/* Quick picks: buy buttons right under the intro of every review */
+.quick-picks { margin: 8px 0 40px; border: 1px solid var(--line); border-radius: var(--r-card); overflow: hidden; background: var(--surface); }
+.quick-picks-title { padding: 14px 20px; font-family: var(--f-display); font-weight: 700; font-size: 1.05rem; border-bottom: 1px solid var(--line); }
+.qp-row { display: grid; grid-template-columns: 9rem 1fr auto auto; gap: 8px 16px; align-items: center; padding: 14px 20px; }
+.qp-row + .qp-row { border-top: 1px solid var(--line); }
+.qp-label { font-size: 0.85rem; font-weight: 600; color: var(--acc); }
+.qp-name { font-weight: 600; color: var(--ink); line-height: 1.3; }
+.qp-note { font-size: 0.9rem; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.article-wrap .qp-btn, .article-wrap .gear-btn {
+  display: inline-block; white-space: nowrap; text-decoration: none;
+  background: var(--acc); color: var(--acc-ink); font-weight: 700; font-size: 0.88rem;
+  padding: 8px 14px; border-radius: var(--r-btn); transition: filter .2s, transform .1s;
+}
+.article-wrap .qp-btn:hover, .article-wrap .gear-btn:hover { filter: brightness(1.08); }
+.article-wrap .qp-btn:active, .article-wrap .gear-btn:active { transform: translateY(1px); }
+
+/* Gear that helps: product suggestions inside guides */
+.gear-box { margin: 40px 0; padding: 22px 24px 10px; background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--acc); border-radius: var(--r-card); }
+.article-wrap .gear-box h2 { margin: 0 0 6px; font-size: 1.35rem; }
+.article-wrap .gear-box > p { font-size: 0.95rem; color: var(--muted); margin-bottom: 8px; }
+.gear-item { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; align-items: center; padding: 14px 0; }
+.gear-item + .gear-item { border-top: 1px solid var(--line); }
+.gear-name { display: block; font-weight: 700; color: var(--ink); }
+.gear-why { display: block; font-size: 0.93rem; color: var(--body); line-height: 1.55; }
+.gear-note { font-size: 0.8rem; color: var(--muted); padding: 10px 0 12px; border-top: 1px solid var(--line); }
 
 /* Conclusion: same theme as the page, set apart by an amber rule */
 .conclusion {
@@ -522,6 +549,24 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
 .page-404 .nf { padding: 40px 0 24px; }
 .page-404 .nf p { font-size: 1.15rem; margin-bottom: 28px; }
 
+/* "New" label and the home "Just added" row (shown by /js/new-badges.js for 30 days) */
+.new-badge { display: inline-block; vertical-align: middle; background: var(--acc); color: var(--acc-ink); font-family: var(--f-body); font-size: 0.75rem; font-weight: 700; letter-spacing: 0; line-height: 1.4; padding: 2px 8px; border-radius: 6px; }
+.new-badge[hidden], .ja-card[hidden], .just-added[hidden] { display: none; }
+.just-added { margin: 0 0 20px; }
+.ja-card { display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: center; padding: 12px; border: 1px solid var(--acc); border-radius: var(--r-card); background: var(--surface); text-decoration: none; }
+.ja-card + .ja-card { margin-top: 10px; }
+.ja-card .thumb { aspect-ratio: 3 / 2; border-radius: 10px; }
+.ja-card b { display: block; font-family: var(--f-display); font-size: 1.1rem; font-weight: 700; line-height: 1.25; margin: 4px 0 2px; }
+.ja-card small { color: var(--muted); font-size: 0.85rem; }
+.rail-body .new-badge { align-self: flex-start; }
+
+/* Hover: every article title on the home and in Keep Reading turns amber.
+   Titles over photos always sit on a dark scrim, so they use the bright amber in both themes. */
+.tile h2, .tile h3, .rail-body b, .fixes b, .rn-title, .ja-card b { transition: color .2s; }
+.tile:hover h2, .tile:hover h3, .tile:focus-visible h2, .tile:focus-visible h3 { color: #efa83f; }
+.rail-card:hover b, .fixes a:hover b, .read-next-card:hover .rn-title, .ja-card:hover b,
+.rail-card:focus-visible b, .fixes a:focus-visible b, .read-next-card:focus-visible .rn-title { color: var(--acc); }
+
 /* ---------- Cookie banner from /js/consent.js, matched to the theme ---------- */
 #tghq-consent {
   background: var(--surface) !important; color: var(--ink) !important;
@@ -553,6 +598,13 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
   .browser-card, .product-card, .earbud-card, .chair-card, .gpu-card { padding: 20px 18px; }
   .pros-cons, .product-pros-cons { grid-template-columns: 1fr; gap: 14px; }
   .read-next-grid { grid-template-columns: 1fr; }
+  .qp-row { grid-template-columns: 1fr auto; padding: 14px 16px; }
+  .qp-label { grid-column: 1 / -1; }
+  .qp-note { grid-column: 1; grid-row: 3; }
+  .qp-btn { grid-column: 2; grid-row: 2 / span 2; }
+  .gear-box { padding: 18px 18px 6px; }
+  .gear-item { grid-template-columns: 1fr; }
+  .gear-btn { justify-self: start; margin-top: 6px; }
   .step, .tip-card, .fix-card, .game-card, .part-block, .item-block, .verdict-card, .verdict, .tool-card { padding: 18px; }
   .tool-card { gap: 14px; }
   .tool-number { width: 32px; font-size: 1.5rem; }
