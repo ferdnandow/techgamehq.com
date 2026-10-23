@@ -489,7 +489,7 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
 .page li::marker { color: var(--acc); }
 .page strong { color: var(--ink); }
 .page p a, .page li a { color: var(--acc); text-underline-offset: 3px; }
-.page-tag { display: inline-block; margin-bottom: 12px; font-size: 0.85rem; font-weight: 600; color: var(--acc); }
+.page-tag { display: inline-block; margin-bottom: 12px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--acc); }
 .page .intro { font-size: 1.15rem; color: var(--ink); }
 .page .date, .page .last-updated { color: var(--muted); font-size: 0.92rem; margin-bottom: 28px; }
 .highlight-box, .cta-box {
@@ -505,7 +505,7 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
 .page-about .hero { padding-bottom: 8px; }
 .page-about .hero h1 span { color: var(--acc); }
 .page-about .hero p { font-size: 1.2rem; color: var(--muted); }
-.page-about h2::before { content: ""; display: inline-block; width: 18px; height: 3px; margin-right: 10px; vertical-align: middle; background: var(--acc); border-radius: 2px; }
+.page-about h2::before, .page-contact h2::before, .page-terms h2::before, .page-privacy-policy h2::before { content: ""; display: inline-block; width: 18px; height: 3px; margin-right: 10px; vertical-align: middle; background: var(--acc); border-radius: 2px; }
 .page-about .cta-box h2::before { content: none; }
 .value-card h3 { color: var(--acc); }
 .topics { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 8px; }
@@ -524,6 +524,7 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 8px 0 8px; }
 .contact-method { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-card); padding: 18px 20px; }
 .contact-method p { font-size: 0.95rem; margin-bottom: 10px; }
+.contact-method h3 { color: var(--acc); }
 .contact-method a { color: var(--acc); font-weight: 600; text-underline-offset: 3px; overflow-wrap: anywhere; }
 .form-section { margin-top: 8px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
