@@ -503,7 +503,11 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
 
 /* About */
 .page-about .hero { padding-bottom: 8px; }
-.page-about .hero p { font-size: 1.2rem; color: var(--ink); }
+.page-about .hero h1 span { color: var(--acc); }
+.page-about .hero p { font-size: 1.2rem; color: var(--muted); }
+.page-about h2::before { content: ""; display: inline-block; width: 18px; height: 3px; margin-right: 10px; vertical-align: middle; background: var(--acc); border-radius: 2px; }
+.page-about .cta-box h2::before { content: none; }
+.value-card h3 { color: var(--acc); }
 .topics { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 8px; }
 .topic { background: var(--surface); border: 1px solid var(--line); color: var(--body); font-size: 0.9rem; font-weight: 500; padding: 6px 12px; border-radius: var(--r-sm); }
 .values { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -511,7 +515,7 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
 .value-card p { margin: 0; font-size: 0.95rem; }
 .team-card { display: flex; gap: 18px; align-items: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-card); padding: 22px 24px; }
 .team-avatar { width: 64px; height: 64px; flex-shrink: 0; display: grid; place-items: center; border-radius: 16px; background: var(--acc); color: var(--acc-ink); font-family: var(--f-display); font-weight: 700; font-size: 1.25rem; }
-.team-role { display: block; font-size: 0.85rem; color: var(--muted); }
+.team-role { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--acc); }
 .team-name { display: block; font-family: var(--f-display); font-size: 1.25rem; font-weight: 700; margin-bottom: 4px; }
 .page .team-bio { font-size: 0.97rem; margin-bottom: 8px; }
 .team-links a { color: var(--acc); font-weight: 600; text-underline-offset: 3px; }
