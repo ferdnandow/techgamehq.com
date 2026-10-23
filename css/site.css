@@ -421,9 +421,9 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
 /* ==========================================================
    HOME
    ========================================================== */
-.home-intro { display: flex; align-items: end; justify-content: space-between; gap: 32px; padding: 48px 0 28px; }
-.home-intro h1 { font-size: clamp(2rem, 3.6vw, 3rem); line-height: 1.05; font-weight: 700; letter-spacing: -0.03em; max-width: 16ch; }
-.home-intro p { color: var(--muted); max-width: 40ch; }
+.home-intro { padding: 48px 0 28px; }
+.home-intro h1 { font-size: clamp(2rem, 3.6vw, 3rem); line-height: 1.05; font-weight: 700; letter-spacing: -0.03em; }
+.home-intro p { color: var(--muted); font-size: 1.1rem; margin-top: 12px; max-width: 52ch; }
 
 .bento { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 250px 250px; gap: 16px; }
 .tile { position: relative; display: block; isolation: isolate; overflow: hidden; border-radius: var(--r-card); background: var(--surface-2); text-decoration: none; }
@@ -618,7 +618,8 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
   .form-row { gap: 0; }
   .team-card { padding: 18px; gap: 14px; }
 
-  .home-intro { flex-direction: column; align-items: start; gap: 10px; padding: 28px 0 20px; }
+  .home-intro { padding: 28px 0 20px; }
+  .home-intro p { margin-top: 8px; }
   .bento { grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: 200px; }
   .tile.big { grid-column: 1 / -1; grid-row: span 2; }
   .tile.big .tile-body { padding: 20px; }
