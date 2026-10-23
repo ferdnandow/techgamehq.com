@@ -346,6 +346,7 @@ h1, h2, h3, h4 { font-family: var(--f-display); letter-spacing: -0.02em; line-he
 }
 .compare-table td, .temp-table td { padding: 12px 14px; border-top: 1px solid var(--line); color: var(--body); vertical-align: top; }
 .compare-table tbody tr:nth-child(even) td, .temp-table tbody tr:nth-child(even) td { background: var(--surface); }
+.tbl-links { display: block; margin-top: 4px; font-size: 0.85rem; }
 .good, .win, .safe { color: var(--good); font-weight: 600; }
 .bad, .lose, .danger { color: var(--bad); font-weight: 600; }
 .ok, .mid, .warn { color: var(--acc); font-weight: 600; }
